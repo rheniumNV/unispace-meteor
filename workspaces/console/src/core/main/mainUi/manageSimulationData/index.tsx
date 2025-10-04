@@ -15,11 +15,16 @@ import { LoadSimulationData } from "./loadSimulationData";
 
 export const ManageSimulationData = () => {
   const { appState, dispatch } = useAppContext();
-  const { localSimulationData, saveSimulationData } = useLocalSimulationData();
+  const { localSimulationData, saveSimulationData, deleteSimulationData } =
+    useLocalSimulationData();
 
   const enableSaveAs = useMemo(() => {
-    return appState.simulationState.id !== undefined;
-  }, [appState.simulationState.id]);
+    return (
+      localSimulationData.status === "SUCCESS" &&
+      appState.simulationState.id !== undefined &&
+      localSimulationData.data[appState.simulationState.id] !== undefined
+    );
+  }, [appState.simulationState.id, localSimulationData]);
 
   const onClickLoad = useCallback(
     (_env: FunctionEnv) => {
@@ -132,6 +137,7 @@ export const ManageSimulationData = () => {
         {appState.enableSimulationLoader &&
           localSimulationData.status === "SUCCESS" && (
             <LoadSimulationData
+              deleteSimulationData={deleteSimulationData}
               localSimulationData={localSimulationData.data}
               mode="Local"
             />

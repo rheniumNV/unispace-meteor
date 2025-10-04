@@ -20,19 +20,19 @@ const meteorList: Meteor[] = [
   {
     name: "Meteor 1",
     size: 3000,
-    mass: 1000 * 10000 * 10000,
+    mass: 10000,
     visualIndex: 0,
   },
   {
     name: "Meteor 2",
     size: 30000,
-    mass: 2000000 * 10000000,
+    mass: 2000000,
     visualIndex: 1,
   },
   {
     name: "Meteor 3",
     size: 300,
-    mass: 100000 * 10000 * 10000,
+    mass: 100000,
     visualIndex: 2,
   },
 ];
