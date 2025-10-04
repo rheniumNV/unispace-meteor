@@ -45,7 +45,6 @@ const input: SimulationInput = {
 		t0: new Date("2025-10-04T00:00:00Z"),
 
 		// 初期位置: ECEF（半径 35,000 km、緯度 ~20°, 経度 ~150° 相当）
-		// r = [x, y, z] [m]
 		r0_ecef: [
 			-28_482_919, // x [m]
 			+16_444_621, // y [m]
@@ -79,7 +78,7 @@ const input: SimulationInput = {
 		// ablation_coeff は簡略化のため未設定（=アブレーション無効/弱め）
 		seismic_efficiency: 0.001, // 地震効率 ~10^-3
 		blast_thresholds_kpa: [1, 3.5, 10, 20], // 可視化用の典型しきい値
-		time_step_s: 10, // 1秒刻み（最高精度でテスト）
+		// time_step_sはデフォルト(1秒)を使用
 		max_time_s: 60 * 60 * 24 * 10, // 10日間でテスト
 	},
 };

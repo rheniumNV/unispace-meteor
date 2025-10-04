@@ -3,6 +3,7 @@
  */
 
 import { R } from "@mobily/ts-belt";
+import { EARTH_MU_M3_S2 } from "../../types/constants";
 import type { Vec3 } from "../../types/input";
 import type { TrajectoryPoint } from "../../types/output";
 import type { DynamicState, SimulationParams } from "../../types/state";
@@ -17,7 +18,7 @@ export interface TrajectoryResult {
 	/** サンプル点の配列 */
 	readonly samples: readonly TrajectoryPoint[];
 	/** 終了理由 */
-	readonly terminationReason: "ground" | "breakup" | "burnout" | "max_time";
+	readonly terminationReason: "ground" | "breakup" | "burnout" | "max_time" | "escape";
 }
 
 /**
@@ -100,8 +101,8 @@ export const integrateTrajectory = (
 	v0: Vec3,
 	m0: number,
 	params: SimulationParams,
-	dt = 60 * 60, // 1時間 = 3,600秒
-	max_time = 60 * 60 * 24 * 30 * 3, // 30日 = 2,592,000秒
+	dt = 1, // 1秒
+	max_time = 60 * 60 * 24 * 30 * 3, // 90日 = 7,776,000秒
 ): R.Result<TrajectoryResult, Error> => {
 	const samples: TrajectoryPoint[] = [];
 	let state: DynamicState = { r: r0, v: v0, m: m0 };
@@ -124,10 +125,15 @@ export const integrateTrajectory = (
 		lon: (initialGeod.lon * 180) / Math.PI,
 	});
 
-	let terminationReason: "ground" | "breakup" | "burnout" | "max_time" = "max_time";
+	let terminationReason: "ground" | "breakup" | "burnout" | "max_time" | "escape" = "max_time";
 
 	// 質量が初期質量の1%未満になったら燃え尽きたと判定
 	const burnout_threshold = m0 * 0.01;
+
+	// 適応的サンプリング用の前回値
+	let lastSampleV = Vec.magnitude(v0);
+	let lastSampleVDir = Vec.normalize(v0);
+	let lastSampleT = 0;
 
 	// 積分ループ
 	while (t < max_time) {
@@ -157,6 +163,7 @@ export const integrateTrajectory = (
 		}
 		const rho = R.getExn(rhoResult);
 
+		// 適応的サンプリング: 速度の大きさ・向きが大きく変化した時のみ記録
 		const v_mag = Vec.magnitude(state.v);
 		const qResult = Drag.dynamicPressure(v_mag, rho);
 		if (R.isError(qResult)) {
@@ -168,32 +175,134 @@ export const integrateTrajectory = (
 			terminationReason = "breakup";
 		}
 
-		// サンプル点を追加
-		samples.push({
-			t,
-			r_ecef: state.r,
-			v_ecef: state.v,
-			mass_kg: state.m,
-			alt_m: geod.alt_m,
-			lat: (geod.lat * 180) / Math.PI,
-			lon: (geod.lon * 180) / Math.PI,
-		});
+		// 脱出判定: 大気圏外でエネルギーが正かつ遠ざかっている
+		if (geod.alt_m > 100000) {
+			// 100km以上
+			const r_mag = Vec.magnitude(state.r);
+			const v_mag_escape = Vec.magnitude(state.v);
+			const E = (v_mag_escape * v_mag_escape) / 2 - EARTH_MU_M3_S2 / r_mag;
+			const r_dot_v = Vec.dot(state.r, state.v);
+
+			if (E > 0 && r_dot_v > 0) {
+				terminationReason = "escape";
+			}
+		}
+
+		const v_dir = Vec.normalize(state.v);
+		const v_mag_change = Math.abs(v_mag - lastSampleV) / lastSampleV;
+		const angle_change = Math.acos(Math.max(-1, Math.min(1, Vec.dot(lastSampleVDir, v_dir))));
+		const time_since_last_sample = t - lastSampleT;
+
+		// 以下のいずれかの条件を満たす場合にサンプル点を追加
+		// 1. 速度の大きさが5%以上変化
+		// 2. 速度の向きが5度以上変化
+		// 3. 最後のサンプルから60秒以上経過
+		const should_sample =
+			v_mag_change > 0.05 || angle_change > (5 * Math.PI) / 180 || time_since_last_sample >= 600;
+
+		if (should_sample) {
+			samples.push({
+				t,
+				r_ecef: state.r,
+				v_ecef: state.v,
+				mass_kg: state.m,
+				alt_m: geod.alt_m,
+				lat: (geod.lat * 180) / Math.PI,
+				lon: (geod.lon * 180) / Math.PI,
+			});
+			lastSampleV = v_mag;
+			lastSampleVDir = v_dir;
+			lastSampleT = t;
+		}
 
 		// 地表到達判定
 		if (geod.alt_m <= 0) {
 			terminationReason = "ground";
+			// 最後の点を必ず記録
+			if (!should_sample) {
+				samples.push({
+					t,
+					r_ecef: state.r,
+					v_ecef: state.v,
+					mass_kg: state.m,
+					alt_m: geod.alt_m,
+					lat: (geod.lat * 180) / Math.PI,
+					lon: (geod.lon * 180) / Math.PI,
+				});
+			}
 			break;
 		}
 
 		// 破砕で停止
 		if (terminationReason === "breakup") {
+			// 最後の点を必ず記録
+			if (!should_sample) {
+				samples.push({
+					t,
+					r_ecef: state.r,
+					v_ecef: state.v,
+					mass_kg: state.m,
+					alt_m: geod.alt_m,
+					lat: (geod.lat * 180) / Math.PI,
+					lon: (geod.lon * 180) / Math.PI,
+				});
+			}
+			break;
+		}
+
+		// 脱出で停止
+		if (terminationReason === "escape") {
+			// 最後の点を必ず記録
+			if (!should_sample) {
+				samples.push({
+					t,
+					r_ecef: state.r,
+					v_ecef: state.v,
+					mass_kg: state.m,
+					alt_m: geod.alt_m,
+					lat: (geod.lat * 180) / Math.PI,
+					lon: (geod.lon * 180) / Math.PI,
+				});
+			}
 			break;
 		}
 
 		// 燃え尽き判定
 		if (state.m < burnout_threshold) {
 			terminationReason = "burnout";
+			// 最後の点を必ず記録
+			if (!should_sample) {
+				samples.push({
+					t,
+					r_ecef: state.r,
+					v_ecef: state.v,
+					mass_kg: state.m,
+					alt_m: geod.alt_m,
+					lat: (geod.lat * 180) / Math.PI,
+					lon: (geod.lon * 180) / Math.PI,
+				});
+			}
 			break;
+		}
+	}
+
+	// max_timeでタイムアウトした場合も最後の点を記録
+	if (terminationReason === "max_time" && samples.length > 0) {
+		const lastRecorded = samples[samples.length - 1];
+		if (lastRecorded && lastRecorded.t !== t) {
+			const geodResult = Coord.ecefToGeodetic(state.r);
+			if (R.isOk(geodResult)) {
+				const geod = R.getExn(geodResult);
+				samples.push({
+					t,
+					r_ecef: state.r,
+					v_ecef: state.v,
+					mass_kg: state.m,
+					alt_m: geod.alt_m,
+					lat: (geod.lat * 180) / Math.PI,
+					lon: (geod.lon * 180) / Math.PI,
+				});
+			}
 		}
 	}
 
