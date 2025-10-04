@@ -2,12 +2,11 @@
  * 運動方程式の統合
  */
 
-import { pipe, R } from "@mobily/ts-belt";
+import { R } from "@mobily/ts-belt";
 import type { DynamicState, DynamicStateDerivative, SimulationParams } from "../../types/state";
 import * as Atmos from "../atmosphere/density";
 import * as Coord from "../coordinates/ecef";
 import * as Vec from "../coordinates/vector";
-import * as Coriolis from "./coriolis";
 import * as Drag from "./drag";
 import * as Grav from "./gravity";
 
@@ -63,25 +62,8 @@ export const rhsState = (
 	}
 	const a_drag = R.getExn(dragResult);
 
-	const coriolisResult = Coriolis.coriolisAcceleration(v);
-	if (R.isError(coriolisResult)) {
-		return coriolisResult;
-	}
-	const a_coriolis = R.getExn(coriolisResult);
-
-	const centrifugalResult = Coriolis.centrifugalAcceleration(r);
-	if (R.isError(centrifugalResult)) {
-		return centrifugalResult;
-	}
-	const a_centrifugal = R.getExn(centrifugalResult);
-
-	// 全加速度
-	const a_total = pipe(
-		a_grav,
-		(a) => Vec.add(a, a_drag),
-		(a) => Vec.add(a, a_coriolis),
-		(a) => Vec.add(a, a_centrifugal),
-	);
+	// 全加速度（コリオリ力・遠心力は宇宙空間では過剰なので除外）
+	const a_total = Vec.add(a_grav, a_drag);
 
 	// 質量変化率（アブレーション）
 	// dm/dt = -σ * A * ρ * v³ / 2 (σはアブレーション係数)
