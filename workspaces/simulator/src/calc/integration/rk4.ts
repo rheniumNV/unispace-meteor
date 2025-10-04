@@ -130,6 +130,9 @@ export const integrateTrajectory = (
 	// 質量が初期質量の1%未満になったら燃え尽きたと判定
 	const burnout_threshold = m0 * 0.01;
 
+	// 脱出検出時刻（脱出後600秒継続するため）
+	let escape_detected_t: number | null = null;
+
 	// 適応的サンプリング用の前回値
 	let lastSampleV = Vec.magnitude(v0);
 	let lastSampleVDir = Vec.normalize(v0);
@@ -184,7 +187,11 @@ export const integrateTrajectory = (
 			const r_dot_v = Vec.dot(state.r, state.v);
 
 			if (E > 0 && r_dot_v > 0) {
-				terminationReason = "escape";
+				if (escape_detected_t === null) {
+					// 初めて脱出を検出
+					terminationReason = "escape";
+					escape_detected_t = t;
+				}
 			}
 		}
 
@@ -250,8 +257,12 @@ export const integrateTrajectory = (
 			break;
 		}
 
-		// 脱出で停止
-		if (terminationReason === "escape") {
+		// 脱出で停止（検出から600秒経過後）
+		if (
+			terminationReason === "escape" &&
+			escape_detected_t !== null &&
+			t - escape_detected_t >= 600
+		) {
 			// 最後の点を必ず記録
 			if (!should_sample) {
 				samples.push({

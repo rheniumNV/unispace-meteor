@@ -86,12 +86,12 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const trajectory = R.getExn(trajectoryResult);
 	const { samples } = trajectory;
 
-	// 衝突までの時間
+	// シミュレーション終了時刻
 	const final_sample = samples[samples.length - 1];
 	if (final_sample === undefined) {
 		return R.Error(new Error("軌道サンプルが空です"));
 	}
-	const time_to_impact_s = final_sample.t;
+	const end_time_s = final_sample.t;
 
 	// 最終速度からエネルギーを計算
 	const v_final_mag = Vec.magnitude(final_sample.v_ecef);
@@ -166,7 +166,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const result: SimulationResult = {
 		trajectory: samples,
 		terminationReason: trajectory.terminationReason,
-		time_to_impact_s,
+		end_time_s,
 		energy: {
 			joule: E_joule,
 			mt_tnt: E_mt_tnt,

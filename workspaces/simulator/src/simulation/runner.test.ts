@@ -91,9 +91,9 @@ describe("シミュレーション統合テスト", () => {
 				// 軌道データが存在する
 				expect(simResult.trajectory.length).toBeGreaterThan(0);
 
-				// 衝突までの時間が正の値
-				expect(simResult.time_to_impact_s).toBeGreaterThan(0);
-				expect(simResult.time_to_impact_s).toBeLessThan(100); // 100秒以内
+				// シミュレーション終了時刻が正の値
+				expect(simResult.end_time_s).toBeGreaterThan(0);
+				expect(simResult.end_time_s).toBeLessThan(100); // 100秒以内
 
 				// エネルギーが妥当な範囲
 				expect(simResult.energy.joule).toBeGreaterThan(0);

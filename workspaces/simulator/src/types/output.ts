@@ -78,8 +78,8 @@ export interface SimulationResult {
 	readonly trajectory: readonly TrajectoryPoint[];
 	/** 終了理由 */
 	readonly terminationReason: "ground" | "breakup" | "burnout" | "max_time" | "escape";
-	/** 衝突までの時間 [s] */
-	readonly time_to_impact_s: number;
+	/** シミュレーション終了時刻 [s] */
+	readonly end_time_s: number;
 	/** エネルギー情報 */
 	readonly energy: EnergyInfo;
 	/** 空中爆発情報（発生した場合） */
