@@ -71,6 +71,7 @@ export const calculateCrater = (
 	const depth = D_final * 0.2;
 
 	return R.Ok({
+		hasCrater: true,
 		transient_diameter_m: D_transient,
 		final_diameter_m: D_final,
 		depth_m: depth,
