@@ -3,21 +3,85 @@ import { simulateMeteorImpact } from "./simulation";
 import { EARTH_RADIUS_M } from "./types/constants";
 import type { SimulationInput, Vec3 } from "./types/input";
 
-const r0_ecef: Vec3 = [EARTH_RADIUS_M + 10000, 0, 0]; // 上空10km
-const velocity_ecef: Vec3 = [-10606.6, 0, 10606.6];
+// const r0_ecef: Vec3 = [EARTH_RADIUS_M + 10000, 0, 0]; // 上空10km
+// const velocity_ecef: Vec3 = [-10606.6, 0, 10606.6];
+// const input: SimulationInput = {
+// 	discovery: {
+// 		t0: new Date("2024-01-01T00:00:00Z"),
+// 		r0_ecef,
+// 		velocity_ecef,
+// 	},
+// 	meteoroid: {
+// 		diameter_m: 1, // 1m径
+// 		density_kg_m3: 3000,
+// 		strength_mpa: 5,
+// 	},
+// 	environment: {
+// 		surface: "land",
+// 	},
+// };
+
+// const input: SimulationInput = {
+// 	discovery: {
+// 		t0: new Date("2025-10-04T12:01:39.570Z"),
+// 		r0_ecef: [20000000, 0, 0],
+// 		velocity_ecef: [-53626.920000000006, -20375.442999999996, 43964.434],
+// 	},
+// 	meteoroid: {
+// 		diameter_m: 2,
+// 		density_kg_m3: 4,
+// 		strength_mpa: 100,
+// 	},
+// 	environment: {
+// 		surface: "land",
+// 	},
+// 	model: {
+// 		time_step_s: 60,
+// 	},
+// };
+
 const input: SimulationInput = {
 	discovery: {
-		t0: new Date("2024-01-01T00:00:00Z"),
-		r0_ecef,
-		velocity_ecef,
+		// ハッカソン本番日の例
+		t0: new Date("2025-10-04T00:00:00Z"),
+
+		// 初期位置: ECEF（半径 35,000 km、緯度 ~20°, 経度 ~150° 相当）
+		// r = [x, y, z] [m]
+		r0_ecef: [
+			-28_482_918.84722808, // x [m]
+			+16_444_620.863753395, // y [m]
+			+11_970_705.016398406, // z [m]
+		],
+
+		// 初期速度: ECEF（東 80% + 北 20% の接線 + わずかに内向き）
+		// |v| ≈ 2.71 km/s < v_circ(35,000 km) ≈ 3.37 km/s → 低い角運動量で落下エリプス
+		velocity_ecef: [
+			-602.1545862457201, // vx [m/s]
+			-2_608.37926578815, // vy [m/s]
+			+396.1911913075802, // vz [m/s]
+		],
 	},
+
 	meteoroid: {
-		diameter_m: 1, // 1m径
-		density_kg_m3: 3000,
-		strength_mpa: 5,
+		// 大型隕石（大クレーター狙い）
+		diameter_m: 250, // 直径 [m]
+		density_kg_m3: 3500, // 密度 [kg/m^3]（stony-iron想定：岩石より重い）
+		strength_mpa: 50, // 強度 [MPa]（空中破砕を抑えて地表まで持たせる）
 	},
+
 	environment: {
-		surface: "land",
+		surface: "land", // 陸上インパクトを想定（大クレーター化を確実に）
+		rho0_kg_m3: 1.225, // 海面大気密度 [kg/m^3]
+		scale_height_m: 8000, // 大気スケールハイト [m]
+		gravity_m_s2: 9.80665, // g [m/s^2]
+	},
+
+	model: {
+		drag_coefficient: 1.0, // Cd ~1（鈍頭体の近似）
+		// ablation_coeff は簡略化のため未設定（=アブレーション無効/弱め）
+		seismic_efficiency: 0.001, // 地震効率 ~10^-3
+		blast_thresholds_kpa: [1, 3.5, 10, 20], // 可視化用の典型しきい値
+		time_step_s: 3600, // 1秒刻み（VR負荷と精度のバランス）
 	},
 };
 

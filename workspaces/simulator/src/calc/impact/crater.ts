@@ -70,6 +70,14 @@ export const calculateCrater = (
 	// クレーター深さ（直径の約0.2倍）
 	const depth = D_final * 0.2;
 
+	// 小さすぎるクレーターは形成されないと判定
+	// クレーター直径が隕石直径の4倍未満の場合
+	if (D_final < 4 * diameter_m) {
+		return R.Ok({
+			hasCrater: false,
+		});
+	}
+
 	return R.Ok({
 		hasCrater: true,
 		transient_diameter_m: D_transient,

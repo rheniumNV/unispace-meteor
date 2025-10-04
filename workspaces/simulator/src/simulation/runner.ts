@@ -35,6 +35,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const Cd = model?.drag_coefficient ?? STANDARD_DRAG_COEFFICIENT;
 	const seismic_efficiency = model?.seismic_efficiency ?? DEFAULT_SEISMIC_EFFICIENCY;
 	const blast_thresholds_kpa = model?.blast_thresholds_kpa ?? DEFAULT_BLAST_THRESHOLDS_KPA;
+	const dt = model?.time_step_s ?? 60 * 60; // 1時間 = 3,600秒
 
 	// 断面積を計算
 	const radius_m = meteoroid.diameter_m / 2;
@@ -70,7 +71,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	};
 
 	// 軌道積分を実行
-	const trajectoryResult = Integration.integrateTrajectory(r0_ecef, v0_ecef, m0_kg, params);
+	const trajectoryResult = Integration.integrateTrajectory(r0_ecef, v0_ecef, m0_kg, params, dt);
 	if (R.isError(trajectoryResult)) {
 		return trajectoryResult;
 	}
@@ -107,30 +108,35 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	// クレーター計算（地表衝突の場合）
 	let crater: SimulationResult["crater"] = { hasCrater: false };
 	if (impactState.impacted) {
-		// 衝突角度を計算（速度ベクトルと地表法線のなす角）
-		const impact_v_mag = Vec.magnitude(impactState.v_ecef);
+		// 水面衝突の場合はクレーターを形成しない
+		if (environment.surface === "water") {
+			crater = { hasCrater: false };
+		} else {
+			// 衝突角度を計算（速度ベクトルと地表法線のなす角）
+			const impact_v_mag = Vec.magnitude(impactState.v_ecef);
 
-		// 地表法線ベクトル（簡易的に位置ベクトルの正規化）
-		const normal = Vec.normalize(impactState.r_ecef);
-		const v_normalized = Vec.normalize(impactState.v_ecef);
+			// 地表法線ベクトル（簡易的に位置ベクトルの正規化）
+			const normal = Vec.normalize(impactState.r_ecef);
+			const v_normalized = Vec.normalize(impactState.v_ecef);
 
-		// 衝突角度（内積から計算、90度から引く）
-		const cos_angle = -Vec.dot(normal, v_normalized);
-		const impact_angle_rad = Math.acos(Math.max(-1, Math.min(1, cos_angle)));
-		const impact_angle_deg = (impact_angle_rad * 180) / Math.PI;
+			// 衝突角度（内積から計算、90度から引く）
+			const cos_angle = -Vec.dot(normal, v_normalized);
+			const impact_angle_rad = Math.acos(Math.max(-1, Math.min(1, cos_angle)));
+			const impact_angle_deg = (impact_angle_rad * 180) / Math.PI;
 
-		const craterResult = Impact.calculateCrater(
-			meteoroid.diameter_m,
-			meteoroid.density_kg_m3,
-			impact_v_mag,
-			impact_angle_deg,
-			target_density_kg_m3,
-			gravity_m_s2,
-		);
-		if (R.isError(craterResult)) {
-			return craterResult;
+			const craterResult = Impact.calculateCrater(
+				meteoroid.diameter_m,
+				meteoroid.density_kg_m3,
+				impact_v_mag,
+				impact_angle_deg,
+				target_density_kg_m3,
+				gravity_m_s2,
+			);
+			if (R.isError(craterResult)) {
+				return craterResult;
+			}
+			crater = R.getExn(craterResult);
 		}
-		crater = R.getExn(craterResult);
 	}
 
 	// 爆風影響範囲

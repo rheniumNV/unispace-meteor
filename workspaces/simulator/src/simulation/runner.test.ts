@@ -58,7 +58,7 @@ describe("シミュレーション統合テスト", () => {
 			// チェリャビンスク隕石風のシナリオ
 			// 19 km/s, 東向き (方位角90度), 入射角45度
 			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 20000, 0, 0]; // 赤道上空20km
-			const velocity_ecef: Vec3 = [0, 13435, -13435]; // ≈19km/s, 東向き, 45度下向き
+			const velocity_ecef: Vec3 = [-13435, 13435, 0]; // ≈19km/s, 東向き, 45度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
@@ -72,6 +72,9 @@ describe("シミュレーション統合テスト", () => {
 				},
 				environment: {
 					surface: "land",
+				},
+				model: {
+					time_step_s: 0.1, // 大気圏突入シナリオでは細かいステップが必要
 				},
 			};
 

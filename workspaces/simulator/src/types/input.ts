@@ -47,6 +47,8 @@ export interface ModelParams {
 	readonly seismic_efficiency?: number;
 	/** 爆風過圧しきい値 [kPa] */
 	readonly blast_thresholds_kpa?: readonly number[];
+	/** タイムステップ [s] */
+	readonly time_step_s?: number;
 }
 
 /** シミュレーション入力全体 */
