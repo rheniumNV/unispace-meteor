@@ -95,8 +95,8 @@ describe("シミュレーション統合テスト", () => {
 
 				// 空中爆発が検出される（弱い隕石なので）
 				// または地表衝突する（強度次第）
-				const hasAirburst = simResult.airburst !== null;
-				const hasCrater = simResult.crater !== null;
+				const hasAirburst = simResult.airburst.isOccurrence;
+				const hasCrater = simResult.crater.hasCrater;
 				expect(hasAirburst || hasCrater).toBe(true);
 
 				// 爆風半径が計算されている
@@ -176,7 +176,7 @@ describe("シミュレーション統合テスト", () => {
 
 				// 強い隕石は地表衝突する可能性が高い
 				// （ただし、速度や角度によっては空中爆発もありうる）
-				expect(simResult.crater !== null || simResult.airburst !== null).toBe(true);
+				expect(simResult.crater.hasCrater || simResult.airburst.isOccurrence).toBe(true);
 			}
 		});
 
@@ -209,7 +209,7 @@ describe("シミュレーション統合テスト", () => {
 				expect(simResult.trajectory.length).toBeGreaterThan(0);
 
 				// 水面衝突でもクレーターは計算される（ターゲット密度が水の1000kg/m³）
-				if (simResult.crater !== null) {
+				if (simResult.crater.hasCrater) {
 					expect(simResult.crater.final_diameter_m).toBeGreaterThan(0);
 				}
 			}

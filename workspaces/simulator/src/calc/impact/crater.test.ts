@@ -12,16 +12,21 @@ describe("クレーター計算", () => {
 			if (R.isOk(result)) {
 				const crater = R.getExn(result);
 
-				// クレーターサイズは正の値
-				expect(crater.transient_diameter_m).toBeGreaterThan(0);
-				expect(crater.final_diameter_m).toBeGreaterThan(0);
-				expect(crater.depth_m).toBeGreaterThan(0);
+				// クレーターが形成される
+				expect(crater.hasCrater).toBe(true);
 
-				// 最終クレーターは一時クレーターより大きい
-				expect(crater.final_diameter_m).toBeGreaterThan(crater.transient_diameter_m);
+				if (crater.hasCrater) {
+					// クレーターサイズは正の値
+					expect(crater.transient_diameter_m).toBeGreaterThan(0);
+					expect(crater.final_diameter_m).toBeGreaterThan(0);
+					expect(crater.depth_m).toBeGreaterThan(0);
 
-				// 深さは直径より小さい
-				expect(crater.depth_m).toBeLessThan(crater.final_diameter_m);
+					// 最終クレーターは一時クレーターより大きい
+					expect(crater.final_diameter_m).toBeGreaterThan(crater.transient_diameter_m);
+
+					// 深さは直径より小さい
+					expect(crater.depth_m).toBeLessThan(crater.final_diameter_m);
+				}
 			}
 		});
 
@@ -36,8 +41,13 @@ describe("クレーター計算", () => {
 				const crater1 = R.getExn(result1);
 				const crater2 = R.getExn(result2);
 
-				// 速度が2倍なら、クレーターサイズも大きくなる（v^0.44）
-				expect(crater2.final_diameter_m).toBeGreaterThan(crater1.final_diameter_m);
+				expect(crater1.hasCrater).toBe(true);
+				expect(crater2.hasCrater).toBe(true);
+
+				if (crater1.hasCrater && crater2.hasCrater) {
+					// 速度が2倍なら、クレーターサイズも大きくなる（v^0.44）
+					expect(crater2.final_diameter_m).toBeGreaterThan(crater1.final_diameter_m);
+				}
 			}
 		});
 
@@ -52,8 +62,13 @@ describe("クレーター計算", () => {
 				const crater1 = R.getExn(result1);
 				const crater2 = R.getExn(result2);
 
-				// 直径が2倍なら、クレーターサイズも大きくなる（d^0.78）
-				expect(crater2.final_diameter_m).toBeGreaterThan(crater1.final_diameter_m);
+				expect(crater1.hasCrater).toBe(true);
+				expect(crater2.hasCrater).toBe(true);
+
+				if (crater1.hasCrater && crater2.hasCrater) {
+					// 直径が2倍なら、クレーターサイズも大きくなる（d^0.78）
+					expect(crater2.final_diameter_m).toBeGreaterThan(crater1.final_diameter_m);
+				}
 			}
 		});
 
@@ -68,8 +83,13 @@ describe("クレーター計算", () => {
 				const crater45 = R.getExn(result45);
 				const crater90 = R.getExn(result90);
 
-				// 垂直衝突の方が大きいクレーター
-				expect(crater90.final_diameter_m).toBeGreaterThan(crater45.final_diameter_m);
+				expect(crater45.hasCrater).toBe(true);
+				expect(crater90.hasCrater).toBe(true);
+
+				if (crater45.hasCrater && crater90.hasCrater) {
+					// 垂直衝突の方が大きいクレーター
+					expect(crater90.final_diameter_m).toBeGreaterThan(crater45.final_diameter_m);
+				}
 			}
 		});
 

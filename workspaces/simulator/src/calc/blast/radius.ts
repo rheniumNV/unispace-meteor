@@ -29,22 +29,35 @@ const OVERPRESSURE_SCALING_DATA: ReadonlyArray<{ z: number; p_kpa: number }> = [
  */
 const overpressureToScaledDistance = (p_kpa: number): number => {
 	// データ範囲外の場合は外挿
-	if (p_kpa >= OVERPRESSURE_SCALING_DATA[0].p_kpa) {
-		return OVERPRESSURE_SCALING_DATA[0].z;
+	const firstData = OVERPRESSURE_SCALING_DATA[0];
+	if (firstData === undefined) {
+		throw new Error("OVERPRESSURE_SCALING_DATA is empty");
+	}
+	if (p_kpa >= firstData.p_kpa) {
+		return firstData.z;
 	}
 	const lastData = OVERPRESSURE_SCALING_DATA[OVERPRESSURE_SCALING_DATA.length - 1];
+	if (lastData === undefined) {
+		throw new Error("OVERPRESSURE_SCALING_DATA is empty");
+	}
 	if (p_kpa <= lastData.p_kpa) {
 		return lastData.z;
 	}
 
 	// ログ補間で逆算
 	for (let i = 0; i < OVERPRESSURE_SCALING_DATA.length - 1; i++) {
-		const p1 = OVERPRESSURE_SCALING_DATA[i].p_kpa;
-		const p2 = OVERPRESSURE_SCALING_DATA[i + 1].p_kpa;
+		const data1 = OVERPRESSURE_SCALING_DATA[i];
+		const data2 = OVERPRESSURE_SCALING_DATA[i + 1];
+		if (data1 === undefined || data2 === undefined) {
+			continue;
+		}
+
+		const p1 = data1.p_kpa;
+		const p2 = data2.p_kpa;
 
 		if (p_kpa <= p1 && p_kpa >= p2) {
-			const z1 = OVERPRESSURE_SCALING_DATA[i].z;
-			const z2 = OVERPRESSURE_SCALING_DATA[i + 1].z;
+			const z1 = data1.z;
+			const z2 = data2.z;
 
 			// ログスケールで補間
 			const log_p = Math.log(p_kpa);
@@ -57,7 +70,7 @@ const overpressureToScaledDistance = (p_kpa: number): number => {
 	}
 
 	// 見つからない場合は最も近い値を返す
-	return OVERPRESSURE_SCALING_DATA[0].z;
+	return firstData.z;
 };
 
 /**

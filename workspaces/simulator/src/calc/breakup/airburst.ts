@@ -11,25 +11,27 @@ import * as Vec from "../coordinates/vector";
  *
  * @param samples 軌道サンプル点
  * @param strength_mpa 強度 [MPa]
- * @returns 空中爆発情報（なければnull）
+ * @returns 空中爆発情報（なければNone）
  */
 export const detectAirburst = (
 	samples: readonly TrajectoryPoint[],
 	_strength_mpa: number,
-): R.Result<AirburstInfo | undefined, Error> => {
+): R.Result<AirburstInfo, Error> => {
 	if (A.isEmpty(samples)) {
 		return R.Error(new Error("軌道サンプルが空です"));
 	}
 
 	// 最後のサンプル点を確認
 	const lastSample = A.last(samples);
-	if (lastSample === undefined) {
+	if (lastSample === undefined || lastSample === null) {
 		return R.Error(new Error("軌道サンプルが空です"));
 	}
 
 	// 地表到達（高度0以下）の場合は空中爆発なし
 	if (lastSample.alt_m <= 0) {
-		return R.Ok<AirburstInfo | null>(null);
+		return R.Ok({
+			isOccurrence: false,
+		});
 	}
 
 	// 空中で停止した場合は空中爆発と判定
@@ -47,6 +49,7 @@ export const detectAirburst = (
 	const burst_energy_joule = v_mag * v_mag * 1000; // 仮の計算
 
 	return R.Ok({
+		isOccurrence: true,
 		burst_altitude_m,
 		burst_energy_joule,
 	});

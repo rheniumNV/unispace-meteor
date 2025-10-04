@@ -78,10 +78,13 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const { samples } = trajectory;
 
 	// 衝突までの時間
-	const time_to_impact_s = samples[samples.length - 1].t;
+	const final_sample = samples[samples.length - 1];
+	if (final_sample === undefined) {
+		return R.Error(new Error("軌道サンプルが空です"));
+	}
+	const time_to_impact_s = final_sample.t;
 
 	// 最終速度からエネルギーを計算
-	const final_sample = samples[samples.length - 1];
 	const v_final_mag = Vec.magnitude(final_sample.v_ecef);
 	// 最終質量は初期質量と同じと仮定（アブレーション未実装の場合）
 	const E_joule = 0.5 * m0_kg * v_final_mag * v_final_mag;
@@ -102,8 +105,8 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const impactState = R.getExn(impactResult);
 
 	// クレーター計算（地表衝突の場合）
-	let crater = null;
-	if (impactState !== null) {
+	let crater: SimulationResult["crater"] = { hasCrater: false };
+	if (impactState.impacted) {
 		// 衝突角度を計算（速度ベクトルと地表法線のなす角）
 		const impact_v_mag = Vec.magnitude(impactState.v_ecef);
 
@@ -131,7 +134,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	}
 
 	// 爆風影響範囲
-	const burst_alt = airburst?.burst_altitude_m ?? 0;
+	const burst_alt = airburst.isOccurrence ? airburst.burst_altitude_m : 0;
 	const blastRadiiResult = Blast.calculateBlastRadii(E_joule, blast_thresholds_kpa, burst_alt);
 	if (R.isError(blastRadiiResult)) {
 		return blastRadiiResult;
