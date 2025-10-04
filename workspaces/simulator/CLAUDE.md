@@ -21,3 +21,6 @@
 
 ## 実装内容
 docs/plan.mdを参照
+
+## NASAのReferences
+- 軌道予測の参考: https://nasa.github.io/mission-viz/RMarkdown/Elliptical_Orbit_Design.html
