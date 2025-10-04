@@ -1,7 +1,6 @@
 import { R } from "@mobily/ts-belt";
 import { simulateMeteorImpact } from "./simulation";
-import { EARTH_RADIUS_M } from "./types/constants";
-import type { SimulationInput, Vec3 } from "./types/input";
+import type { SimulationInput } from "./types/input";
 
 // const r0_ecef: Vec3 = [EARTH_RADIUS_M + 10000, 0, 0]; // 上空10km
 // const velocity_ecef: Vec3 = [-10606.6, 0, 10606.6];
@@ -45,20 +44,19 @@ const input: SimulationInput = {
 		// ハッカソン本番日の例
 		t0: new Date("2025-10-04T00:00:00Z"),
 
-		// 初期位置: ECEF（半径 35,000 km、緯度 ~20°, 経度 ~150° 相当）
+		// 初期位置: ECEF（半径 15,000 km、緯度 ~20°, 経度 ~150° 相当）
 		// r = [x, y, z] [m]
 		r0_ecef: [
-			-28_482_918.84722808, // x [m]
-			+16_444_620.863753395, // y [m]
-			+11_970_705.016398406, // z [m]
+			-12_206_965, // x [m]
+			+7_048_123, // y [m]
+			+5_130_302, // z [m]
 		],
 
-		// 初期速度: ECEF（東 80% + 北 20% の接線 + わずかに内向き）
-		// |v| ≈ 2.71 km/s < v_circ(35,000 km) ≈ 3.37 km/s → 低い角運動量で落下エリプス
+		// 初期速度: 地球向きに約1.5 km/s（衝突確実）
 		velocity_ecef: [
-			-602.1545862457201, // vx [m/s]
-			-2_608.37926578815, // vy [m/s]
-			+396.1911913075802, // vz [m/s]
+			+800, // vx [m/s]
+			+1200, // vy [m/s]
+			-200, // vz [m/s]
 		],
 	},
 
@@ -81,7 +79,8 @@ const input: SimulationInput = {
 		// ablation_coeff は簡略化のため未設定（=アブレーション無効/弱め）
 		seismic_efficiency: 0.001, // 地震効率 ~10^-3
 		blast_thresholds_kpa: [1, 3.5, 10, 20], // 可視化用の典型しきい値
-		time_step_s: 3600, // 1秒刻み（VR負荷と精度のバランス）
+		time_step_s: 1, // 1秒刻み（最高精度でテスト）
+		max_time_s: 60 * 60 * 24 * 10, // 10日間でテスト
 	},
 };
 

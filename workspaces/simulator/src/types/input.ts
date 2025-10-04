@@ -49,6 +49,8 @@ export interface ModelParams {
 	readonly blast_thresholds_kpa?: readonly number[];
 	/** タイムステップ [s] */
 	readonly time_step_s?: number;
+	/** 最大シミュレーション時間 [s] */
+	readonly max_time_s?: number;
 }
 
 /** シミュレーション入力全体 */
