@@ -1,7 +1,8 @@
 import { createContext, Dispatch, useContext, useReducer } from "react";
-// import { SimulationResult } from "@unispace-meteor/simulator/src/main";
-
-interface SimulationResult {}
+import {
+  SimulationInput,
+  type SimulationResult,
+} from "@unispace-meteor/simulator/dist/main";
 
 export type SimulationModeSelectMeteor = {
   mode: "SelectMeteor";
@@ -15,6 +16,7 @@ export type SimulationModeSetMeteor = {
     mass: number;
     size: number;
   };
+  input?: SimulationInput;
   result?: SimulationResult;
 };
 
@@ -59,7 +61,11 @@ export type AppAction =
       type: "UPDATE_METEOR_POWER";
       power: [number, number, number];
     }
-  | { type: "UPDATE_SIMULATION_RESULT"; result: SimulationResult };
+  | {
+      type: "UPDATE_SIMULATION_RESULT";
+      input: SimulationInput;
+      result: SimulationResult;
+    };
 
 export const appReducer = (state: AppState, action: AppAction): AppState => {
   console.debug("appReducer", action);
@@ -120,6 +126,7 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
         ...state,
         simulationState: {
           ...state.simulationState,
+          input: action.input,
           result: action.result,
         },
       };

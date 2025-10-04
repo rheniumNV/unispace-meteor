@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "npm run start -w workspaces/console",
-    "build": "npm run build:common && npm run build:miragex && npm run build:console",
+    "build": "npm run build:common && run-p build:simulator build:miragex && npm run build:console",
     "build:common": "npm run build -w workspaces/common",
+    "build:simulator": "npm run build -w workspaces/simulator",
     "build:miragex": "npm run build -w workspaces/miragex",
     "build:console": "npm run build -w workspaces/console",
     "dev": "run-p dev:*",
