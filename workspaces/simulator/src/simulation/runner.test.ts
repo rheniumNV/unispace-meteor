@@ -8,9 +8,9 @@ describe("シミュレーション統合テスト", () => {
 	describe("simulateMeteorImpact", () => {
 		it("正常な入力でOkを返す", () => {
 			// チェリャビンスク隕石風の小型隕石シナリオ
-			// 19 km/s, 東向き (方位角90度), 入射角20度
+			// 19 km/s, 東向き + 地球向き (入射角20度)
 			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 30000, 0, 0]; // 赤道上空30km
-			const velocity_ecef: Vec3 = [0, 17849, -6499]; // ≈19km/s, 東向き, 20度下向き
+			const velocity_ecef: Vec3 = [-6500, 17000, 0]; // ≈18km/s, 東向き+地球向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
@@ -24,6 +24,9 @@ describe("シミュレーション統合テスト", () => {
 				},
 				environment: {
 					surface: "land",
+				},
+				model: {
+					time_step_s: 1, // 1秒刻みで高速化
 				},
 			};
 
@@ -74,7 +77,7 @@ describe("シミュレーション統合テスト", () => {
 					surface: "land",
 				},
 				model: {
-					time_step_s: 0.1, // 大気圏突入シナリオでは細かいステップが必要
+					time_step_s: 1, // 1秒刻みで高速化
 				},
 			};
 

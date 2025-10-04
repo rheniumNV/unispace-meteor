@@ -35,7 +35,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const Cd = model?.drag_coefficient ?? STANDARD_DRAG_COEFFICIENT;
 	const seismic_efficiency = model?.seismic_efficiency ?? DEFAULT_SEISMIC_EFFICIENCY;
 	const blast_thresholds_kpa = model?.blast_thresholds_kpa ?? DEFAULT_BLAST_THRESHOLDS_KPA;
-	const dt = model?.time_step_s ?? 60 * 60; // 1時間 = 3,600秒
+	const dt = model?.time_step_s ?? 1; // 1秒
 	const max_time = model?.max_time_s ?? 60 * 60 * 24 * 30 * 3; // 90日 = 7,776,000秒
 
 	// 断面積を計算
@@ -165,6 +165,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	// 結果をまとめる
 	const result: SimulationResult = {
 		trajectory: samples,
+		terminationReason: trajectory.terminationReason,
 		time_to_impact_s,
 		energy: {
 			joule: E_joule,
