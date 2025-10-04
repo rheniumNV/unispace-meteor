@@ -1,9 +1,9 @@
 import { Slot } from "../../../unit/package/Primitive/main";
 import { MeteorSetterV2 } from "../../../lib/meteorSetterV2";
 import { useAppContext, type SimulationModeSetMeteor } from "../../appContext";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
-import { Earth } from "../../../unit/package/Meteor/main";
+import { Earth, Line } from "../../../unit/package/Meteor/main";
 // import { simulateMeteorImpact } from "@unispace-meteor/simulator/src/simulation";
 // import { R } from "@mobily/ts-belt";
 
@@ -42,6 +42,24 @@ export const SetMeteor = (props: {
     // }
   }, [dispatch, props.simulationState.result]);
 
+  const meteorLinePoints = useMemo<
+    { start: [number, number, number]; end: [number, number, number] }[]
+  >(() => {
+    const points: [number, number, number][] = [
+      [2, 0, 0],
+      [1.8, 0.2, 0],
+      [1.5, 0.4, 0],
+      [1.2, 0.5, 0],
+      [0.8, 0.45, 0],
+      [0.4, 0.3, 0],
+      [0, 0, 0],
+    ];
+    return points.map((point, index) => ({
+      start: point,
+      end: points[index + 1] ?? [0, 0, 0],
+    }));
+  }, []);
+
   const onChangePosition = useCallback(
     (_env: FunctionEnv, position: [number, number, number]) => {
       dispatch({
@@ -71,6 +89,9 @@ export const SetMeteor = (props: {
         onChangePosition={onChangePosition}
         onChangePower={onChangePower}
       />
+      {meteorLinePoints.map((line) => (
+        <Line key={line.start.join(",")} start={line.start} end={line.end} />
+      ))}
     </Slot>
   );
 };
