@@ -5,3 +5,4 @@ export { O as Line } from "./Line/main";
 export { O as MeteorInfo } from "./MeteorInfo/main";
 export { O as MeteorSetter } from "./MeteorSetter/main";
 export { O as MeteorVisual } from "./MeteorVisual/main";
+export { O as SmoothTransform } from "./SmoothTransform/main";

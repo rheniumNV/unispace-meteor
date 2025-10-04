@@ -15,8 +15,13 @@ import {
   SimulationResult,
 } from "@unispace-meteor/simulator/dist/main";
 import { R } from "@mobily/ts-belt";
-import { SIMULATION_SCALE, SIMULATION_POWER_SCALE } from "../../constant";
+import {
+  SIMULATION_SCALE,
+  SIMULATION_POWER_SCALE,
+  SIMULATION_DAY_TIME_STEP,
+} from "../../constant";
 import { MeteorSelector } from "./meteorSelector";
+import { rotateQuatY } from "@unispace-meteor/common/dist/quaternion";
 
 const simulateMeteorImpactAsync = async (
   input: SimulationInput,
@@ -31,7 +36,7 @@ const simulateMeteorImpactAsync = async (
 export const SetMeteor = (props: {
   simulationState: SimulationModeSetMeteor;
 }) => {
-  const { dispatch } = useAppContext();
+  const { appState, dispatch } = useAppContext();
 
   useEffect(() => {
     if (!props.simulationState.result) {
@@ -64,7 +69,8 @@ export const SetMeteor = (props: {
           surface: "land",
         },
         model: {
-          time_step_s: 10,
+          time_step_s: 1,
+          max_time_s: 60 * 60 * 24 * 7,
         },
       } as const;
 
@@ -129,8 +135,6 @@ export const SetMeteor = (props: {
       .filter((v) => v !== undefined)
       .slice(0, 1000);
   }, [props.simulationState.result]);
-
-  console.log(meteorLinePoints.length);
 
   const onChangePosition = useCallback(
     (_env: FunctionEnv, position: [number, number, number]) => {
@@ -200,21 +204,40 @@ export const SetMeteor = (props: {
     };
   }, [props.simulationState.result]);
 
+  const earthRotation = useMemo<[number, number, number, number]>(() => {
+    return rotateQuatY(
+      [0, 0, 0, 1],
+      (2 * Math.PI * (props.simulationState.result?.end_time_s ?? 0)) /
+        SIMULATION_DAY_TIME_STEP,
+    );
+  }, [props.simulationState.result?.end_time_s]);
+
   return (
     <Slot>
-      <Earth />
-      <MeteorSetterV2
-        defaultPosition={props.simulationState.meteor.position}
-        defaultPower={props.simulationState.meteor.power}
-        onChangePosition={onChangePosition}
-        onChangePower={onChangePower}
+      <Earth rotation={earthRotation} />
+      {appState.enableSimulationLoader === undefined && (
+        <MeteorSetterV2
+          defaultPosition={props.simulationState.meteor.position}
+          defaultPower={props.simulationState.meteor.power}
+          onChangePosition={onChangePosition}
+          onChangePower={onChangePower}
+        >
+          <MeteorVisual
+            scale={[0.1, 0.1, 0.1]}
+            meteorIndex={props.simulationState.meteor.visualIndex}
+          />
+          <MeteorSelector />
+        </MeteorSetterV2>
+      )}
+      <Slot
+        active={appState.enableSimulationLoader !== undefined}
+        position={props.simulationState.meteor.position}
       >
         <MeteorVisual
           scale={[0.1, 0.1, 0.1]}
           meteorIndex={props.simulationState.meteor.visualIndex}
         />
-        <MeteorSelector />
-      </MeteorSetterV2>
+      </Slot>
       {meteorLinePoints.map((line, index) => (
         <Line key={index} start={line.start} end={line.end} />
       ))}

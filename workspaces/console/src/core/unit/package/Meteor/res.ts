@@ -5,6 +5,7 @@ import { res as Line } from "./Line/res";
 import { res as MeteorInfo } from "./MeteorInfo/res";
 import { res as MeteorSetter } from "./MeteorSetter/res";
 import { res as MeteorVisual } from "./MeteorVisual/res";
+import { res as SmoothTransform } from "./SmoothTransform/res";
 
 export const Units = {
   DamagePrediction,
@@ -14,4 +15,5 @@ export const Units = {
   MeteorInfo,
   MeteorSetter,
   MeteorVisual,
+  SmoothTransform,
 };

@@ -7,3 +7,4 @@ dist
 .idea
 /private/
 /events.json
+localSimulationData.json

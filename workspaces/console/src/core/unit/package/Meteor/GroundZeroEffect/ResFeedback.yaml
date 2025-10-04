@@ -262,16 +262,16 @@ Children:
                 Position:
                   ID: ID:latitude:Tag:2
                   Data:
-                    - -50889
-                    - 158889
-                    - 40000
+                    - 0
+                    - 0
+                    - 0
                 Rotation:
                   ID: ID:latitude:Tag:3
                   Data:
-                    - 27111
-                    - 83000
-                    - -55777.666666666664
-                    - 40222.333333333336
+                    - 0
+                    - 0
+                    - 0
+                    - 111111
                 Scale:
                   ID: "?"
                   Data:
@@ -485,7 +485,7 @@ Children:
                                       Data: Radius
                                     Value:
                                       ID: ID:DV:Components:3:Value:0
-                                      Data: 33.333333333333336
+                                      Data: 0
                                     OverrideOnLink:
                                       ID: "?"
                                       Data: false
@@ -506,8 +506,8 @@ Children:
                                       ID: ID:DV:Components:4:Value:0
                                       Data:
                                         - 333.3333333333333
-                                        - 0
-                                        - 139.33333333333334
+                                        - 333.3333333333333
+                                        - 333.3333333333333
                                         - 333.3333333333333
                                         - sRGB
                                     OverrideOnLink:
@@ -620,7 +620,7 @@ Children:
                                           Data: Linear
                                         Radius:
                                           ID: ID:Sphere:Components:5:Radius:0
-                                          Data: 33.333333333333336
+                                          Data: 0
                                         Segments:
                                           ID: "?"
                                           Data: 10666.666666666666
@@ -817,7 +817,7 @@ Children:
                                           ID: ID:Sphere:Components:10:TextureOffset:0
                                           Data:
                                             - 0
-                                            - 282
+                                            - 59.333333333333336
                                         AlbedoColor:
                                           ID: "?"
                                           Data:
@@ -841,8 +841,8 @@ Children:
                                           ID: ID:Sphere:Components:10:EmissiveColor:0
                                           Data:
                                             - 333.3333333333333
-                                            - 0
-                                            - 139.33333333333334
+                                            - 333.3333333333333
+                                            - 333.3333333333333
                                             - 0
                                             - sRGB
                                         IntersectEmissiveColor:
@@ -850,12 +850,12 @@ Children:
                                           Data:
                                             - 666.6666666666666
                                             - 333.3333333333333
-                                            - 472.6666666666667
+                                            - 333.3333333333333
                                             - 333.3333333333333
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:29:ID:8
+                                          Data: ID:Assets:34:ID:5
                                         NormalMap:
                                           ID: "?"
                                           Data: null
@@ -1929,7 +1929,7 @@ Children:
                                       Data: Radius
                                     Value:
                                       ID: ID:DV:Components:3:Value:1
-                                      Data: 66.66666666666667
+                                      Data: 0
                                     OverrideOnLink:
                                       ID: "?"
                                       Data: false
@@ -1949,9 +1949,9 @@ Children:
                                     Value:
                                       ID: ID:DV:Components:4:Value:1
                                       Data:
-                                        - 197.33333333333334
-                                        - 141.33333333333334
-                                        - 79.66666666666667
+                                        - 333.3333333333333
+                                        - 333.3333333333333
+                                        - 333.3333333333333
                                         - 333.3333333333333
                                         - sRGB
                                     OverrideOnLink:
@@ -2064,7 +2064,7 @@ Children:
                                           Data: Linear
                                         Radius:
                                           ID: ID:Sphere:Components:5:Radius:1
-                                          Data: 66.66666666666667
+                                          Data: 0
                                         Segments:
                                           ID: "?"
                                           Data: 10666.666666666666
@@ -2261,7 +2261,7 @@ Children:
                                           ID: ID:Sphere:Components:10:TextureOffset:1
                                           Data:
                                             - 0
-                                            - 282
+                                            - 59.333333333333336
                                         AlbedoColor:
                                           ID: "?"
                                           Data:
@@ -2284,22 +2284,22 @@ Children:
                                         EmissiveColor:
                                           ID: ID:Sphere:Components:10:EmissiveColor:1
                                           Data:
-                                            - 197.33333333333334
-                                            - 141.33333333333334
-                                            - 79.66666666666667
+                                            - 333.3333333333333
+                                            - 333.3333333333333
+                                            - 333.3333333333333
                                             - 0
                                             - sRGB
                                         IntersectEmissiveColor:
                                           ID: ID:Sphere:Components:10:IntersectEmissiveColor:1
                                           Data:
                                             - 666.6666666666666
-                                            - 507.3333333333333
+                                            - 333.3333333333333
                                             - 333.3333333333333
                                             - 333.3333333333333
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:29:ID:8
+                                          Data: ID:Assets:34:ID:5
                                         NormalMap:
                                           ID: "?"
                                           Data: null
@@ -3373,7 +3373,7 @@ Children:
                                       Data: Radius
                                     Value:
                                       ID: ID:DV:Components:3:Value:2
-                                      Data: 166.66666666666666
+                                      Data: 0
                                     OverrideOnLink:
                                       ID: "?"
                                       Data: false
@@ -3393,9 +3393,9 @@ Children:
                                     Value:
                                       ID: ID:DV:Components:4:Value:2
                                       Data:
-                                        - 94
-                                        - 96.66666666666667
-                                        - 57.666666666666664
+                                        - 333.3333333333333
+                                        - 333.3333333333333
+                                        - 333.3333333333333
                                         - 333.3333333333333
                                         - sRGB
                                     OverrideOnLink:
@@ -3508,7 +3508,7 @@ Children:
                                           Data: Linear
                                         Radius:
                                           ID: ID:Sphere:Components:5:Radius:2
-                                          Data: 166.66666666666666
+                                          Data: 0
                                         Segments:
                                           ID: "?"
                                           Data: 10666.666666666666
@@ -3705,7 +3705,7 @@ Children:
                                           ID: ID:Sphere:Components:10:TextureOffset:2
                                           Data:
                                             - 0
-                                            - 282
+                                            - 59.333333333333336
                                         AlbedoColor:
                                           ID: "?"
                                           Data:
@@ -3728,22 +3728,22 @@ Children:
                                         EmissiveColor:
                                           ID: ID:Sphere:Components:10:EmissiveColor:2
                                           Data:
-                                            - 94
-                                            - 96.66666666666667
-                                            - 57.666666666666664
+                                            - 333.3333333333333
+                                            - 333.3333333333333
+                                            - 333.3333333333333
                                             - 0
                                             - sRGB
                                         IntersectEmissiveColor:
                                           ID: ID:Sphere:Components:10:IntersectEmissiveColor:2
                                           Data:
-                                            - 644.3333333333334
                                             - 666.6666666666666
+                                            - 333.3333333333333
                                             - 333.3333333333333
                                             - 333.3333333333333
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:29:ID:8
+                                          Data: ID:Assets:34:ID:5
                                         NormalMap:
                                           ID: "?"
                                           Data: null
