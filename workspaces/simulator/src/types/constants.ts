@@ -34,3 +34,6 @@ export const MEGATON_TNT_JOULE = 4.184e15;
 
 /** デフォルトの爆風過圧しきい値 [kPa] */
 export const DEFAULT_BLAST_THRESHOLDS_KPA = [1, 3.5, 10, 20] as const;
+
+/** デフォルトの隕石強度 [MPa] (石質小惑星の典型値) */
+export const DEFAULT_STRENGTH_MPA = 5;
