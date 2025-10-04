@@ -4,21 +4,39 @@ import { useAppContext, type SimulationModeSetMeteor } from "../../appContext";
 import { useCallback, useEffect, useMemo } from "react";
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import {
-  DamagePrediction,
   Earth,
   GroundZeroEffect,
   Line,
   MeteorVisual,
 } from "../../../unit/package/Meteor/main";
-import { simulateMeteorImpact } from "@unispace-meteor/simulator/dist/main";
+import {
+  simulateMeteorImpact,
+  SimulationInput,
+  SimulationResult,
+} from "@unispace-meteor/simulator/dist/main";
 import { R } from "@mobily/ts-belt";
-import { SIMULATION_SCALE, SIMULATION_POWER_SCALE } from "../../constant";
+import {
+  SIMULATION_SCALE,
+  SIMULATION_POWER_SCALE,
+  SIMULATION_DAY_TIME_STEP,
+} from "../../constant";
 import { MeteorSelector } from "./meteorSelector";
+import { rotateQuatY } from "@unispace-meteor/common/dist/quaternion";
+
+const simulateMeteorImpactAsync = async (
+  input: SimulationInput,
+  callback: (result: SimulationResult) => void,
+) => {
+  const result = await (async () => simulateMeteorImpact(input))();
+  if (R.isOk(result)) {
+    callback(R.getExn(result));
+  }
+};
 
 export const SetMeteor = (props: {
   simulationState: SimulationModeSetMeteor;
 }) => {
-  const { dispatch } = useAppContext();
+  const { appState, dispatch } = useAppContext();
 
   useEffect(() => {
     if (!props.simulationState.result) {
@@ -44,24 +62,33 @@ export const SetMeteor = (props: {
         },
         meteoroid: {
           diameter_m: props.simulationState.meteor.size,
-          density_kg_m3: props.simulationState.meteor.mass,
+          mass_kg: props.simulationState.meteor.mass,
           strength_mpa: 100,
         },
         environment: {
           surface: "land",
         },
         model: {
-          time_step_s: 10,
+          time_step_s: 1,
+          max_time_s: 60 * 60 * 24 * 7,
         },
       } as const;
-      const result = simulateMeteorImpact(input);
-      if (R.isOk(result)) {
+
+      let cancel = false;
+      simulateMeteorImpactAsync(input, (result) => {
+        if (cancel) {
+          return;
+        }
         dispatch({
           type: "UPDATE_SIMULATION_RESULT",
           input,
-          result: R.getExn(result),
+          result,
         });
-      }
+      });
+
+      return () => {
+        cancel = true;
+      };
     }
   }, [dispatch, props.simulationState.result]);
 
@@ -109,8 +136,6 @@ export const SetMeteor = (props: {
       .slice(0, 1000);
   }, [props.simulationState.result]);
 
-  console.log(meteorLinePoints.length);
-
   const onChangePosition = useCallback(
     (_env: FunctionEnv, position: [number, number, number]) => {
       dispatch({
@@ -135,7 +160,7 @@ export const SetMeteor = (props: {
     [dispatch],
   );
 
-  const crater = useMemo(() => {
+  const grandZeroEffectProps = useMemo(() => {
     if (!props.simulationState.result) {
       return undefined;
     }
@@ -161,36 +186,70 @@ export const SetMeteor = (props: {
         lastPoint.r_ecef[1] / SIMULATION_SCALE,
         lastPoint.r_ecef[2] / SIMULATION_SCALE,
       ] as [number, number, number],
+      radius1:
+        ((props.simulationState.result.blast.damage_radii_km["20kPa"] ?? 0) /
+          SIMULATION_SCALE) *
+        1000,
+      radius2:
+        ((props.simulationState.result.blast.damage_radii_km["10kPa"] ?? 0) /
+          SIMULATION_SCALE) *
+        1000,
+      radius3:
+        ((props.simulationState.result.blast.damage_radii_km["3.5kPa"] ?? 0) /
+          SIMULATION_SCALE) *
+        1000,
+      color1: [1, 0, 0, 1] as [number, number, number, number],
+      color2: [1, 1, 0, 1] as [number, number, number, number],
+      color3: [1, 1, 1, 0.5] as [number, number, number, number],
     };
   }, [props.simulationState.result]);
 
+  const earthRotation = useMemo<[number, number, number, number]>(() => {
+    return rotateQuatY(
+      [0, 0, 0, 1],
+      (2 * Math.PI * (props.simulationState.result?.end_time_s ?? 0)) /
+        SIMULATION_DAY_TIME_STEP,
+    );
+  }, [props.simulationState.result?.end_time_s]);
+
   return (
     <Slot>
-      <Earth />
-      <MeteorSetterV2
-        defaultPosition={props.simulationState.meteor.position}
-        defaultPower={props.simulationState.meteor.power}
-        onChangePosition={onChangePosition}
-        onChangePower={onChangePower}
+      <Earth rotation={earthRotation} />
+      {appState.enableSimulationLoader === undefined && (
+        <MeteorSetterV2
+          defaultPosition={props.simulationState.meteor.position}
+          defaultPower={props.simulationState.meteor.power}
+          onChangePosition={onChangePosition}
+          onChangePower={onChangePower}
+        >
+          <MeteorVisual
+            scale={[0.1, 0.1, 0.1]}
+            meteorIndex={props.simulationState.meteor.visualIndex}
+          />
+          <MeteorSelector />
+        </MeteorSetterV2>
+      )}
+      <Slot
+        active={appState.enableSimulationLoader !== undefined}
+        position={props.simulationState.meteor.position}
       >
         <MeteorVisual
           scale={[0.1, 0.1, 0.1]}
           meteorIndex={props.simulationState.meteor.visualIndex}
         />
-        <MeteorSelector />
-      </MeteorSetterV2>
+      </Slot>
       {meteorLinePoints.map((line, index) => (
         <Line key={index} start={line.start} end={line.end} />
       ))}
-      {crater && (
+      {grandZeroEffectProps && (
         <GroundZeroEffect
-          position={crater.position}
-          radius1={crater.transient_diameter_m / SIMULATION_SCALE / 2}
-          radius2={crater.final_diameter_m / SIMULATION_SCALE / 2}
-          radius3={((crater.damage_radii_km ?? 0) / SIMULATION_SCALE) * 1000}
-          color1={[1, 0, 0, 1]}
-          color2={[1, 1, 0, 1]}
-          color3={[1, 1, 1, 0.5]}
+          position={grandZeroEffectProps.position}
+          radius1={grandZeroEffectProps.radius1}
+          radius2={grandZeroEffectProps.radius2}
+          radius3={grandZeroEffectProps.radius3}
+          color1={grandZeroEffectProps.color1}
+          color2={grandZeroEffectProps.color2}
+          color3={grandZeroEffectProps.color3}
         />
       )}
     </Slot>

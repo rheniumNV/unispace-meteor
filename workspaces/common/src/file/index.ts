@@ -1,4 +1,10 @@
-import { Result, Success, Failed, FailedResult } from "../type/result";
+import {
+  Result,
+  Success,
+  Failed,
+  FailedResult,
+  FAILED_UNKNOWN,
+} from "../type/result";
 import fs from "fs";
 
 type FileErrorCode = "FILE_NOT_FOUND" | "PERMISSION_DENIED" | "UNKNOWN_ERROR";
@@ -27,5 +33,20 @@ export const readFileSync = ({
     return Success(content);
   } catch (e) {
     return errorHandler(e);
+  }
+};
+
+export const writeFileSync = ({
+  path: pathName,
+  data,
+}: {
+  path: string;
+  data: string;
+}) => {
+  try {
+    fs.writeFileSync(pathName, data);
+    return Success(true);
+  } catch (_e) {
+    return FAILED_UNKNOWN;
   }
 };

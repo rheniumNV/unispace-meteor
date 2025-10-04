@@ -1,15 +1,19 @@
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import { StyledButton, StyledText } from "../../../unit/package/StyledUix/main";
 import { Color, Sprite } from "../../style";
+import { StyledColorVariable } from "../../../lib/styledUnit";
 
 export const SimpleButton = (props: {
+  enabled?: boolean;
   text: string;
-  onClick: (env: FunctionEnv) => void;
+  onClick?: (env: FunctionEnv) => void;
+  overrideStyledColor?: StyledColorVariable;
 }) => {
   return (
     <StyledButton
+      enabled={props.enabled ?? true}
       onClick={props.onClick}
-      styledColor={Color.button}
+      styledColor={props.overrideStyledColor ?? Color.button}
       styledSprite={Sprite.button}
     >
       <StyledText

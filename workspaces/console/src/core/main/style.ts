@@ -21,6 +21,7 @@ export const { StyledSpace, Color, Sprite, Material, Font } = createStyle({
     background: createColor([0.18, 0.18, 0.18, 1]),
     subBackground: createColor([0.25, 0.25, 0.25, 1]),
     button: createColor([0.4, 0.4, 0.4, 1]),
+    selectedButton: createColor([0.4, 0.6, 0.4, 1]),
     text: createColor([1, 1, 1, 1]),
     textReversed: createColor([0, 0, 0, 1]),
     white: createColor([1, 1, 1, 1]),
