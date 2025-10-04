@@ -855,7 +855,7 @@ Children:
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:34:ID:5
+                                          Data: ID:Assets:35:ID:2
                                         NormalMap:
                                           ID: "?"
                                           Data: null
@@ -2299,7 +2299,7 @@ Children:
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:34:ID:5
+                                          Data: ID:Assets:35:ID:2
                                         NormalMap:
                                           ID: "?"
                                           Data: null
@@ -3743,7 +3743,7 @@ Children:
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:34:ID:5
+                                          Data: ID:Assets:35:ID:2
                                         NormalMap:
                                           ID: "?"
                                           Data: null
