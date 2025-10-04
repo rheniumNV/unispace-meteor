@@ -10,8 +10,6 @@ import { type SimulationModeSetMeteor, useAppContext } from "../../appContext";
 export const MainUiSetMeteor = (props: {
   simulationState: SimulationModeSetMeteor;
 }) => {
-  const { dispatch } = useAppContext();
-
   const inputText = useMemo(() => {
     if (!props.simulationState.input) {
       return "Input: No input";

@@ -4,16 +4,29 @@ import { useAppContext, type SimulationModeSetMeteor } from "../../appContext";
 import { useCallback, useEffect, useMemo } from "react";
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import {
-  DamagePrediction,
   Earth,
   GroundZeroEffect,
   Line,
   MeteorVisual,
 } from "../../../unit/package/Meteor/main";
-import { simulateMeteorImpact } from "@unispace-meteor/simulator/dist/main";
+import {
+  simulateMeteorImpact,
+  SimulationInput,
+  SimulationResult,
+} from "@unispace-meteor/simulator/dist/main";
 import { R } from "@mobily/ts-belt";
 import { SIMULATION_SCALE, SIMULATION_POWER_SCALE } from "../../constant";
 import { MeteorSelector } from "./meteorSelector";
+
+const simulateMeteorImpactAsync = async (
+  input: SimulationInput,
+  callback: (result: SimulationResult) => void,
+) => {
+  const result = await (async () => simulateMeteorImpact(input))();
+  if (R.isOk(result)) {
+    callback(R.getExn(result));
+  }
+};
 
 export const SetMeteor = (props: {
   simulationState: SimulationModeSetMeteor;
@@ -54,14 +67,22 @@ export const SetMeteor = (props: {
           time_step_s: 10,
         },
       } as const;
-      const result = simulateMeteorImpact(input);
-      if (R.isOk(result)) {
+
+      let cancel = false;
+      simulateMeteorImpactAsync(input, (result) => {
+        if (cancel) {
+          return;
+        }
         dispatch({
           type: "UPDATE_SIMULATION_RESULT",
           input,
-          result: R.getExn(result),
+          result,
         });
-      }
+      });
+
+      return () => {
+        cancel = true;
+      };
     }
   }, [dispatch, props.simulationState.result]);
 
@@ -135,7 +156,7 @@ export const SetMeteor = (props: {
     [dispatch],
   );
 
-  const crater = useMemo(() => {
+  const grandZeroEffectProps = useMemo(() => {
     if (!props.simulationState.result) {
       return undefined;
     }
@@ -161,6 +182,21 @@ export const SetMeteor = (props: {
         lastPoint.r_ecef[1] / SIMULATION_SCALE,
         lastPoint.r_ecef[2] / SIMULATION_SCALE,
       ] as [number, number, number],
+      radius1:
+        ((props.simulationState.result.blast.damage_radii_km["20kPa"] ?? 0) /
+          SIMULATION_SCALE) *
+        1000,
+      radius2:
+        ((props.simulationState.result.blast.damage_radii_km["10kPa"] ?? 0) /
+          SIMULATION_SCALE) *
+        1000,
+      radius3:
+        ((props.simulationState.result.blast.damage_radii_km["3.5kPa"] ?? 0) /
+          SIMULATION_SCALE) *
+        1000,
+      color1: [1, 0, 0, 1] as [number, number, number, number],
+      color2: [1, 1, 0, 1] as [number, number, number, number],
+      color3: [1, 1, 1, 0.5] as [number, number, number, number],
     };
   }, [props.simulationState.result]);
 
@@ -182,15 +218,15 @@ export const SetMeteor = (props: {
       {meteorLinePoints.map((line, index) => (
         <Line key={index} start={line.start} end={line.end} />
       ))}
-      {crater && (
+      {grandZeroEffectProps && (
         <GroundZeroEffect
-          position={crater.position}
-          radius1={crater.transient_diameter_m / SIMULATION_SCALE / 2}
-          radius2={crater.final_diameter_m / SIMULATION_SCALE / 2}
-          radius3={((crater.damage_radii_km ?? 0) / SIMULATION_SCALE) * 1000}
-          color1={[1, 0, 0, 1]}
-          color2={[1, 1, 0, 1]}
-          color3={[1, 1, 1, 0.5]}
+          position={grandZeroEffectProps.position}
+          radius1={grandZeroEffectProps.radius1}
+          radius2={grandZeroEffectProps.radius2}
+          radius3={grandZeroEffectProps.radius3}
+          color1={grandZeroEffectProps.color1}
+          color2={grandZeroEffectProps.color2}
+          color3={grandZeroEffectProps.color3}
         />
       )}
     </Slot>

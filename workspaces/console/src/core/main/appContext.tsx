@@ -18,7 +18,9 @@ export type SimulationModeSetMeteor = {
 };
 
 export type SimulationModeViewMeteor = {
-  mode: "ViewMeteor";
+  mode: "ANIMATION";
+  play: boolean;
+  time: number;
   meteor: {
     position: [number, number, number];
     power: [number, number, number];
@@ -26,6 +28,8 @@ export type SimulationModeViewMeteor = {
     size: number;
     visualIndex: number;
   };
+  input: SimulationInput;
+  result: SimulationResult;
 };
 
 export type SimulationState =
@@ -52,6 +56,26 @@ export type AppAction =
       type: "UPDATE_SIMULATION_RESULT";
       input: SimulationInput;
       result: SimulationResult;
+    }
+  | {
+      type: "START_ANIMATION";
+      meteor: {
+        position: [number, number, number];
+        power: [number, number, number];
+        mass: number;
+        size: number;
+        visualIndex: number;
+      };
+      input: SimulationInput;
+      result: SimulationResult;
+    }
+  | { type: "PLAY_ANIMATION" }
+  | {
+      type: "STOP_ANIMATION";
+    }
+  | {
+      type: "UPDATE_ANIMATION_TIME";
+      time: number;
     };
 
 export const appReducer = (state: AppState, action: AppAction): AppState => {
@@ -89,6 +113,51 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
           ...state.simulationState,
           input: action.input,
           result: action.result,
+        },
+      };
+    case "START_ANIMATION":
+      return {
+        ...state,
+        simulationState: {
+          mode: "ANIMATION",
+          play: true,
+          time: 0,
+          meteor: action.meteor,
+          input: action.input,
+          result: action.result,
+        },
+      };
+    case "PLAY_ANIMATION":
+      if (state.simulationState.mode !== "ANIMATION") {
+        return state;
+      }
+      return {
+        ...state,
+        simulationState: {
+          ...state.simulationState,
+          play: true,
+        },
+      };
+    case "STOP_ANIMATION":
+      if (state.simulationState.mode !== "ANIMATION") {
+        return state;
+      }
+      return {
+        ...state,
+        simulationState: {
+          ...state.simulationState,
+          play: false,
+        },
+      };
+    case "UPDATE_ANIMATION_TIME":
+      if (state.simulationState.mode !== "ANIMATION") {
+        return state;
+      }
+      return {
+        ...state,
+        simulationState: {
+          ...state.simulationState,
+          time: action.time,
         },
       };
     default:
