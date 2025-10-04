@@ -87,8 +87,8 @@ export const MainUiSelectMeteor = () => {
         meteor: {
           mass: meteor.mass,
           size: meteor.size,
-          position: [0, 0, 0],
-          rotation: [0, 0, 0, 0],
+          position: [2, 0, 0],
+          power: [1, 0, 0],
         },
       });
     },

@@ -1,4 +1,8 @@
 import { createContext, Dispatch, useContext, useReducer } from "react";
+import {
+  SimulationInput,
+  type SimulationResult,
+} from "@unispace-meteor/simulator/dist/main";
 
 export type SimulationModeSelectMeteor = {
   mode: "SelectMeteor";
@@ -8,17 +12,19 @@ export type SimulationModeSetMeteor = {
   mode: "SetMeteor";
   meteor: {
     position: [number, number, number];
-    rotation: [number, number, number, number];
+    power: [number, number, number];
     mass: number;
     size: number;
   };
+  input?: SimulationInput;
+  result?: SimulationResult;
 };
 
 export type SimulationModeViewMeteor = {
   mode: "ViewMeteor";
   meteor: {
     position: [number, number, number];
-    rotation: [number, number, number, number];
+    power: [number, number, number];
     mass: number;
     size: number;
   };
@@ -44,17 +50,21 @@ export type AppAction =
         mass: number;
         size: number;
         position: [number, number, number];
-        rotation: [number, number, number, number];
+        power: [number, number, number];
       };
     }
   | {
-      type: "UPDATE_METEOR";
-      meteor: {
-        mass: number;
-        size: number;
-        position: [number, number, number];
-        rotation: [number, number, number, number];
-      };
+      type: "UPDATE_METEOR_POSITION";
+      position: [number, number, number];
+    }
+  | {
+      type: "UPDATE_METEOR_POWER";
+      power: [number, number, number];
+    }
+  | {
+      type: "UPDATE_SIMULATION_RESULT";
+      input: SimulationInput;
+      result: SimulationResult;
     };
 
 export const appReducer = (state: AppState, action: AppAction): AppState => {
@@ -72,16 +82,56 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
       }
       return {
         ...state,
-        simulationState: { mode: "SetMeteor", meteor: action.meteor },
+        simulationState: {
+          mode: "SetMeteor",
+          meteor: {
+            ...action.meteor,
+            power: [0, 0, 0],
+          },
+        },
       };
-    case "UPDATE_METEOR":
+    case "UPDATE_METEOR_POSITION":
       if (state.simulationState.mode !== "SetMeteor") {
         return state;
       }
       return {
         ...state,
-        simulationState: { mode: "SetMeteor", meteor: action.meteor },
+        simulationState: {
+          mode: "SetMeteor",
+          meteor: {
+            ...state.simulationState.meteor,
+            position: action.position,
+          },
+        },
       };
+    case "UPDATE_METEOR_POWER":
+      if (state.simulationState.mode !== "SetMeteor") {
+        return state;
+      }
+      return {
+        ...state,
+        simulationState: {
+          mode: "SetMeteor",
+          meteor: {
+            ...state.simulationState.meteor,
+            power: action.power,
+          },
+        },
+      };
+    case "UPDATE_SIMULATION_RESULT":
+      if (state.simulationState.mode !== "SetMeteor") {
+        return state;
+      }
+      return {
+        ...state,
+        simulationState: {
+          ...state.simulationState,
+          input: action.input,
+          result: action.result,
+        },
+      };
+    default:
+      return state;
   }
 };
 

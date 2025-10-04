@@ -32,6 +32,7 @@
   "dependencies": {
     "@unispace-meteor/common": "^1.0.0",
     "@unispace-meteor/miragex": "^1.0.0",
+    "@unispace-meteor/simulator": "^1.0.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "jose": "^4.14.6",
