@@ -4,12 +4,10 @@ import { useAppContext, type SimulationModeSetMeteor } from "../../appContext";
 import { useCallback, useEffect, useMemo } from "react";
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import { Earth, Line } from "../../../unit/package/Meteor/main";
-import {
-  simulateMeteorImpact,
-  Vec3,
-} from "@unispace-meteor/simulator/dist/main";
+import { simulateMeteorImpact } from "@unispace-meteor/simulator/dist/main";
 import { R } from "@mobily/ts-belt";
 import { SIMULATION_SCALE, SIMULATION_POWER_SCALE } from "../../constant";
+import { MeteorSelector } from "./meteorSelector";
 
 export const SetMeteor = (props: {
   simulationState: SimulationModeSetMeteor;
@@ -67,6 +65,7 @@ export const SetMeteor = (props: {
     if (!props.simulationState.result) {
       return [];
     }
+    const length = props.simulationState.result.trajectory.length;
     const points: (readonly [number, number, number])[] =
       props.simulationState.result.trajectory
         .map((point) => point.r_ecef)
@@ -77,7 +76,8 @@ export const SetMeteor = (props: {
               point[1] / SIMULATION_SCALE,
               point[2] / SIMULATION_SCALE,
             ] as [number, number, number],
-        );
+        )
+        .filter((_p, index) => index % Math.round(length / 100) === 0);
     return points
       .map((point, index) => {
         const prevPoint = points[index - 1];
@@ -126,7 +126,9 @@ export const SetMeteor = (props: {
         defaultPower={props.simulationState.meteor.power}
         onChangePosition={onChangePosition}
         onChangePower={onChangePower}
-      />
+      >
+        <MeteorSelector />
+      </MeteorSetterV2>
       {meteorLinePoints.map((line, index) => (
         <Line key={index} start={line.start} end={line.end} />
       ))}

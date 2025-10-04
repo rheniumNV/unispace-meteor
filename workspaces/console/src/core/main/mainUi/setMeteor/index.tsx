@@ -12,10 +12,6 @@ export const MainUiSetMeteor = (props: {
 }) => {
   const { dispatch } = useAppContext();
 
-  const onClickBack = useCallback(() => {
-    dispatch({ type: "GO_TO_SELECT_METEOR" });
-  }, [dispatch]);
-
   const inputText = useMemo(() => {
     if (!props.simulationState.input) {
       return "Input: No input";
@@ -42,20 +38,6 @@ export const MainUiSetMeteor = (props: {
 
   return (
     <VerticalLayout>
-      <LayoutElement minHeight={100}>
-        <StyledButton
-          onClick={onClickBack}
-          styledColor={Color.button}
-          styledSprite={Sprite.circleBase}
-        >
-          <StyledText
-            content="Back"
-            horizontalAlign="Center"
-            styledColor={Color.text}
-            verticalAlign="Middle"
-          />
-        </StyledButton>
-      </LayoutElement>
       <LayoutElement minHeight={100}>
         <StyledText
           content={`Position: ${props.simulationState.meteor.position.join(", ")}`}

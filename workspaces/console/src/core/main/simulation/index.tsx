@@ -6,8 +6,6 @@ export const Simulation = () => {
   const { appState } = useAppContext();
 
   switch (appState.simulationState.mode) {
-    case "SelectMeteor":
-      return <SelectMeteor />;
     case "SetMeteor":
       return <SetMeteor simulationState={appState.simulationState} />;
     default:

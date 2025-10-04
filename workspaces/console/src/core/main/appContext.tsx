@@ -4,10 +4,6 @@ import {
   type SimulationResult,
 } from "@unispace-meteor/simulator/dist/main";
 
-export type SimulationModeSelectMeteor = {
-  mode: "SelectMeteor";
-};
-
 export type SimulationModeSetMeteor = {
   mode: "SetMeteor";
   meteor: {
@@ -31,7 +27,6 @@ export type SimulationModeViewMeteor = {
 };
 
 export type SimulationState =
-  | SimulationModeSelectMeteor
   | SimulationModeSetMeteor
   | SimulationModeViewMeteor;
 
@@ -42,15 +37,10 @@ export type AppState = {
 
 export type AppAction =
   | {
-      type: "GO_TO_SELECT_METEOR";
-    }
-  | {
       type: "SELECT_METEOR";
       meteor: {
         mass: number;
         size: number;
-        position: [number, number, number];
-        power: [number, number, number];
       };
     }
   | {
@@ -71,13 +61,8 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
   console.debug("appReducer", action);
 
   switch (action.type) {
-    case "GO_TO_SELECT_METEOR":
-      return {
-        mode: "Simulation",
-        simulationState: { mode: "SelectMeteor" },
-      };
     case "SELECT_METEOR":
-      if (state.simulationState.mode !== "SelectMeteor") {
+      if (state.simulationState.mode !== "SetMeteor") {
         return state;
       }
       return {
@@ -85,8 +70,10 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
         simulationState: {
           mode: "SetMeteor",
           meteor: {
-            ...action.meteor,
-            power: [0, 0, 0],
+            size: action.meteor.size,
+            mass: action.meteor.mass,
+            position: state.simulationState.meteor.position ?? [0, 0, 0],
+            power: state.simulationState.meteor.power ?? [0, 0, 0],
           },
         },
       };
@@ -153,7 +140,13 @@ export const AppContextProvider = ({
   >(appReducer, {
     mode: "Simulation",
     simulationState: {
-      mode: "SelectMeteor",
+      mode: "SetMeteor",
+      meteor: {
+        position: [2, 0.1, -0.05],
+        power: [0.3, 0.05, 0],
+        mass: 3000,
+        size: 10000,
+      },
     },
   } as const);
 

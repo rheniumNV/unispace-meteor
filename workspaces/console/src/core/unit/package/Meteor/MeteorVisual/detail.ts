@@ -1,4 +1,3 @@
-import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import {
   DetailBase,
   UnitProp,
@@ -9,12 +8,11 @@ import {
 } from "@unispace-meteor/miragex/dist/unit/common";
 
 const detail = {
-  code: "Meteor/MeteorSelector",
+  code: "Meteor/MeteorVisual",
   propsConfig: {
-    title: UnitProp.String("Meteor Selector"),
-    description: UnitProp.String("Meteor Selector"),
-    onClick: UnitProp.Function((_env: FunctionEnv) => {}),
-    imageUrl: UnitProp.Uri(""),
+    meteorIndex: UnitProp.Int(0),
+    scale: UnitProp.Float3([1, 1, 1]),
+    rotation: UnitProp.FloatQ([0, 0, 0, 0]),
   },
   children: "multi",
 } as const satisfies DetailBase;

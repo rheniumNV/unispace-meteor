@@ -45,6 +45,23 @@ export const { StyledSpace, Color, Sprite, Material, Font } = createStyle({
       wrapModeU: "Clamp",
       wrapModeV: "Clamp",
     }),
+    base: createSprite({
+      url: "resdb:///81353cfd10591df09fd2c1e85d2782b3f0da2c90aecb0fe8f0a7ee9686ca47f1.webp",
+      rect: [0, 0, 1, 1],
+      borders: [0.5, 0.5, 0.5, 0.5],
+      scale: 1,
+      fixedSize: 8,
+      filterMode: "Anisotropic",
+      wrapModeU: "Clamp",
+      wrapModeV: "Clamp",
+    }),
+    button: createSprite({
+      url: "resdb:///a55251726365e27870afe9a83539829d5315332c8ea1fb43f095227f53fa8c20.webp",
+      rect: [0, 0, 1, 1],
+      borders: [0.4318, 0.16796875, 0.4318, 0.16796875],
+      scale: 1,
+      fixedSize: 8,
+    }),
   },
   Material: {
     base: createUiUnlitMaterial({
@@ -52,6 +69,12 @@ export const { StyledSpace, Color, Sprite, Material, Font } = createStyle({
       alphaCutoff: 0.5,
       offsetFactor: 10,
       offsetUnits: 500,
+    }),
+    baseAlpha: createUiUnlitMaterial({
+      alphaClip: true,
+      alphaCutoff: 0.25,
+      offsetFactor: 100,
+      offsetUnits: 4000,
     }),
     front: createUiUnlitMaterial({
       alphaClip: true,

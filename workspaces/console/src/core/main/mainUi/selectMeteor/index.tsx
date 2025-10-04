@@ -4,13 +4,10 @@ import {
   LayoutElement,
   VerticalLayout,
 } from "../../../unit/package/PrimitiveUix/main";
-import {
-  StyledButton,
-  StyledImage,
-  StyledText,
-} from "../../../unit/package/StyledUix/main";
+import { StyledImage, StyledText } from "../../../unit/package/StyledUix/main";
 import { useAppContext } from "../../appContext";
 import { Color, Sprite } from "../../style";
+import { SimpleButton } from "../../components/simpleButton";
 
 type Meteor = {
   name: string;
@@ -60,18 +57,7 @@ const Meteor = ({
           styledColor={Color.text}
           verticalAlign="Middle"
         />
-        <StyledButton
-          onClick={onClick}
-          styledColor={Color.button}
-          styledSprite={Sprite.circleBase}
-        >
-          <StyledText
-            content="Select"
-            horizontalAlign="Center"
-            styledColor={Color.text}
-            verticalAlign="Middle"
-          />
-        </StyledButton>
+        <SimpleButton onClick={onClick} text="Select" />
       </HorizontalLayout>
     </LayoutElement>
   );
@@ -87,8 +73,6 @@ export const MainUiSelectMeteor = () => {
         meteor: {
           mass: meteor.mass,
           size: meteor.size,
-          position: [2, 0, 0],
-          power: [-2, 0, 0],
         },
       });
     },
