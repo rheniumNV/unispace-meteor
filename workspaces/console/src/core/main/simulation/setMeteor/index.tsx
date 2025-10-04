@@ -62,7 +62,7 @@ export const SetMeteor = (props: {
         },
         meteoroid: {
           diameter_m: props.simulationState.meteor.size,
-          density_kg_m3: props.simulationState.meteor.mass,
+          mass_kg: props.simulationState.meteor.mass,
           strength_mpa: 100,
         },
         environment: {
