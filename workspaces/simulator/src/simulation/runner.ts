@@ -5,7 +5,6 @@
 import { R } from "@mobily/ts-belt";
 import * as Blast from "../calc/blast";
 import * as Breakup from "../calc/breakup";
-import * as Coord from "../calc/coordinates";
 import * as Vec from "../calc/coordinates/vector";
 import * as Impact from "../calc/impact";
 import * as Integration from "../calc/integration";
@@ -53,32 +52,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 
 	// 初期位置・速度の準備
 	const r0_ecef = discovery.r0_ecef;
-
-	// 位置から緯度経度を取得してENU基底を作成
-	const geodResult = Coord.ecefToGeodetic(r0_ecef);
-	if (R.isError(geodResult)) {
-		return geodResult;
-	}
-	const geod = R.getExn(geodResult);
-	const { lat: lat_rad, lon: lon_rad } = geod;
-
-	const basisResult = Coord.enuBasisAt(lat_rad, lon_rad);
-	if (R.isError(basisResult)) {
-		return basisResult;
-	}
-	const basis = R.getExn(basisResult);
-
-	// 初期速度ベクトルを計算
-	const v0Result = Coord.velocityFromAzimuthEntry(
-		discovery.velocity.magnitude_m_s,
-		discovery.velocity.azimuth_deg,
-		discovery.velocity.entry_angle_deg,
-		basis,
-	);
-	if (R.isError(v0Result)) {
-		return v0Result;
-	}
-	const v0_ecef = R.getExn(v0Result);
+	const v0_ecef = discovery.velocity_ecef;
 
 	// シミュレーションパラメータ
 	const params: SimulationParams = {
@@ -104,10 +78,13 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const { samples } = trajectory;
 
 	// 衝突までの時間
-	const time_to_impact_s = samples[samples.length - 1].t;
+	const final_sample = samples[samples.length - 1];
+	if (final_sample === undefined) {
+		return R.Error(new Error("軌道サンプルが空です"));
+	}
+	const time_to_impact_s = final_sample.t;
 
 	// 最終速度からエネルギーを計算
-	const final_sample = samples[samples.length - 1];
 	const v_final_mag = Vec.magnitude(final_sample.v_ecef);
 	// 最終質量は初期質量と同じと仮定（アブレーション未実装の場合）
 	const E_joule = 0.5 * m0_kg * v_final_mag * v_final_mag;
@@ -128,8 +105,8 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const impactState = R.getExn(impactResult);
 
 	// クレーター計算（地表衝突の場合）
-	let crater = null;
-	if (impactState !== null) {
+	let crater: SimulationResult["crater"] = { hasCrater: false };
+	if (impactState.impacted) {
 		// 衝突角度を計算（速度ベクトルと地表法線のなす角）
 		const impact_v_mag = Vec.magnitude(impactState.v_ecef);
 
@@ -157,7 +134,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	}
 
 	// 爆風影響範囲
-	const burst_alt = airburst?.burst_altitude_m ?? 0;
+	const burst_alt = airburst.isOccurrence ? airburst.burst_altitude_m : 0;
 	const blastRadiiResult = Blast.calculateBlastRadii(E_joule, blast_thresholds_kpa, burst_alt);
 	if (R.isError(blastRadiiResult)) {
 		return blastRadiiResult;

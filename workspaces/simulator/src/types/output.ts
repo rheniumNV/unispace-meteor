@@ -29,22 +29,34 @@ export interface EnergyInfo {
 }
 
 /** 空中爆発情報 */
-export interface AirburstInfo {
-	/** 爆発高度 [m] */
-	readonly burst_altitude_m: number;
-	/** 爆発時のエネルギー [J] */
-	readonly burst_energy_joule: number;
-}
+export type AirburstInfo =
+	| {
+			/** 発生したか */
+			readonly isOccurrence: true;
+			/** 爆発高度 [m] */
+			readonly burst_altitude_m: number;
+			/** 爆発時のエネルギー [J] */
+			readonly burst_energy_joule: number;
+	  }
+	| {
+			readonly isOccurrence: false;
+	  };
 
 /** クレーター情報 */
-export interface CraterInfo {
-	/** 一時クレーター直径 [m] */
-	readonly transient_diameter_m: number;
-	/** 最終クレーター直径 [m] */
-	readonly final_diameter_m: number;
-	/** 深さ [m] */
-	readonly depth_m: number;
-}
+export type CraterInfo =
+	| {
+			/** クレーターが形成されるか */
+			readonly hasCrater: true;
+			/** 一時クレーター直径 [m] */
+			readonly transient_diameter_m: number;
+			/** 最終クレーター直径 [m] */
+			readonly final_diameter_m: number;
+			/** 深さ [m] */
+			readonly depth_m: number;
+	  }
+	| {
+			readonly hasCrater: false;
+	  };
 
 /** 爆風影響情報 */
 export interface BlastInfo {
@@ -67,9 +79,9 @@ export interface SimulationResult {
 	/** エネルギー情報 */
 	readonly energy: EnergyInfo;
 	/** 空中爆発情報（発生した場合） */
-	readonly airburst: AirburstInfo | null;
+	readonly airburst: AirburstInfo;
 	/** クレーター情報（地表衝突の場合） */
-	readonly crater: CraterInfo | null;
+	readonly crater: CraterInfo;
 	/** 爆風影響範囲 */
 	readonly blast: BlastInfo;
 	/** 地震規模 */

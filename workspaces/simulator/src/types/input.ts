@@ -11,15 +11,8 @@ export interface DiscoveryInput {
 	readonly t0: Date;
 	/** 発見時のECEF座標 [m] */
 	readonly r0_ecef: Vec3;
-	/** 速度情報 */
-	readonly velocity: {
-		/** 速度の大きさ [m/s] */
-		readonly magnitude_m_s: number;
-		/** 方位角 [度] (北から時計回り、0=北、90=東) */
-		readonly azimuth_deg: number;
-		/** 入射角 [度] (水平面からの角度、0=水平、90=鉛直下向き) */
-		readonly entry_angle_deg: number;
-	};
+	/** 速度ベクトル ECEF [m/s] */
+	readonly velocity_ecef: Vec3;
 }
 
 /** 隕石の物性 */
