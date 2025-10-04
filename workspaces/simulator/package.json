@@ -1,9 +1,24 @@
 {
   "name": "@unispace-meteor/simulator",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "隕石シミュレーション計算ライブラリ",
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "LinaTsukusu",
+  "license": "ISC",
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "vitest": "3.2.4"
+  },
+  "dependencies": {
+    "@mobily/ts-belt": "^3.13.1"
+  }
 }
