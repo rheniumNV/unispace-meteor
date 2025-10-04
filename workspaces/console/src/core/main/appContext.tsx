@@ -17,7 +17,7 @@ export type SimulationModeSetMeteor = {
   result?: SimulationResult;
 };
 
-export type SimulationModeViewMeteor = {
+export type SimulationModeAnimation = {
   mode: "ANIMATION";
   play: boolean;
   time: number;
@@ -32,9 +32,7 @@ export type SimulationModeViewMeteor = {
   result: SimulationResult;
 };
 
-export type SimulationState =
-  | SimulationModeSetMeteor
-  | SimulationModeViewMeteor;
+export type SimulationState = SimulationModeSetMeteor | SimulationModeAnimation;
 
 export type AppState = {
   mode: "Simulation";
