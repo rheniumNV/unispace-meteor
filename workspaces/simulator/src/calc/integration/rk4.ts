@@ -17,7 +17,7 @@ export interface TrajectoryResult {
 	/** サンプル点の配列 */
 	readonly samples: readonly TrajectoryPoint[];
 	/** 終了理由 */
-	readonly terminationReason: "ground" | "breakup" | "max_time";
+	readonly terminationReason: "ground" | "breakup" | "burnout" | "max_time";
 }
 
 /**
@@ -100,8 +100,8 @@ export const integrateTrajectory = (
 	v0: Vec3,
 	m0: number,
 	params: SimulationParams,
-	dt = 0.1,
-	max_time = 600,
+	dt = 60 * 60, // 1時間 = 3,600秒
+	max_time = 60 * 60 * 24 * 30 * 3, // 30日 = 2,592,000秒
 ): R.Result<TrajectoryResult, Error> => {
 	const samples: TrajectoryPoint[] = [];
 	let state: DynamicState = { r: r0, v: v0, m: m0 };
@@ -118,12 +118,16 @@ export const integrateTrajectory = (
 		t: 0,
 		r_ecef: r0,
 		v_ecef: v0,
+		mass_kg: m0,
 		alt_m: initialGeod.alt_m,
 		lat: (initialGeod.lat * 180) / Math.PI,
 		lon: (initialGeod.lon * 180) / Math.PI,
 	});
 
-	let terminationReason: "ground" | "breakup" | "max_time" = "max_time";
+	let terminationReason: "ground" | "breakup" | "burnout" | "max_time" = "max_time";
+
+	// 質量が初期質量の1%未満になったら燃え尽きたと判定
+	const burnout_threshold = m0 * 0.01;
 
 	// 積分ループ
 	while (t < max_time) {
@@ -169,6 +173,7 @@ export const integrateTrajectory = (
 			t,
 			r_ecef: state.r,
 			v_ecef: state.v,
+			mass_kg: state.m,
 			alt_m: geod.alt_m,
 			lat: (geod.lat * 180) / Math.PI,
 			lon: (geod.lon * 180) / Math.PI,
@@ -182,6 +187,12 @@ export const integrateTrajectory = (
 
 		// 破砕で停止
 		if (terminationReason === "breakup") {
+			break;
+		}
+
+		// 燃え尽き判定
+		if (state.m < burnout_threshold) {
+			terminationReason = "burnout";
 			break;
 		}
 	}

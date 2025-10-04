@@ -12,6 +12,8 @@ export interface TrajectoryPoint {
 	readonly r_ecef: Vec3;
 	/** ECEF速度 [m/s] */
 	readonly v_ecef: Vec3;
+	/** 質量 [kg] */
+	readonly mass_kg: number;
 	/** 高度 [m] */
 	readonly alt_m: number;
 	/** 緯度 [度] */

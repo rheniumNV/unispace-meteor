@@ -39,14 +39,8 @@ export const detectAirburst = (
 	const burst_altitude_m = lastSample.alt_m;
 
 	// 爆発時の運動エネルギー E = (1/2) * m * v²
-	// 質量は軌道データから直接取得できないので、
-	// ここでは速度ベクトルから運動エネルギーを推定
-	// （完全な実装では質量情報も軌道データに含めるべき）
 	const v_mag = Vec.magnitude(lastSample.v_ecef);
-
-	// 暫定的に、動的圧力から推定したエネルギーを返す
-	// より正確には質量情報が必要
-	const burst_energy_joule = v_mag * v_mag * 1000; // 仮の計算
+	const burst_energy_joule = 0.5 * lastSample.mass_kg * v_mag * v_mag;
 
 	return R.Ok({
 		isOccurrence: true,
