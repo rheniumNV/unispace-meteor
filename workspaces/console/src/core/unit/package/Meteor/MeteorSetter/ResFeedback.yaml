@@ -4497,7 +4497,7 @@ Children:
                                       ID: "?"
                                       Data:
                                         - ID: "?"
-                                          Data: ID:Assets:74:ID:2
+                                          Data: ID:Assets:71:ID:2
                                     MaterialPropertyBlocks:
                                       ID: "?"
                                       Data: []
@@ -4763,10 +4763,10 @@ Children:
                                 Rotation:
                                   ID: ID:LAt:Tag:3
                                   Data:
-                                    - 18111
-                                    - 17555.666666666668
-                                    - -3000
-                                    - 108111
+                                    - 0
+                                    - 0
+                                    - 0
+                                    - 111111
                                 Scale:
                                   ID: "?"
                                   Data:
@@ -4851,10 +4851,10 @@ Children:
                                         Value:
                                           ID: ID:LAt:Components:62:Value:0
                                           Data:
-                                            - 54.333333333333336
-                                            - 52.666666666666664
-                                            - -9
-                                            - 324.3333333333333
+                                            - 0
+                                            - 0
+                                            - 0
+                                            - 333.3333333333333
                                 Children:
                                   - Name:
                                       ID: "?"
@@ -5145,10 +5145,10 @@ Children:
                         Rotation:
                           ID: ID:Arrow - Parent:Tag:3
                           Data:
-                            - 3000
-                            - 108111
-                            - 18111
-                            - -17555.666666666668
+                            - 0
+                            - 0
+                            - 0
+                            - 111111
                         Scale:
                           ID: "?"
                           Data:
@@ -5329,7 +5329,7 @@ Children:
                                           Data:
                                             - 0
                                             - 0
-                                            - -74
+                                            - 0
                                         Sides:
                                           ID: "?"
                                           Data: 2666.6666666666665
@@ -5626,7 +5626,7 @@ Children:
                                           Data:
                                             - 0
                                             - 0
-                                            - 74
+                                            - 0
                                         Sides:
                                           ID: "?"
                                           Data: 2666.6666666666665
@@ -5648,8 +5648,8 @@ Children:
                                         BodyUVScale:
                                           ID: ID:ArrowRev:Components:66:BodyUVScale:0
                                           Data:
-                                            - 147.66666666666666
-                                            - 147.66666666666666
+                                            - 0
+                                            - 0
                                         BodyUVOffset:
                                           ID: "?"
                                           Data:
@@ -5772,16 +5772,16 @@ Children:
                                             - sRGB
                                         BehindFarTexture:
                                           ID: "?"
-                                          Data: ID:Assets:76:ID:7
+                                          Data: ID:Assets:73:ID:8
                                         BehindNearTexture:
                                           ID: "?"
-                                          Data: ID:Assets:76:ID:7
+                                          Data: ID:Assets:73:ID:8
                                         FrontFarTexture:
                                           ID: "?"
-                                          Data: ID:Assets:76:ID:7
+                                          Data: ID:Assets:73:ID:8
                                         FrontNearTexture:
                                           ID: "?"
-                                          Data: ID:Assets:76:ID:7
+                                          Data: ID:Assets:73:ID:8
                                         BehindFarTextureScale:
                                           ID: "?"
                                           Data:

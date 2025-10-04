@@ -21,18 +21,18 @@ type Meteor = {
 const meteorList: Meteor[] = [
   {
     name: "Meteor 1",
-    size: 1,
-    mass: 1,
+    size: 3000,
+    mass: 100000,
   },
   {
     name: "Meteor 2",
-    size: 2,
-    mass: 2,
+    size: 30000,
+    mass: 2000000,
   },
   {
     name: "Meteor 3",
-    size: 3,
-    mass: 3,
+    size: 300000,
+    mass: 30000000,
   },
 ];
 
@@ -88,7 +88,7 @@ export const MainUiSelectMeteor = () => {
           mass: meteor.mass,
           size: meteor.size,
           position: [2, 0, 0],
-          power: [1, 0, 0],
+          power: [-2, 0, 0],
         },
       });
     },

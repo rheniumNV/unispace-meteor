@@ -9,6 +9,7 @@ import {
   Vec3,
 } from "@unispace-meteor/simulator/dist/main";
 import { R } from "@mobily/ts-belt";
+import { SIMULATION_SCALE, SIMULATION_POWER_SCALE } from "../../constant";
 
 export const SetMeteor = (props: {
   simulationState: SimulationModeSetMeteor;
@@ -21,14 +22,20 @@ export const SetMeteor = (props: {
         discovery: {
           t0: new Date(),
           r0_ecef: [
-            props.simulationState.meteor.position[0] * 10000000,
-            props.simulationState.meteor.position[1] * 10000000,
-            props.simulationState.meteor.position[2] * 10000000,
+            props.simulationState.meteor.position[0] * SIMULATION_SCALE,
+            props.simulationState.meteor.position[1] * SIMULATION_SCALE,
+            props.simulationState.meteor.position[2] * SIMULATION_SCALE,
           ],
           velocity_ecef: [
-            -props.simulationState.meteor.power[0] * 0.01 * 10000000,
-            -props.simulationState.meteor.power[1] * 0.01 * 10000000,
-            -props.simulationState.meteor.power[2] * 0.01 * 10000000,
+            -props.simulationState.meteor.power[0] *
+              SIMULATION_POWER_SCALE *
+              SIMULATION_SCALE,
+            -props.simulationState.meteor.power[1] *
+              SIMULATION_POWER_SCALE *
+              SIMULATION_SCALE,
+            -props.simulationState.meteor.power[2] *
+              SIMULATION_POWER_SCALE *
+              SIMULATION_SCALE,
           ],
         },
         meteoroid: {
@@ -61,39 +68,32 @@ export const SetMeteor = (props: {
       return [];
     }
     const points: (readonly [number, number, number])[] =
-      props.simulationState.result.trajectory.map((point) => point.r_ecef);
-    // [
-    //   [2, 0, 0],
-    //   [1.8, 0.2, 0],
-    //   [1.5, 0.4, 0],
-    //   [1.2, 0.5, 0],
-    //   [0.8, 0.45, 0],
-    //   [0.4, 0.3, 0],
-    //   [0, 0, 0],
-    // ];
+      props.simulationState.result.trajectory
+        .map((point) => point.r_ecef)
+        .map(
+          (point) =>
+            [
+              point[0] / SIMULATION_SCALE,
+              point[1] / SIMULATION_SCALE,
+              point[2] / SIMULATION_SCALE,
+            ] as [number, number, number],
+        );
     return points
-      .map(
-        (point) =>
-          [point[0] / 10000000, point[1] / 10000000, point[2] / 10000000] as [
-            number,
-            number,
-            number,
-          ],
-      )
       .map((point, index) => {
         const prevPoint = points[index - 1];
-        return {
-          start: [point[0], point[1], point[2]] as [number, number, number],
-          end: prevPoint
-            ? ([prevPoint[0], prevPoint[1], prevPoint[2]] as [
+        return prevPoint
+          ? {
+              start: [point[0], point[1], point[2]] as [number, number, number],
+              end: [prevPoint[0], prevPoint[1], prevPoint[2]] as [
                 number,
                 number,
                 number,
-              ])
-            : ([0, 0, 0] as [number, number, number]),
-        };
+              ],
+            }
+          : undefined;
       })
-      .slice(0, 10);
+      .filter((v) => v !== undefined)
+      .slice(0, 1000);
   }, [props.simulationState.result]);
 
   console.log(meteorLinePoints.length);
@@ -127,8 +127,8 @@ export const SetMeteor = (props: {
         onChangePosition={onChangePosition}
         onChangePower={onChangePower}
       />
-      {meteorLinePoints.map((line) => (
-        <Line key={line.start.join(",")} start={line.start} end={line.end} />
+      {meteorLinePoints.map((line, index) => (
+        <Line key={index} start={line.start} end={line.end} />
       ))}
     </Slot>
   );

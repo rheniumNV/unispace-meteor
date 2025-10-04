@@ -32,7 +32,12 @@ export const MainUiSetMeteor = (props: {
         .length,
       null,
       2,
-    )}`;
+    )}
+    ${JSON.stringify(props.simulationState.result.crater, null, 2)}
+    ${JSON.stringify(props.simulationState.result.airburst, null, 2)}
+    ${JSON.stringify(props.simulationState.result.blast, null, 2)}
+    ${JSON.stringify(props.simulationState.result.seismic, null, 2)}
+    ${JSON.stringify(props.simulationState.result.energy, null, 2)}`;
   }, [props.simulationState.result]);
 
   return (
@@ -68,22 +73,31 @@ export const MainUiSetMeteor = (props: {
           horizontalAlign="Center"
           styledColor={Color.text}
           verticalAlign="Middle"
+          verticalAutoSize
+          horizontalAutoSize
+          autoSizeMin={1}
         />
       </LayoutElement>
       <LayoutElement flexibleHeight={1}>
         <StyledText
           content={inputText}
-          horizontalAlign="Center"
+          horizontalAlign="Left"
           styledColor={Color.text}
           verticalAlign="Middle"
+          verticalAutoSize
+          horizontalAutoSize
+          autoSizeMin={1}
         />
       </LayoutElement>
       <LayoutElement flexibleHeight={1}>
         <StyledText
           content={resultText}
-          horizontalAlign="Center"
+          horizontalAlign="Left"
           styledColor={Color.text}
           verticalAlign="Middle"
+          verticalAutoSize
+          horizontalAutoSize
+          autoSizeMin={1}
         />
       </LayoutElement>
     </VerticalLayout>
