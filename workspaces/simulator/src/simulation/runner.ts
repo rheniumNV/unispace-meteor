@@ -5,7 +5,6 @@
 import { R } from "@mobily/ts-belt";
 import * as Blast from "../calc/blast";
 import * as Breakup from "../calc/breakup";
-import * as Coord from "../calc/coordinates";
 import * as Vec from "../calc/coordinates/vector";
 import * as Impact from "../calc/impact";
 import * as Integration from "../calc/integration";
@@ -53,32 +52,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 
 	// 初期位置・速度の準備
 	const r0_ecef = discovery.r0_ecef;
-
-	// 位置から緯度経度を取得してENU基底を作成
-	const geodResult = Coord.ecefToGeodetic(r0_ecef);
-	if (R.isError(geodResult)) {
-		return geodResult;
-	}
-	const geod = R.getExn(geodResult);
-	const { lat: lat_rad, lon: lon_rad } = geod;
-
-	const basisResult = Coord.enuBasisAt(lat_rad, lon_rad);
-	if (R.isError(basisResult)) {
-		return basisResult;
-	}
-	const basis = R.getExn(basisResult);
-
-	// 初期速度ベクトルを計算
-	const v0Result = Coord.velocityFromAzimuthEntry(
-		discovery.velocity.magnitude_m_s,
-		discovery.velocity.azimuth_deg,
-		discovery.velocity.entry_angle_deg,
-		basis,
-	);
-	if (R.isError(v0Result)) {
-		return v0Result;
-	}
-	const v0_ecef = R.getExn(v0Result);
+	const v0_ecef = discovery.velocity_ecef;
 
 	// シミュレーションパラメータ
 	const params: SimulationParams = {

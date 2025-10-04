@@ -1,22 +1,21 @@
 import { R } from "@mobily/ts-belt";
 import { describe, expect, it } from "vitest";
 import { EARTH_RADIUS_M } from "../types/constants";
-import type { SimulationInput } from "../types/input";
+import type { SimulationInput, Vec3 } from "../types/input";
 import * as Runner from "./runner";
 
 describe("シミュレーション統合テスト", () => {
 	describe("simulateMeteorImpact", () => {
 		it("正常な入力でOkを返す", () => {
 			// チェリャビンスク隕石風の小型隕石シナリオ
+			// 19 km/s, 東向き (方位角90度), 入射角20度
+			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 30000, 0, 0]; // 赤道上空30km
+			const velocity_ecef: Vec3 = [0, 17849, -6499]; // ≈19km/s, 東向き, 20度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
-					r0_ecef: [EARTH_RADIUS_M + 30000, 0, 0], // 赤道上空30km
-					velocity: {
-						magnitude_m_s: 19000, // 19 km/s
-						azimuth_deg: 90, // 東向き
-						entry_angle_deg: 20, // 浅い入射角
-					},
+					r0_ecef,
+					velocity_ecef,
 				},
 				meteoroid: {
 					diameter_m: 20, // 20m径
@@ -38,11 +37,7 @@ describe("シミュレーション統合テスト", () => {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
 					r0_ecef: [0, 0, 0], // 不正な位置
-					velocity: {
-						magnitude_m_s: 19000,
-						azimuth_deg: 90,
-						entry_angle_deg: 20,
-					},
+					velocity_ecef: [19000, 0, 0], // ダミー速度ベクトル
 				},
 				meteoroid: {
 					diameter_m: 20,
@@ -61,15 +56,14 @@ describe("シミュレーション統合テスト", () => {
 
 		it("現実的なシナリオで妥当な結果を返す（統合テスト）", () => {
 			// チェリャビンスク隕石風のシナリオ
+			// 19 km/s, 東向き (方位角90度), 入射角45度
+			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 20000, 0, 0]; // 赤道上空20km
+			const velocity_ecef: Vec3 = [0, 13435, -13435]; // ≈19km/s, 東向き, 45度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
-					r0_ecef: [EARTH_RADIUS_M + 20000, 0, 0], // 赤道上空20km
-					velocity: {
-						magnitude_m_s: 19000, // 19 km/s
-						azimuth_deg: 90, // 東向き
-						entry_angle_deg: 45, // 45度入射（より急角度）
-					},
+					r0_ecef,
+					velocity_ecef,
 				},
 				meteoroid: {
 					diameter_m: 20, // 20m径
@@ -123,15 +117,14 @@ describe("シミュレーション統合テスト", () => {
 		});
 
 		it("小さな隕石（1m径）でも計算できる", () => {
+			// 15 km/s, 北向き (方位角0度), 入射角45度
+			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 10000, 0, 0]; // 上空10km
+			const velocity_ecef: Vec3 = [-10606.6, 0, -10606.6]; // ≈15km/s, 北向き, 45度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
-					r0_ecef: [EARTH_RADIUS_M + 10000, 0, 0], // 上空10km
-					velocity: {
-						magnitude_m_s: 15000, // 15 km/s
-						azimuth_deg: 0, // 北向き
-						entry_angle_deg: 45, // 45度入射
-					},
+					r0_ecef,
+					velocity_ecef,
 				},
 				meteoroid: {
 					diameter_m: 1, // 1m径
@@ -155,15 +148,14 @@ describe("シミュレーション統合テスト", () => {
 		});
 
 		it("非常に強い隕石（100 MPa）は地表まで到達する", () => {
+			// 20 km/s, 北向き (方位角0度), 入射角60度
+			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 20000, 0, 0]; // 上空20km
+			const velocity_ecef: Vec3 = [-10000, 0, -17321]; // ≈20km/s, 北向き, 60度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
-					r0_ecef: [EARTH_RADIUS_M + 20000, 0, 0], // 上空20km
-					velocity: {
-						magnitude_m_s: 20000, // 20 km/s
-						azimuth_deg: 0,
-						entry_angle_deg: 60, // 急角度
-					},
+					r0_ecef,
+					velocity_ecef,
 				},
 				meteoroid: {
 					diameter_m: 50, // 50m径
@@ -189,15 +181,14 @@ describe("シミュレーション統合テスト", () => {
 		});
 
 		it("水面衝突のケース", () => {
+			// 18 km/s, 北東 (方位角45度), 入射角30度
+			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 15000, 0, 0]; // 上空15km
+			const velocity_ecef: Vec3 = [-11023, 11023, -9000]; // ≈18km/s, 北東, 30度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
-					r0_ecef: [EARTH_RADIUS_M + 15000, 0, 0], // 上空15km
-					velocity: {
-						magnitude_m_s: 18000,
-						azimuth_deg: 45,
-						entry_angle_deg: 30,
-					},
+					r0_ecef,
+					velocity_ecef,
 				},
 				meteoroid: {
 					diameter_m: 30,
@@ -225,15 +216,14 @@ describe("シミュレーション統合テスト", () => {
 		});
 
 		it("モデルパラメータなしでデフォルト値を使用", () => {
+			// 15 km/s, 北向き (方位角0度), 入射角45度
+			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 10000, 0, 0];
+			const velocity_ecef: Vec3 = [-10606.6, 0, -10606.6]; // ≈15km/s, 北向き, 45度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
-					r0_ecef: [EARTH_RADIUS_M + 10000, 0, 0],
-					velocity: {
-						magnitude_m_s: 15000,
-						azimuth_deg: 0,
-						entry_angle_deg: 45,
-					},
+					r0_ecef,
+					velocity_ecef,
 				},
 				meteoroid: {
 					diameter_m: 10,
@@ -262,16 +252,15 @@ describe("シミュレーション統合テスト", () => {
 		});
 
 		it("カスタム爆風しきい値が正しく使われる", () => {
+			// 15 km/s, 北向き (方位角0度), 入射角45度
 			const customThresholds = [5, 15, 50];
+			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 10000, 0, 0];
+			const velocity_ecef: Vec3 = [-10606.6, 0, -10606.6]; // ≈15km/s, 北向き, 45度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
-					r0_ecef: [EARTH_RADIUS_M + 10000, 0, 0],
-					velocity: {
-						magnitude_m_s: 15000,
-						azimuth_deg: 0,
-						entry_angle_deg: 45,
-					},
+					r0_ecef,
+					velocity_ecef,
 				},
 				meteoroid: {
 					diameter_m: 10,
@@ -301,15 +290,14 @@ describe("シミュレーション統合テスト", () => {
 		});
 
 		it("環境パラメータの上書きが動作する", () => {
+			// 15 km/s, 北向き (方位角0度), 入射角45度
+			const r0_ecef: Vec3 = [EARTH_RADIUS_M + 10000, 0, 0];
+			const velocity_ecef: Vec3 = [-10606.6, 0, -10606.6]; // ≈15km/s, 北向き, 45度下向き
 			const input: SimulationInput = {
 				discovery: {
 					t0: new Date("2024-01-01T00:00:00Z"),
-					r0_ecef: [EARTH_RADIUS_M + 10000, 0, 0],
-					velocity: {
-						magnitude_m_s: 15000,
-						azimuth_deg: 0,
-						entry_angle_deg: 45,
-					},
+					r0_ecef,
+					velocity_ecef,
 				},
 				meteoroid: {
 					diameter_m: 10,
