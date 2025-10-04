@@ -1,0 +1,773 @@
+Name:
+  ID: "?"
+  Data: ButtonEvent/ButtonAudioClipPlayer
+Active:
+  ID: "?"
+  Data: true
+ID: "?"
+Persistent-ID: "?"
+Position:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+Rotation:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+    - 1
+Scale:
+  ID: "?"
+  Data:
+    - 1
+    - 1
+    - 1
+Tag:
+  ID: "?"
+  Data: null
+OrderOffset:
+  ID: "?"
+  Data: 0
+Components:
+  ID: "?"
+  Data:
+    - Type: 0
+      Data:
+        ID: "?"
+        persistent-ID: "?"
+        UpdateOrder:
+          ID: "?"
+          Data: 0
+        Enabled:
+          ID: "?"
+          Data: true
+        SpaceName:
+          ID: "?"
+          Data: null
+        OnlyDirectBinding:
+          ID: "?"
+          Data: false
+Children:
+  - Name:
+      ID: "?"
+      Data: DV
+    Active:
+      ID: "?"
+      Data: true
+    ID: "?"
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 1
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            VariableName:
+              ID: "?"
+              Data: Static.Ref
+            Reference:
+              ID: "?"
+              Data: ID:Ref:0
+            OverrideOnLink:
+              ID: "?"
+              Data: false
+    Children: []
+    ParentReference: ""
+  - Name:
+      ID: "?"
+      Data: Ref
+    Active:
+      ID: "?"
+      Data: true
+    ID: ID:Ref:0
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 0
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            SpaceName:
+              ID: "?"
+              Data: null
+            OnlyDirectBinding:
+              ID: "?"
+              Data: false
+    Children:
+      - Name:
+          ID: "?"
+          Data: ButtonAudioClipPlayer
+        Active:
+          ID: "?"
+          Data: true
+        ID: ID:ButtonAudioClipPlayer:0
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: ButtonEventRelay/Target
+                Reference:
+                  ID: ID:ButtonAudioClipPlayer:Components:1:Reference:0
+                  Data: ID:ButtonAudioClipPlayer:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                Target:
+                  ID: ID:ButtonAudioClipPlayer:Components:2:Target:0
+                  Data: null
+            - Type: 3
+              Data:
+                ID: ID:ButtonAudioClipPlayer:Components:3:0
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                URL:
+                  ID: ID:ButtonAudioClipPlayer:Components:3:URL:0
+                  Data: null
+                LoadMode:
+                  ID: "?"
+                  Data: Automatic
+                SampleRateMode:
+                  ID: "?"
+                  Data: Conform
+            - Type: 4
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                Reference:
+                  ID: ID:ButtonAudioClipPlayer:Components:4:Reference:0
+                  Data: ID:ButtonAudioClipPlayer:0
+            - Type: 5
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                Source:
+                  ID: "?"
+                  Data: ID:ButtonAudioClipPlayer:Components:4:Reference:0
+                Target:
+                  ID: "?"
+                  Data: ID:ButtonAudioClipPlayer:Components:1:Reference:0
+                WriteBack:
+                  ID: "?"
+                  Data: false
+            - Type: 6
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                ParentUnder:
+                  ID: ID:ButtonAudioClipPlayer:Components:6:ParentUnder:0
+                  Data: "?"
+                MinDistance:
+                  ID: "?"
+                  Data: null
+                MaxDistance:
+                  ID: "?"
+                  Data: null
+                RolloffMode:
+                  ID: "?"
+                  Data: null
+                PressedClips:
+                  ID: "?"
+                  Data:
+                    - ID: "?"
+                      Clip:
+                        ID: "?"
+                        Data: ID:ButtonAudioClipPlayer:Components:3:0
+                      Weight:
+                        ID: "?"
+                        Data: 333.3333333333333
+                      MinVolume:
+                        ID: ID:ButtonAudioClipPlayer:Components:6:PressedClips.0.MinVolume.ID:0
+                        Data: 333.3333333333333
+                      MaxVolume:
+                        ID: ID:ButtonAudioClipPlayer:Components:6:PressedClips.0.MaxVolume.ID:0
+                        Data: 333.3333333333333
+                      MinSpeed:
+                        ID: "?"
+                        Data: 333.3333333333333
+                      MaxSpeed:
+                        ID: "?"
+                        Data: 333.3333333333333
+                      Spatialize:
+                        ID: "?"
+                        Data: true
+                      SpatialBlend:
+                        ID: "?"
+                        Data: 333.3333333333333
+                      MinDistance:
+                        ID: "?"
+                        Data: null
+                      MaxDistance:
+                        ID: "?"
+                        Data: null
+                      RolloffMode:
+                        ID: "?"
+                        Data: null
+                ReleasedClips:
+                  ID: "?"
+                  Data: []
+                HoverEnterClips:
+                  ID: "?"
+                  Data: []
+                HoverLeaveClips:
+                  ID: "?"
+                  Data: []
+        Children:
+          - Name:
+              ID: "?"
+              Data: EventRelayTarget
+            Active:
+              ID: "?"
+              Data: true
+            ID: ID:EventRelayTarget:0
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data:
+                - Type: 0
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    SpaceName:
+                      ID: "?"
+                      Data: ButtonEventRelay
+                    OnlyDirectBinding:
+                      ID: "?"
+                      Data: true
+                - Type: 7
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: "?"
+                      Data: ButtonEventRelay/Target
+                    Target:
+                      ID: "?"
+                      Data: ID:ButtonAudioClipPlayer:Components:2:Target:0
+                    DefaultTarget:
+                      ID: "?"
+                      Data: null
+            Children: []
+            ParentReference: ""
+          - Name:
+              ID: "?"
+              Data: flux
+            Active:
+              ID: "?"
+              Data: true
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data: []
+            Children:
+              - Name:
+                  ID: "?"
+                  Data: LocalUserSpace
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - -898444.3333333334
+                    - -773555.6666666666
+                    - 7629444.333333333
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - -44555.666666666664
+                    - 0
+                    - 101777.66666666667
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: ""
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 8
+                      Data:
+                        ID: ID:LocalUserSpace:Components:8:0
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                Children: []
+                ParentReference: ""
+              - Name:
+                  ID: "?"
+                  Data: ReferenceDrive`1
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - -880444.3333333334
+                    - -773555.6666666666
+                    - 7649000
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - -44555.666666666664
+                    - 0
+                    - 101777.66666666667
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: ""
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 9
+                      Data:
+                        ID: ID:ReferenceDrive`1:Components:9:0
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Target:
+                          ID: "?"
+                          Data: ID:LocalUserSpace:Components:8:0
+                    - Type: 10
+                      Data:
+                        ID: "?"
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Node:
+                          ID: "?"
+                          Data: ID:ReferenceDrive`1:Components:9:0
+                        Path:
+                          ID: "?"
+                          Data: []
+                        Drive:
+                          ID: "?"
+                          Data: ID:ButtonAudioClipPlayer:Components:6:ParentUnder:0
+                Children: []
+                ParentReference: ""
+            ParentReference: ""
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Static
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Root
+                Reference:
+                  ID: "?"
+                  Data: ID:Ref:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Main
+                Reference:
+                  ID: "?"
+                  Data: ID:ButtonAudioClipPlayer:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.ChildrenParent
+                Reference:
+                  ID: "?"
+                  Data: ID:EventRelayTarget:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Props
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 11
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.url
+                TargetField:
+                  ID: "?"
+                  Data: ID:ButtonAudioClipPlayer:Components:3:URL:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 12
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.minVolume
+                TargetField:
+                  ID: "?"
+                  Data: ID:ButtonAudioClipPlayer:Components:6:PressedClips.0.MinVolume.ID:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 12
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.maxVolume
+                TargetField:
+                  ID: "?"
+                  Data: ID:ButtonAudioClipPlayer:Components:6:PressedClips.0.MaxVolume.ID:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+    ParentReference: ""
+ParentReference: ""

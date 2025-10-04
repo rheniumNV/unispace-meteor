@@ -1,0 +1,1001 @@
+Name:
+  ID: "?"
+  Data: NexusUix/DynamicImpulseButton
+Active:
+  ID: "?"
+  Data: true
+ID: "?"
+persistent-ID: "?"
+Position:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+Rotation:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+    - 1
+Scale:
+  ID: "?"
+  Data:
+    - 1
+    - 1
+    - 1
+Tag:
+  ID: "?"
+  Data: ""
+OrderOffset:
+  ID: "?"
+  Data: 0
+Components:
+  ID: "?"
+  Data:
+    - Type: 0
+      Data:
+        ID: "?"
+        persistent-ID: "?"
+        UpdateOrder:
+          ID: "?"
+          Data: 0
+        Enabled:
+          ID: "?"
+          Data: true
+        SpaceName:
+          ID: "?"
+          Data: ""
+        OnlyDirectBinding:
+          ID: "?"
+          Data: false
+Children:
+  - Name:
+      ID: "?"
+      Data: DV
+    Active:
+      ID: "?"
+      Data: true
+    ID: "?"
+    persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: ""
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 1
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            VariableName:
+              ID: "?"
+              Data: Static.Ref
+            Reference:
+              ID: "?"
+              Data: ID:Ref:0
+            OverrideOnLink:
+              ID: "?"
+              Data: false
+    Children: []
+    ParentReference: ""
+  - Name:
+      ID: "?"
+      Data: Ref
+    Active:
+      ID: "?"
+      Data: true
+    ID: ID:Ref:0
+    persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: ""
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 0
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            SpaceName:
+              ID: "?"
+              Data: ""
+            OnlyDirectBinding:
+              ID: "?"
+              Data: false
+    Children:
+      - Name:
+          ID: "?"
+          Data: DV/Static
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: ""
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Root
+                Reference:
+                  ID: "?"
+                  Data: ID:Ref:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Main
+                Reference:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.ChildrenParent
+                Reference:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Props
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: ""
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledSprite
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:13:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledColor
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:12:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledMaterial
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:14:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 3
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.defaultColor
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:12:DefaultValue:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 4
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.tintColorMode
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.TintColorMode.ID:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledNormalColor
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:12:VariableName:1
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledHighlightColor
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:12:VariableName:2
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledPressColor
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:12:VariableName:3
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledDisableColor
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:12:VariableName:4
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 5
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.requireLockInToPress
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:9:RequireLockInToPress:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 6
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.nineSliceSizing
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:7:NineSliceSizing:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.dynamicImpulseTarget
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:11:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.dynamicImpulsePressedTag
+                TargetField:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:10:PressedTag:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DynamicImpulseButton
+        Active:
+          ID: "?"
+          Data: true
+        ID: ID:DynamicImpulseButton:0
+        persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 7
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                Sprite:
+                  ID: ID:DynamicImpulseButton:Components:7:Sprite:0
+                  Data: null
+                Material:
+                  ID: ID:DynamicImpulseButton:Components:7:Material:0
+                  Data: null
+                PreserveAspect:
+                  ID: "?"
+                  Data: true
+                NineSliceSizing:
+                  ID: ID:DynamicImpulseButton:Components:7:NineSliceSizing:0
+                  Data: TextureSize
+                FlipHorizontally:
+                  ID: "?"
+                  Data: false
+                FlipVertically:
+                  ID: "?"
+                  Data: false
+                InteractionTarget:
+                  ID: "?"
+                  Data: true
+                FillRect:
+                  ID: "?"
+                  Data:
+                    X: 0
+                    Y: 0
+                    Width: 333.3333333333333
+                    Height: 333.3333333333333
+                Tint:
+                  ID: ID:DynamicImpulseButton:Components:7:Tint:0
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - sRGBAlpha
+                __legacyZWrite-ID: "?"
+            - Type: 8
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                AnchorMin:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                AnchorMax:
+                  ID: "?"
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                OffsetMin:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                OffsetMax:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                Pivot:
+                  ID: "?"
+                  Data:
+                    - 166.66666666666666
+                    - 166.66666666666666
+            - Type: 9
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                BaseColor:
+                  ID: ID:DynamicImpulseButton:Components:9:BaseColor:0
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - sRGBAlpha
+                ColorDrivers:
+                  ID: "?"
+                  Data:
+                    - ID: "?"
+                      ColorDrive:
+                        ID: "?"
+                        Data: ID:DynamicImpulseButton:Components:7:Tint:0
+                      TintColorMode:
+                        ID: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.TintColorMode.ID:0
+                        Data: Explicit
+                      NormalColor:
+                        ID: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.NormalColor.ID:0
+                        Data:
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - sRGBAlpha
+                      HighlightColor:
+                        ID: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.HighlightColor.ID:0
+                        Data:
+                          - 250
+                          - 250
+                          - 250
+                          - 333.3333333333333
+                          - sRGBAlpha
+                      PressColor:
+                        ID: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.PressColor.ID:0
+                        Data:
+                          - 166.66666666666666
+                          - 166.66666666666666
+                          - 166.66666666666666
+                          - 333.3333333333333
+                          - sRGBAlpha
+                      DisabledColor:
+                        ID: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.DisabledColor.ID:0
+                        Data:
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 333.3333333333333
+                          - sRGBAlpha
+                IsPressed:
+                  ID: "?"
+                  Data: false
+                IsHovering:
+                  ID: "?"
+                  Data: false
+                HoverVibrate:
+                  ID: "?"
+                  Data: Short
+                PressVibrate:
+                  ID: "?"
+                  Data: Medium
+                ClearFocusOnPress:
+                  ID: "?"
+                  Data: true
+                PassThroughHorizontalMovement:
+                  ID: "?"
+                  Data: true
+                PassThroughVerticalMovement:
+                  ID: "?"
+                  Data: true
+                RequireLockInToPress:
+                  ID: ID:DynamicImpulseButton:Components:9:RequireLockInToPress:0
+                  Data: false
+                RequireInitialPress:
+                  ID: "?"
+                  Data: true
+                PressPoint:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                SendSlotEvents:
+                  ID: "?"
+                  Data: true
+                Pressed:
+                  ID: "?"
+                  Data:
+                    Target: null
+                Pressing:
+                  ID: "?"
+                  Data:
+                    Target: null
+                Released:
+                  ID: "?"
+                  Data:
+                    Target: null
+                HoverEnter:
+                  ID: "?"
+                  Data:
+                    Target: null
+                HoverStay:
+                  ID: "?"
+                  Data:
+                    Target: null
+                HoverLeave:
+                  ID: "?"
+                  Data:
+                    Target: null
+                __legacy_NormalColor-ID: "?"
+                __legacy_HighlightColor-ID: "?"
+                __legacy_PressColor-ID: "?"
+                __legacy_DisabledColor-ID: "?"
+                __legacy_TintColorMode-ID: "?"
+                __legacy_ColorDrive-ID: "?"
+            - Type: 10
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                Target:
+                  ID: ID:DynamicImpulseButton:Components:10:Target:0
+                  Data: null
+                ExcludeDisabled:
+                  ID: "?"
+                  Data: true
+                PressedTag:
+                  ID: ID:DynamicImpulseButton:Components:10:PressedTag:0
+                  Data: ""
+                PressingTag:
+                  ID: "?"
+                  Data: null
+                ReleasedTag:
+                  ID: "?"
+                  Data: null
+                HoverEnterTag:
+                  ID: "?"
+                  Data: null
+                HoverStayTag:
+                  ID: "?"
+                  Data: null
+                HoverLeaveTag:
+                  ID: "?"
+                  Data: null
+            - Type: 11
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:DynamicImpulseButton:Components:11:VariableName:0
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:10:Target:0
+                DefaultTarget:
+                  ID: "?"
+                  Data: null
+            - Type: 12
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:DynamicImpulseButton:Components:12:VariableName:0
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:9:BaseColor:0
+                DefaultValue:
+                  ID: ID:DynamicImpulseButton:Components:12:DefaultValue:0
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - sRGBAlpha
+            - Type: 13
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:DynamicImpulseButton:Components:13:VariableName:0
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:7:Sprite:0
+                DefaultTarget:
+                  ID: "?"
+                  Data: null
+            - Type: 14
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:DynamicImpulseButton:Components:14:VariableName:0
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:7:Material:0
+                DefaultTarget:
+                  ID: "?"
+                  Data: null
+            - Type: 12
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:DynamicImpulseButton:Components:12:VariableName:1
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.NormalColor.ID:0
+                DefaultValue:
+                  ID: "?"
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - sRGBAlpha
+            - Type: 12
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:DynamicImpulseButton:Components:12:VariableName:2
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.HighlightColor.ID:0
+                DefaultValue:
+                  ID: "?"
+                  Data:
+                    - 250
+                    - 250
+                    - 250
+                    - 333.3333333333333
+                    - sRGBAlpha
+            - Type: 12
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:DynamicImpulseButton:Components:12:VariableName:3
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.PressColor.ID:0
+                DefaultValue:
+                  ID: "?"
+                  Data:
+                    - 166.66666666666666
+                    - 166.66666666666666
+                    - 166.66666666666666
+                    - 333.3333333333333
+                    - sRGBAlpha
+            - Type: 12
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:DynamicImpulseButton:Components:12:VariableName:4
+                  Data: ""
+                Target:
+                  ID: "?"
+                  Data: ID:DynamicImpulseButton:Components:9:ColorDrivers.0.DisabledColor.ID:0
+                DefaultValue:
+                  ID: "?"
+                  Data:
+                    - 216.66666666666666
+                    - 216.66666666666666
+                    - 216.66666666666666
+                    - 333.3333333333333
+                    - sRGBAlpha
+        Children: []
+        ParentReference: ""
+    ParentReference: ""
+ParentReference: ""

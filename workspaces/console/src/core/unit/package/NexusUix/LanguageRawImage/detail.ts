@@ -1,0 +1,27 @@
+import {
+  UnitProp,
+  generateUnitConfig,
+  getMainProps,
+  getMirrorProps,
+  getWebProps,
+} from "@unispace-meteor/miragex/dist/unit/common";
+
+const detail = {
+  code: "NexusUix/LanguageRawImage",
+  propsConfig: {
+    urlEn: UnitProp.Uri(""),
+    urlJa: UnitProp.Uri(""),
+    urlKo: UnitProp.Uri(""),
+    preserveAspect: UnitProp.Boolean(false),
+    interactionTarget: UnitProp.Boolean(true),
+    styledMaterial: UnitProp.String(""),
+    styledColor: UnitProp.String(""),
+    defaultColor: UnitProp.Color([1, 1, 1, 1]),
+  },
+  children: "multi" as const,
+};
+
+export type MainProps = getMainProps<typeof detail>;
+export type MirrorProps = getMirrorProps<typeof detail>;
+export type WebProps = getWebProps<typeof detail>;
+export const unitConfig = generateUnitConfig(detail);

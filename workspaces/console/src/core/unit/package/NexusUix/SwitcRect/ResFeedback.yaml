@@ -1,0 +1,3076 @@
+Name:
+  ID: "?"
+  Data: NexusUix/SwitcRect
+Active:
+  ID: "?"
+  Data: true
+ID: "?"
+Persistent-ID: "?"
+Position:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+Rotation:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+    - 1
+Scale:
+  ID: "?"
+  Data:
+    - 1
+    - 1
+    - 1
+Tag:
+  ID: "?"
+  Data: null
+OrderOffset:
+  ID: "?"
+  Data: 0
+Components:
+  ID: "?"
+  Data:
+    - Type: 0
+      Data:
+        ID: "?"
+        persistent-ID: "?"
+        UpdateOrder:
+          ID: "?"
+          Data: 0
+        Enabled:
+          ID: "?"
+          Data: true
+        SpaceName:
+          ID: "?"
+          Data: null
+        OnlyDirectBinding:
+          ID: "?"
+          Data: false
+Children:
+  - Name:
+      ID: "?"
+      Data: DV
+    Active:
+      ID: "?"
+      Data: true
+    ID: "?"
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 1
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            VariableName:
+              ID: "?"
+              Data: Static.Ref
+            Reference:
+              ID: "?"
+              Data: ID:Ref:0
+            OverrideOnLink:
+              ID: "?"
+              Data: false
+    Children: []
+    ParentReference: ""
+  - Name:
+      ID: "?"
+      Data: Ref
+    Active:
+      ID: "?"
+      Data: true
+    ID: ID:Ref:0
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 0
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            SpaceName:
+              ID: "?"
+              Data: null
+            OnlyDirectBinding:
+              ID: "?"
+              Data: false
+    Children:
+      - Name:
+          ID: "?"
+          Data: SwitcRect
+        Active:
+          ID: "?"
+          Data: true
+        ID: ID:SwitcRect:0
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: ""
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                AnchorMin:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                AnchorMax:
+                  ID: "?"
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                OffsetMin:
+                  ID: ID:SwitcRect:Components:2:OffsetMin:0
+                  Data:
+                    - 0
+                    - 0
+                OffsetMax:
+                  ID: ID:SwitcRect:Components:2:OffsetMax:0
+                  Data:
+                    - 0
+                    - 0
+                Pivot:
+                  ID: "?"
+                  Data:
+                    - 166.66666666666666
+                    - 166.66666666666666
+        Children:
+          - Name:
+              ID: "?"
+              Data: Data
+            Active:
+              ID: "?"
+              Data: true
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 50111
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: ""
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data:
+                - Type: 3
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    Value:
+                      ID: ID:Data:Components:3:Value:0
+                      Data:
+                        - 0
+                        - 0
+                - Type: 3
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    Value:
+                      ID: ID:Data:Components:3:Value:1
+                      Data:
+                        - 0
+                        - 0
+                - Type: 4
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    Value:
+                      ID: ID:Data:Components:4:Value:0
+                      Data: 0
+            Children:
+              - Name:
+                  ID: "?"
+                  Data: Driver
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 111111
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 111
+                    - 0
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data: []
+                Children:
+                  - Name:
+                      ID: "?"
+                      Data: Smooth Lerp
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -56457777.666666664
+                        - 131544666.66666667
+                        - -63046000
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 5
+                          Data:
+                            ID: ID:Smooth Lerp:Components:5:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Input:
+                              ID: "?"
+                              Data: ID:Cast:Components:15:0
+                            Speed:
+                              ID: "?"
+                              Data: ID:float:Components:6:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: float
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -99197889
+                        - 120740889
+                        - -63996111
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - -4555.666666666667
+                        - 0
+                        - 111000
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222555.66666666
+                        - 222222111
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 6
+                          Data:
+                            ID: ID:float:Components:6:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Value:
+                              ID: "?"
+                              Data: 3333.3333333333335
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Unpack xy
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -8027555.666666667
+                        - 193699666.66666666
+                        - -69613777.66666667
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 1444.3333333333333
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222111
+                        - 222222222.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 7
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            V:
+                              ID: "?"
+                              Data: ID:INJECTED SOURCE:Components:18:0
+                            X:
+                              ID: ID:Unpack xy:Components:7:X:0
+                              Data: null
+                            Y:
+                              ID: "?"
+                              Data: null
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Unpack xy
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -6296777.666666667
+                        - 163901889
+                        - -64923333.333333336
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222555.66666666
+                        - 222222111
+                        - 222222222.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 7
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            V:
+                              ID: "?"
+                              Data: ID:INJECTED SOURCE:Components:18:1
+                            X:
+                              ID: ID:Unpack xy:Components:7:X:1
+                              Data: null
+                            Y:
+                              ID: ID:Unpack xy:Components:7:Y:1
+                              Data: null
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: "-"
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 29610000
+                        - 178439777.66666666
+                        - -66268000
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 8
+                          Data:
+                            ID: ID:-:Components:8:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            A:
+                              ID: "?"
+                              Data: ID:Unpack xy:Components:7:X:0
+                            B:
+                              ID: "?"
+                              Data: ID:Relay:Components:12:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: ÷
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 57842333.333333336
+                        - 174600333.33333334
+                        - -67325222.33333333
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 9
+                          Data:
+                            ID: ID:÷:Components:9:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            A:
+                              ID: "?"
+                              Data: ID:-:Components:8:0
+                            B:
+                              ID: "?"
+                              Data: ID:Cast_int_To_float:Components:15:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: ×
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 73192444.33333333
+                        - 124405333.33333333
+                        - -67899777.66666667
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222444.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 10
+                          Data:
+                            ID: ID:×:Components:10:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            A:
+                              ID: "?"
+                              Data: ID:÷:Components:9:0
+                            B:
+                              ID: "?"
+                              Data: ID:Smooth Lerp:Components:5:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Pack xy
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 125820666.66666667
+                        - 118371777.66666667
+                        - -69870555.66666667
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222333.33333334
+                        - 222222444.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 11
+                          Data:
+                            ID: ID:Pack xy:Components:11:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            X:
+                              ID: "?"
+                              Data: ID:Relay:Components:12:1
+                            Y:
+                              ID: "?"
+                              Data: ID:-n:Components:14:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Relay
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 9812444.333333334
+                        - 167973555.66666666
+                        - -65725222.333333336
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222555.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 12
+                          Data:
+                            ID: ID:Relay:Components:12:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Input:
+                              ID: "?"
+                              Data: ID:Unpack xy:Components:7:X:1
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: +
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 67212889
+                        - 94255333.33333333
+                        - -70190000
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - -3111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222777.66666666
+                        - 222222333.33333334
+                        - 222222444.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 13
+                          Data:
+                            ID: ID:+:Components:13:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            A:
+                              ID: "?"
+                              Data: ID:Relay:Components:12:0
+                            B:
+                              ID: "?"
+                              Data: ID:Relay:Components:12:1
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Relay
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 88482889
+                        - 121663555.66666667
+                        - -68558444.33333333
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 12
+                          Data:
+                            ID: ID:Relay:Components:12:1
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Input:
+                              ID: "?"
+                              Data: ID:×:Components:10:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: ÷
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 66615222.333333336
+                        - 67901777.66666667
+                        - -67653333.33333333
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222333.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 9
+                          Data:
+                            ID: ID:÷:Components:9:1
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            A:
+                              ID: "?"
+                              Data: ID:Unpack xy:Components:7:Y:1
+                            B:
+                              ID: "?"
+                              Data: ID:float:Components:6:1
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: float
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 20566333.333333332
+                        - 62141555.666666664
+                        - -65929333.333333336
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 6
+                          Data:
+                            ID: ID:float:Components:6:1
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Value:
+                              ID: "?"
+                              Data: 666.6666666666666
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Pack xy
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 128836444.33333333
+                        - 90668333.33333333
+                        - -69983333.33333333
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 11
+                          Data:
+                            ID: ID:Pack xy:Components:11:1
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            X:
+                              ID: "?"
+                              Data: ID:+:Components:13:0
+                            Y:
+                              ID: "?"
+                              Data: ID:Relay:Components:12:2
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Relay
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 91395666.66666667
+                        - 62483555.666666664
+                        - -68811889
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 12
+                          Data:
+                            ID: ID:Relay:Components:12:2
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Input:
+                              ID: "?"
+                              Data: ID:÷:Components:9:1
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: -n
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 103070222.33333333
+                        - 107125777.66666667
+                        - -69018666.66666667
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 14
+                          Data:
+                            ID: ID:-n:Components:14:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            N:
+                              ID: "?"
+                              Data: ID:Relay:Components:12:2
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Cast
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -76443777.66666667
+                        - 135544444.33333334
+                        - -62297111
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222223000
+                        - 222222000
+                        - 222222666.66666666
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 15
+                          Data:
+                            ID: ID:Cast:Components:15:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Input:
+                              ID: "?"
+                              Data: ID:INJECTED SOURCE:Components:20:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Driver
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 182865889
+                        - 117589222.33333333
+                        - -61217666.666666664
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 10444.333333333334
+                        - 0
+                        - 110666.66666666667
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222223111
+                        - 222222111
+                        - 222222666.66666666
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 16
+                          Data:
+                            ID: ID:Driver:Components:16:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Value:
+                              ID: "?"
+                              Data: ID:Pack xy:Components:11:0
+                        - Type: 17
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Node:
+                              ID: "?"
+                              Data: ID:Driver:Components:16:0
+                            Path:
+                              ID: "?"
+                              Data: []
+                            Drive:
+                              ID: "?"
+                              Data: ID:Button:Components:2:OffsetMin:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Driver
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 178884777.66666666
+                        - 90338666.66666667
+                        - -71434111
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 8777.666666666666
+                        - 0
+                        - 110777.66666666667
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222223111
+                        - 222222111
+                        - 222222666.66666666
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 16
+                          Data:
+                            ID: ID:Driver:Components:16:1
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Value:
+                              ID: "?"
+                              Data: ID:Pack xy:Components:11:1
+                        - Type: 17
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Node:
+                              ID: "?"
+                              Data: ID:Driver:Components:16:1
+                            Path:
+                              ID: "?"
+                              Data: []
+                            Drive:
+                              ID: "?"
+                              Data: ID:Button:Components:2:OffsetMax:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: INJECTED SOURCE
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -60126000
+                        - 197572222.33333334
+                        - -70961222.33333333
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 6222.333333333333
+                        - 0
+                        - 110889
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222111
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 18
+                          Data:
+                            ID: ID:INJECTED SOURCE:Components:18:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Source:
+                              ID: "?"
+                              Data: ID:INJECTED SOURCE:Components:19:0
+                        - Type: 19
+                          Data:
+                            ID: ID:INJECTED SOURCE:Components:19:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Reference:
+                              ID: "?"
+                              Data: ID:Data:Components:3:Value:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: INJECTED SOURCE
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -61148111
+                        - 168803111
+                        - -68006222.33333333
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 5222.333333333333
+                        - 0
+                        - 111000
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 18
+                          Data:
+                            ID: ID:INJECTED SOURCE:Components:18:1
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Source:
+                              ID: "?"
+                              Data: ID:INJECTED SOURCE:Components:19:1
+                        - Type: 19
+                          Data:
+                            ID: ID:INJECTED SOURCE:Components:19:1
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Reference:
+                              ID: "?"
+                              Data: ID:Data:Components:3:Value:1
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: INJECTED SOURCE
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -118470889
+                        - 139093444.33333334
+                        - -66284777.666666664
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - -13889
+                        - 0
+                        - 110222.33333333333
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222889
+                        - 222222000
+                        - 222222666.66666666
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 20
+                          Data:
+                            ID: ID:INJECTED SOURCE:Components:20:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Source:
+                              ID: "?"
+                              Data: ID:INJECTED SOURCE:Components:21:0
+                        - Type: 21
+                          Data:
+                            ID: ID:INJECTED SOURCE:Components:21:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Reference:
+                              ID: "?"
+                              Data: ID:Data:Components:4:Value:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: ChildrenCount
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -36867555.666666664
+                        - 115417000
+                        - -80616111
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 1111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222223111
+                        - 222222222.33333334
+                        - 222222666.66666666
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 22
+                          Data:
+                            ID: ID:ChildrenCount:Components:22:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Instance:
+                              ID: "?"
+                              Data: ID:ElementSource`1:Components:24:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: ValueDec`1
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -4420444.333333333
+                        - 115558444.33333333
+                        - -77178333.33333333
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 9333.333333333334
+                        - -333.3333333333333
+                        - 0
+                        - 110666.66666666667
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222889
+                        - 222221889
+                        - 222222555.66666666
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 23
+                          Data:
+                            ID: ID:ValueDec`1:Components:23:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            N:
+                              ID: "?"
+                              Data: ID:ChildrenCount:Components:22:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: ElementSource`1
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - -83146222.33333333
+                        - 105041666.66666667
+                        - -72633777.66666667
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2444.3333333333335
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222889
+                        - 222222000
+                        - 222222555.66666666
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 24
+                          Data:
+                            ID: ID:ElementSource`1:Components:24:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Source:
+                              ID: "?"
+                              Data: ID:ElementSource`1:Components:25:0
+                        - Type: 25
+                          Data:
+                            ID: ID:ElementSource`1:Components:25:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Reference:
+                              ID: "?"
+                              Data: ID:HorizontalLayout:0
+                    Children: []
+                    ParentReference: ""
+                  - Name:
+                      ID: "?"
+                      Data: Cast_int_To_float
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 37856333.333333336
+                        - 170433444.33333334
+                        - -66576333.333333336
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 2111
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 222222666.66666666
+                        - 222222222.33333334
+                        - 222222333.33333334
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 15
+                          Data:
+                            ID: ID:Cast_int_To_float:Components:15:0
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Input:
+                              ID: "?"
+                              Data: ID:ValueDec`1:Components:23:0
+                    Children: []
+                    ParentReference: ""
+                ParentReference: ""
+            ParentReference: ""
+          - Name:
+              ID: "?"
+              Data: HorizontalLayout
+            Active:
+              ID: "?"
+              Data: true
+            ID: ID:HorizontalLayout:0
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - -327444.3333333333
+                - 40222.333333333336
+                - -75666.66666666667
+            Rotation:
+              ID: "?"
+              Data:
+                - 111
+                - -62555.666666666664
+                - 0
+                - 91777.66666666667
+            Scale:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data:
+                - Type: 2
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    AnchorMin:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                    AnchorMax:
+                      ID: "?"
+                      Data:
+                        - 333.3333333333333
+                        - 333.3333333333333
+                    OffsetMin:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                    OffsetMax:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                    Pivot:
+                      ID: "?"
+                      Data:
+                        - 166.66666666666666
+                        - 166.66666666666666
+                - Type: 26
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    PaddingTop:
+                      ID: "?"
+                      Data: 0
+                    PaddingRight:
+                      ID: "?"
+                      Data: 0
+                    PaddingBottom:
+                      ID: "?"
+                      Data: 0
+                    PaddingLeft:
+                      ID: "?"
+                      Data: 0
+                    Spacing:
+                      ID: "?"
+                      Data: 0
+                    HorizontalAlign:
+                      ID: "?"
+                      Data: Justify
+                    VerticalAlign:
+                      ID: "?"
+                      Data: Middle
+                    ForceExpandWidth:
+                      ID: "?"
+                      Data: false
+                    ForceExpandHeight:
+                      ID: "?"
+                      Data: false
+                - Type: 27
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    TargetSize:
+                      ID: "?"
+                      Data: ID:Data:Components:3:Value:0
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 333.3333333333333
+                        - 333.3333333333333
+            Children: []
+            ParentReference: ""
+          - Name:
+              ID: "?"
+              Data: Button
+            Active:
+              ID: "?"
+              Data: true
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: ""
+            OrderOffset:
+              ID: "?"
+              Data: 333000
+            Components:
+              ID: "?"
+              Data:
+                - Type: 28
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: ID:Button:Components:28:VariableName:0
+                      Data: ""
+                    Target:
+                      ID: "?"
+                      Data: ID:Button:Components:29:Material:0
+                    DefaultTarget:
+                      ID: "?"
+                      Data: null
+                - Type: 29
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    Sprite:
+                      ID: ID:Button:Components:29:Sprite:0
+                      Data: null
+                    Material:
+                      ID: ID:Button:Components:29:Material:0
+                      Data: null
+                    PreserveAspect:
+                      ID: ID:Button:Components:29:PreserveAspect:0
+                      Data: true
+                    NineSliceSizing:
+                      ID: ID:Button:Components:29:NineSliceSizing:0
+                      Data: RectHeight
+                    FlipHorizontally:
+                      ID: "?"
+                      Data: false
+                    FlipVertically:
+                      ID: "?"
+                      Data: false
+                    InteractionTarget:
+                      ID: "?"
+                      Data: true
+                    FillRect:
+                      ID: "?"
+                      Data:
+                        X: 0
+                        Y: 0
+                        Width: 333.3333333333333
+                        Height: 333.3333333333333
+                    TintTopLeft:
+                      ID: ID:Button:Components:29:TintTopLeft:0
+                      Data:
+                        - 2.3333333333333335
+                        - 132.33333333333334
+                        - 266.3333333333333
+                        - 333.3333333333333
+                        - Linear
+                    TintTopRight:
+                      ID: ID:Button:Components:29:TintTopRight:0
+                      Data:
+                        - 26
+                        - 39
+                        - 256
+                        - 333.3333333333333
+                        - Linear
+                    TintBottomRight:
+                      ID: ID:Button:Components:29:TintBottomRight:0
+                      Data:
+                        - 33.333333333333336
+                        - 28
+                        - 256
+                        - 333.3333333333333
+                        - Linear
+                    TintBottomLeft:
+                      ID: ID:Button:Components:29:TintBottomLeft:0
+                      Data:
+                        - 4.666666666666667
+                        - 110.66666666666667
+                        - 266.3333333333333
+                        - 333.3333333333333
+                        - Linear
+                    __legacyZWrite-ID: "?"
+                - Type: 2
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    AnchorMin:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 166.66666666666666
+                    AnchorMax:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 166.66666666666666
+                    OffsetMin:
+                      ID: ID:Button:Components:2:OffsetMin:0
+                      Data:
+                        - 0
+                        - 0
+                    OffsetMax:
+                      ID: ID:Button:Components:2:OffsetMax:0
+                      Data:
+                        - 0
+                        - 0
+                    Pivot:
+                      ID: "?"
+                      Data:
+                        - 166.66666666666666
+                        - 166.66666666666666
+                - Type: 30
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: ID:Button:Components:30:VariableName:0
+                      Data: ""
+                    Target:
+                      ID: "?"
+                      Data: ID:Button:Components:29:Sprite:0
+                    DefaultTarget:
+                      ID: "?"
+                      Data: null
+                - Type: 31
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: "?"
+                      Data: ""
+                    Target:
+                      ID: "?"
+                      Data: null
+                    DefaultValue:
+                      ID: "?"
+                      Data:
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - sRGBAlpha
+                - Type: 31
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: "?"
+                      Data: ""
+                    Target:
+                      ID: "?"
+                      Data: null
+                    DefaultValue:
+                      ID: "?"
+                      Data:
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - sRGBAlpha
+                - Type: 31
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: "?"
+                      Data: ""
+                    Target:
+                      ID: "?"
+                      Data: null
+                    DefaultValue:
+                      ID: "?"
+                      Data:
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - sRGBAlpha
+                - Type: 31
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: "?"
+                      Data: ""
+                    Target:
+                      ID: "?"
+                      Data: null
+                    DefaultValue:
+                      ID: "?"
+                      Data:
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - 333.3333333333333
+                        - sRGBAlpha
+                - Type: 32
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    BaseColor:
+                      ID: "?"
+                      Data:
+                        - 27.333333333333332
+                        - 221
+                        - 302
+                        - 333.3333333333333
+                        - sRGB
+                    ColorDrivers:
+                      ID: "?"
+                      Data:
+                        - ID: "?"
+                          ColorDrive:
+                            ID: "?"
+                            Data: ID:Button:Components:29:TintTopLeft:0
+                          TintColorMode:
+                            ID: "?"
+                            Data: Direct
+                          NormalColor:
+                            ID: "?"
+                            Data:
+                              - 2.3333333333333335
+                              - 132.33333333333334
+                              - 266.3333333333333
+                              - 333.3333333333333
+                              - Linear
+                          HighlightColor:
+                            ID: "?"
+                            Data:
+                              - 3
+                              - 158.66666666666666
+                              - 319.6666666666667
+                              - 333.3333333333333
+                              - Linear
+                          PressColor:
+                            ID: "?"
+                            Data:
+                              - 3.6666666666666665
+                              - 198.33333333333334
+                              - 399.6666666666667
+                              - 333.3333333333333
+                              - Linear
+                          DisabledColor:
+                            ID: "?"
+                            Data:
+                              - 216.66666666666666
+                              - 216.66666666666666
+                              - 216.66666666666666
+                              - 333.3333333333333
+                              - sRGB
+                        - ID: "?"
+                          ColorDrive:
+                            ID: "?"
+                            Data: ID:Button:Components:29:TintTopRight:0
+                          TintColorMode:
+                            ID: "?"
+                            Data: Direct
+                          NormalColor:
+                            ID: "?"
+                            Data:
+                              - 26
+                              - 39
+                              - 256
+                              - 333.3333333333333
+                              - Linear
+                          HighlightColor:
+                            ID: "?"
+                            Data:
+                              - 34
+                              - 50.666666666666664
+                              - 333
+                              - 333.3333333333333
+                              - Linear
+                          PressColor:
+                            ID: "?"
+                            Data:
+                              - 41.666666666666664
+                              - 62.333333333333336
+                              - 409.6666666666667
+                              - 333.3333333333333
+                              - Linear
+                          DisabledColor:
+                            ID: "?"
+                            Data:
+                              - 216.66666666666666
+                              - 216.66666666666666
+                              - 216.66666666666666
+                              - 333.3333333333333
+                              - sRGB
+                        - ID: "?"
+                          ColorDrive:
+                            ID: "?"
+                            Data: ID:Button:Components:29:TintBottomRight:0
+                          TintColorMode:
+                            ID: "?"
+                            Data: Direct
+                          NormalColor:
+                            ID: "?"
+                            Data:
+                              - 33.333333333333336
+                              - 28
+                              - 256
+                              - 333.3333333333333
+                              - Linear
+                          HighlightColor:
+                            ID: "?"
+                            Data:
+                              - 43.333333333333336
+                              - 36.666666666666664
+                              - 333
+                              - 333.3333333333333
+                              - Linear
+                          PressColor:
+                            ID: "?"
+                            Data:
+                              - 53.333333333333336
+                              - 45
+                              - 409.6666666666667
+                              - 333.3333333333333
+                              - Linear
+                          DisabledColor:
+                            ID: "?"
+                            Data:
+                              - 216.66666666666666
+                              - 216.66666666666666
+                              - 216.66666666666666
+                              - 333.3333333333333
+                              - sRGB
+                        - ID: "?"
+                          ColorDrive:
+                            ID: "?"
+                            Data: ID:Button:Components:29:TintBottomLeft:0
+                          TintColorMode:
+                            ID: "?"
+                            Data: Direct
+                          NormalColor:
+                            ID: "?"
+                            Data:
+                              - 4.666666666666667
+                              - 110.66666666666667
+                              - 266.3333333333333
+                              - 333.3333333333333
+                              - Linear
+                          HighlightColor:
+                            ID: "?"
+                            Data:
+                              - 5.333333333333333
+                              - 133
+                              - 319.6666666666667
+                              - 333.3333333333333
+                              - Linear
+                          PressColor:
+                            ID: "?"
+                            Data:
+                              - 6.333333333333333
+                              - 155
+                              - 373
+                              - 333.3333333333333
+                              - Linear
+                          DisabledColor:
+                            ID: "?"
+                            Data:
+                              - 216.66666666666666
+                              - 216.66666666666666
+                              - 216.66666666666666
+                              - 333.3333333333333
+                              - sRGB
+                    IsPressed:
+                      ID: "?"
+                      Data: false
+                    IsHovering:
+                      ID: "?"
+                      Data: false
+                    HoverVibrate:
+                      ID: "?"
+                      Data: Short
+                    PressVibrate:
+                      ID: "?"
+                      Data: Medium
+                    ClearFocusOnPress:
+                      ID: "?"
+                      Data: true
+                    PassThroughHorizontalMovement:
+                      ID: "?"
+                      Data: true
+                    PassThroughVerticalMovement:
+                      ID: "?"
+                      Data: true
+                    RequireLockInToPress:
+                      ID: "?"
+                      Data: false
+                    RequireInitialPress:
+                      ID: "?"
+                      Data: true
+                    PressPoint:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                    SendSlotEvents:
+                      ID: "?"
+                      Data: true
+                    Pressed:
+                      ID: "?"
+                      Data:
+                        Target: null
+                    Pressing:
+                      ID: "?"
+                      Data:
+                        Target: null
+                    Released:
+                      ID: "?"
+                      Data:
+                        Target: null
+                    HoverEnter:
+                      ID: "?"
+                      Data:
+                        Target: null
+                    HoverStay:
+                      ID: "?"
+                      Data:
+                        Target: null
+                    HoverLeave:
+                      ID: "?"
+                      Data:
+                        Target: null
+                    __legacy_NormalColor-ID: "?"
+                    __legacy_HighlightColor-ID: "?"
+                    __legacy_PressColor-ID: "?"
+                    __legacy_DisabledColor-ID: "?"
+                    __legacy_TintColorMode-ID: "?"
+                    __legacy_ColorDrive-ID: "?"
+            Children:
+              - Name:
+                  ID: "?"
+                  Data: Shadow
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: ID:Shadow:0
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 111111
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: -3333000
+                Components:
+                  ID: "?"
+                  Data:
+                    - Type: 2
+                      Data:
+                        ID: "?"
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        AnchorMin:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 0
+                        AnchorMax:
+                          ID: "?"
+                          Data:
+                            - 333.3333333333333
+                            - 333.3333333333333
+                        OffsetMin:
+                          ID: ID:Shadow:Components:2:OffsetMin:0
+                          Data:
+                            - -13000
+                            - -14000
+                        OffsetMax:
+                          ID: ID:Shadow:Components:2:OffsetMax:0
+                          Data:
+                            - 13000
+                            - 11000
+                        Pivot:
+                          ID: "?"
+                          Data:
+                            - 166.66666666666666
+                            - 166.66666666666666
+                    - Type: 29
+                      Data:
+                        ID: "?"
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        Sprite:
+                          ID: ID:Shadow:Components:29:Sprite:0
+                          Data: null
+                        Material:
+                          ID: ID:Shadow:Components:29:Material:0
+                          Data: null
+                        PreserveAspect:
+                          ID: "?"
+                          Data: true
+                        NineSliceSizing:
+                          ID: "?"
+                          Data: RectHeight
+                        FlipHorizontally:
+                          ID: "?"
+                          Data: false
+                        FlipVertically:
+                          ID: "?"
+                          Data: false
+                        InteractionTarget:
+                          ID: "?"
+                          Data: true
+                        FillRect:
+                          ID: "?"
+                          Data:
+                            X: 0
+                            Y: 0
+                            Width: 333.3333333333333
+                            Height: 333.3333333333333
+                        TintTopLeft:
+                          ID: "?"
+                          Data:
+                            - 2.3333333333333335
+                            - 132.33333333333334
+                            - 266.3333333333333
+                            - 233.33333333333334
+                            - Linear
+                        TintTopRight:
+                          ID: "?"
+                          Data:
+                            - 26
+                            - 39
+                            - 256
+                            - 233.33333333333334
+                            - Linear
+                        TintBottomRight:
+                          ID: "?"
+                          Data:
+                            - 33.333333333333336
+                            - 28
+                            - 256
+                            - 233.33333333333334
+                            - Linear
+                        TintBottomLeft:
+                          ID: "?"
+                          Data:
+                            - 4.666666666666667
+                            - 110.66666666666667
+                            - 266.3333333333333
+                            - 233.33333333333334
+                            - Linear
+                        __legacyZWrite-ID: "?"
+                    - Type: 30
+                      Data:
+                        ID: "?"
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        VariableName:
+                          ID: ID:Shadow:Components:30:VariableName:0
+                          Data: ""
+                        Target:
+                          ID: "?"
+                          Data: ID:Shadow:Components:29:Sprite:0
+                        DefaultTarget:
+                          ID: "?"
+                          Data: null
+                    - Type: 28
+                      Data:
+                        ID: "?"
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        VariableName:
+                          ID: ID:Shadow:Components:28:VariableName:0
+                          Data: ""
+                        Target:
+                          ID: "?"
+                          Data: ID:Shadow:Components:29:Material:0
+                        DefaultTarget:
+                          ID: "?"
+                          Data: null
+                    - Type: 33
+                      Data:
+                        ID: "?"
+                        persistent-ID: "?"
+                        UpdateOrder:
+                          ID: "?"
+                          Data: 0
+                        Enabled:
+                          ID: "?"
+                          Data: true
+                        _worker:
+                          ID: "?"
+                          Data: ID:Shadow:0
+                        _gizmo:
+                          ID: "?"
+                          Data: null
+                        _type:
+                          ID: "?"
+                          Data: 111000
+                Children: []
+                ParentReference: ""
+            ParentReference: ""
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Static
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Root
+                Reference:
+                  ID: "?"
+                  Data: ID:Ref:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Main
+                Reference:
+                  ID: "?"
+                  Data: ID:SwitcRect:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.ChildrenParent
+                Reference:
+                  ID: "?"
+                  Data: ID:HorizontalLayout:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Props
+        Active:
+          ID: "?"
+          Data: true
+        ID: ID:DV/Props:0
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 34
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.switchState
+                TargetField:
+                  ID: "?"
+                  Data: ID:Data:Components:4:Value:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 35
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.valueItemFloat
+                TargetField:
+                  ID: "?"
+                  Data: ID:Data:Components:3:Value:1
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 35
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.offsetMin
+                TargetField:
+                  ID: "?"
+                  Data: ID:SwitcRect:Components:2:OffsetMin:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 35
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.offsetMax
+                TargetField:
+                  ID: "?"
+                  Data: ID:SwitcRect:Components:2:OffsetMax:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 35
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.shadowOffsetMin
+                TargetField:
+                  ID: "?"
+                  Data: ID:Shadow:Components:2:OffsetMin:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 35
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.shadowOffsetMax
+                TargetField:
+                  ID: "?"
+                  Data: ID:Shadow:Components:2:OffsetMax:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 36
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledSprite
+                TargetField:
+                  ID: "?"
+                  Data: ID:Button:Components:30:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 36
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledMaterial
+                TargetField:
+                  ID: "?"
+                  Data: ID:Button:Components:28:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 36
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledSpriteShadow
+                TargetField:
+                  ID: "?"
+                  Data: ID:Shadow:Components:30:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 36
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledMaterialShadow
+                TargetField:
+                  ID: "?"
+                  Data: ID:Shadow:Components:28:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 36
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledColor
+                TargetField:
+                  ID: "?"
+                  Data: null
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 37
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.defaultColor
+                TargetField:
+                  ID: "?"
+                  Data: null
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 38
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.nineSliceSizing
+                TargetField:
+                  ID: "?"
+                  Data: ID:Button:Components:29:NineSliceSizing:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 39
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.preserveAspect
+                TargetField:
+                  ID: "?"
+                  Data: ID:Button:Components:29:PreserveAspect:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 33
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                _worker:
+                  ID: "?"
+                  Data: ID:DV/Props:0
+                _gizmo:
+                  ID: "?"
+                  Data: null
+                _type:
+                  ID: "?"
+                  Data: 111000
+        Children: []
+        ParentReference: ""
+    ParentReference: ""
+ParentReference: ""
