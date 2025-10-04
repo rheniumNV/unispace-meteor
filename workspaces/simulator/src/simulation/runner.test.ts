@@ -19,7 +19,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 20, // 20m径
-					density_kg_m3: 3300, // 石質隕石
+					mass_kg: 138_230_077, // 質量 [kg]（直径20m、密度3300kg/m³想定）
 					strength_mpa: 10, // 10 MPa
 				},
 				environment: {
@@ -44,7 +44,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 20,
-					density_kg_m3: 3300,
+					mass_kg: 138_230_077, // 質量 [kg]（直径20m、密度3300kg/m³想定）
 					strength_mpa: 10,
 				},
 				environment: {
@@ -70,7 +70,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 20, // 20m径
-					density_kg_m3: 3300, // 石質隕石
+					mass_kg: 138_230_077, // 質量 [kg]（直径20m、密度3300kg/m³想定）
 					strength_mpa: 10, // 10 MPa（比較的脆い）
 				},
 				environment: {
@@ -134,7 +134,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 1, // 1m径
-					density_kg_m3: 3000,
+					mass_kg: 1_570_796, // 質量 [kg]（直径10m、密度3000kg/m³想定）
 					strength_mpa: 5,
 				},
 				environment: {
@@ -165,7 +165,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 50, // 50m径
-					density_kg_m3: 3500, // 鉄質隕石
+					mass_kg: 229_868_988_230, // 質量 [kg]（直径50m、密度3500kg/m³想定）
 					strength_mpa: 100, // 非常に強い
 				},
 				environment: {
@@ -198,7 +198,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 30,
-					density_kg_m3: 3200,
+					mass_kg: 452_389_342, // 質量 [kg]（直径30m、密度3200kg/m³想定）
 					strength_mpa: 20,
 				},
 				environment: {
@@ -233,7 +233,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 10,
-					density_kg_m3: 3000,
+					mass_kg: 1_570_796, // 質量 [kg]（直径10m、密度3000kg/m³想定）
 					strength_mpa: 10,
 				},
 				environment: {
@@ -270,7 +270,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 10,
-					density_kg_m3: 3000,
+					mass_kg: 1_570_796, // 質量 [kg]（直径10m、密度3000kg/m³想定）
 					strength_mpa: 10,
 				},
 				environment: {
@@ -307,7 +307,7 @@ describe("シミュレーション統合テスト", () => {
 				},
 				meteoroid: {
 					diameter_m: 10,
-					density_kg_m3: 3000,
+					mass_kg: 1_570_796, // 質量 [kg]（直径10m、密度3000kg/m³想定）
 					strength_mpa: 10,
 				},
 				environment: {

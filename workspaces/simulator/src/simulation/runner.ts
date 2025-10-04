@@ -13,6 +13,7 @@ import {
 	ATMOSPHERE_SCALE_HEIGHT_M,
 	DEFAULT_BLAST_THRESHOLDS_KPA,
 	DEFAULT_SEISMIC_EFFICIENCY,
+	DEFAULT_STRENGTH_MPA,
 	MEGATON_TNT_JOULE,
 	SEA_LEVEL_DENSITY_KG_M3,
 	STANDARD_DRAG_COEFFICIENT,
@@ -42,12 +43,16 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const radius_m = meteoroid.diameter_m / 2;
 	const area_m2 = Math.PI * radius_m * radius_m;
 
-	// 初期質量を計算
-	const volume_m3 = (4 / 3) * Math.PI * radius_m * radius_m * radius_m;
-	const m0_kg = meteoroid.density_kg_m3 * volume_m3;
+	// 初期質量を取得
+	const m0_kg = meteoroid.mass_kg;
 
-	// 強度をPaに変換
-	const strength_pa = meteoroid.strength_mpa * 1e6;
+	// 密度を計算（質量と体積から）
+	const volume_m3 = (4 / 3) * Math.PI * radius_m * radius_m * radius_m;
+	const density_kg_m3 = m0_kg / volume_m3;
+
+	// 強度を取得（meteoroidプロパティまたはデフォルト値）
+	const strength_mpa = meteoroid.strength_mpa ?? DEFAULT_STRENGTH_MPA;
+	const strength_pa = strength_mpa * 1e6;
 
 	// 地表密度（簡易的に）
 	const target_density_kg_m3 = environment.surface === "water" ? 1000 : 2500;
@@ -66,7 +71,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 		ablation_coeff: model?.ablation_coeff,
 		strength_pa,
 		surface: environment.surface,
-		density_kg_m3: meteoroid.density_kg_m3,
+		density_kg_m3,
 		seismic_efficiency,
 		blast_thresholds_kpa: [...blast_thresholds_kpa],
 	};
@@ -100,7 +105,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const E_mt_tnt = E_joule / MEGATON_TNT_JOULE;
 
 	// 空中爆発の検出
-	const airburstResult = Breakup.detectAirburst(samples, meteoroid.strength_mpa);
+	const airburstResult = Breakup.detectAirburst(samples, strength_mpa);
 	if (R.isError(airburstResult)) {
 		return airburstResult;
 	}
@@ -134,7 +139,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 
 			const craterResult = Impact.calculateCrater(
 				meteoroid.diameter_m,
-				meteoroid.density_kg_m3,
+				density_kg_m3,
 				impact_v_mag,
 				impact_angle_deg,
 				target_density_kg_m3,

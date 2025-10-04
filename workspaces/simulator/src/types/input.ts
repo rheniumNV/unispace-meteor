@@ -19,10 +19,10 @@ export interface DiscoveryInput {
 export interface MeteoroidProperties {
 	/** 直径 [m] */
 	readonly diameter_m: number;
-	/** 密度 [kg/m³] */
-	readonly density_kg_m3: number;
-	/** 強度 [MPa] */
-	readonly strength_mpa: number;
+	/** 質量 [kg] */
+	readonly mass_kg: number;
+	/** 強度 [MPa] (省略可、デフォルト: 5 MPa) */
+	readonly strength_mpa?: number;
 }
 
 /** 環境パラメータ */
