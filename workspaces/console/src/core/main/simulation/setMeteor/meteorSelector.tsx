@@ -13,6 +13,7 @@ type Meteor = {
   name: string;
   size: number;
   mass: number;
+  visualIndex: number;
 };
 
 const meteorList: Meteor[] = [
@@ -20,16 +21,19 @@ const meteorList: Meteor[] = [
     name: "Meteor 1",
     size: 3000,
     mass: 100000,
+    visualIndex: 0,
   },
   {
     name: "Meteor 2",
     size: 30000,
     mass: 2000000,
+    visualIndex: 1,
   },
   {
     name: "Meteor 3",
     size: 300000,
     mass: 30000000,
+    visualIndex: 2,
   },
 ];
 
@@ -93,10 +97,11 @@ export const MeteorSelector = () => {
   const selectMeteor = useCallback(
     (meteor: Meteor) => {
       dispatch({
-        type: "SELECT_METEOR",
+        type: "UPDATE_METEOR",
         meteor: {
           mass: meteor.mass,
           size: meteor.size,
+          visualIndex: meteor.visualIndex,
         },
       });
     },

@@ -3,7 +3,7 @@ import { MeteorSetterV2 } from "../../../lib/meteorSetterV2";
 import { useAppContext, type SimulationModeSetMeteor } from "../../appContext";
 import { useCallback, useEffect, useMemo } from "react";
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
-import { Earth, Line } from "../../../unit/package/Meteor/main";
+import { Earth, Line, MeteorVisual } from "../../../unit/package/Meteor/main";
 import { simulateMeteorImpact } from "@unispace-meteor/simulator/dist/main";
 import { R } from "@mobily/ts-belt";
 import { SIMULATION_SCALE, SIMULATION_POWER_SCALE } from "../../constant";
@@ -101,8 +101,10 @@ export const SetMeteor = (props: {
   const onChangePosition = useCallback(
     (_env: FunctionEnv, position: [number, number, number]) => {
       dispatch({
-        type: "UPDATE_METEOR_POSITION",
-        position,
+        type: "UPDATE_METEOR",
+        meteor: {
+          position,
+        },
       });
     },
     [dispatch],
@@ -111,8 +113,10 @@ export const SetMeteor = (props: {
   const onChangePower = useCallback(
     (_env: FunctionEnv, power: [number, number, number]) => {
       dispatch({
-        type: "UPDATE_METEOR_POWER",
-        power,
+        type: "UPDATE_METEOR",
+        meteor: {
+          power,
+        },
       });
     },
     [dispatch],
@@ -127,6 +131,10 @@ export const SetMeteor = (props: {
         onChangePosition={onChangePosition}
         onChangePower={onChangePower}
       >
+        <MeteorVisual
+          scale={[0.1, 0.1, 0.1]}
+          meteorIndex={props.simulationState.meteor.visualIndex}
+        />
         <MeteorSelector />
       </MeteorSetterV2>
       {meteorLinePoints.map((line, index) => (

@@ -4,7 +4,7 @@ Name:
 Active:
   ID: "?"
   Data: true
-ID: ID:Meteor/Line:0
+ID: "?"
 Persistent-ID: "?"
 Position:
   ID: "?"
@@ -50,25 +50,6 @@ Components:
         OnlyDirectBinding:
           ID: "?"
           Data: false
-    - Type: 1
-      Data:
-        ID: "?"
-        persistent-ID: "?"
-        UpdateOrder:
-          ID: "?"
-          Data: 0
-        Enabled:
-          ID: "?"
-          Data: true
-        _worker:
-          ID: "?"
-          Data: ID:Meteor/Line:0
-        _gizmo:
-          ID: "?"
-          Data: null
-        _type:
-          ID: "?"
-          Data: 128333.33333333333
 Children:
   - Name:
       ID: "?"
@@ -106,7 +87,7 @@ Children:
     Components:
       ID: "?"
       Data:
-        - Type: 2
+        - Type: 1
           Data:
             ID: "?"
             persistent-ID: "?"
@@ -216,7 +197,7 @@ Children:
         Components:
           ID: "?"
           Data:
-            - Type: 3
+            - Type: 2
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -228,7 +209,7 @@ Children:
                   Data: true
                 Mesh:
                   ID: "?"
-                  Data: ID:Line:Components:4:0
+                  Data: ID:Line:Components:3:0
                 Materials:
                   ID: "?"
                   Data:
@@ -246,9 +227,9 @@ Children:
                 SortingOrder:
                   ID: "?"
                   Data: 0
-            - Type: 4
+            - Type: 3
               Data:
-                ID: ID:Line:Components:4:0
+                ID: ID:Line:Components:3:0
                 persistent-ID: "?"
                 UpdateOrder:
                   ID: "?"
@@ -280,13 +261,13 @@ Children:
                   ID: "?"
                   Data: 3.3333333333333335
                 PointA:
-                  ID: ID:Line:Components:4:PointA:0
+                  ID: ID:Line:Components:3:PointA:0
                   Data:
                     - 0
                     - 0
                     - 0
                 PointB:
-                  ID: ID:Line:Components:4:PointB:0
+                  ID: ID:Line:Components:3:PointB:0
                   Data:
                     - 0
                     - 0
@@ -338,7 +319,7 @@ Children:
         Components:
           ID: "?"
           Data:
-            - Type: 2
+            - Type: 1
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -357,7 +338,7 @@ Children:
                 OverrideOnLink:
                   ID: "?"
                   Data: false
-            - Type: 2
+            - Type: 1
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -376,7 +357,7 @@ Children:
                 OverrideOnLink:
                   ID: "?"
                   Data: false
-            - Type: 2
+            - Type: 1
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -433,7 +414,7 @@ Children:
         Components:
           ID: "?"
           Data:
-            - Type: 5
+            - Type: 4
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -448,11 +429,11 @@ Children:
                   Data: Props.start
                 TargetField:
                   ID: "?"
-                  Data: ID:Line:Components:4:PointA:0
+                  Data: ID:Line:Components:3:PointA:0
                 OverrideOnLink:
                   ID: "?"
                   Data: false
-            - Type: 5
+            - Type: 4
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -467,7 +448,7 @@ Children:
                   Data: Props.end
                 TargetField:
                   ID: "?"
-                  Data: ID:Line:Components:4:PointB:0
+                  Data: ID:Line:Components:3:PointB:0
                 OverrideOnLink:
                   ID: "?"
                   Data: false

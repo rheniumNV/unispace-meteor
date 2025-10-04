@@ -1,5 +1,4 @@
 import { useAppContext } from "../appContext";
-import { SelectMeteor } from "./selectMeteor";
 import { SetMeteor } from "./setMeteor";
 
 export const Simulation = () => {

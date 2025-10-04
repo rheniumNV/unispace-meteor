@@ -1,0 +1,967 @@
+Name:
+  ID: "?"
+  Data: Meteor/MeteorVisual
+Active:
+  ID: "?"
+  Data: true
+ID: "?"
+Persistent-ID: "?"
+Position:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+Rotation:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+    - 1
+Scale:
+  ID: "?"
+  Data:
+    - 1
+    - 1
+    - 1
+Tag:
+  ID: "?"
+  Data: null
+OrderOffset:
+  ID: "?"
+  Data: 0
+Components:
+  ID: "?"
+  Data:
+    - Type: 0
+      Data:
+        ID: "?"
+        persistent-ID: "?"
+        UpdateOrder:
+          ID: "?"
+          Data: 0
+        Enabled:
+          ID: "?"
+          Data: true
+        SpaceName:
+          ID: "?"
+          Data: null
+        OnlyDirectBinding:
+          ID: "?"
+          Data: false
+Children:
+  - Name:
+      ID: "?"
+      Data: DV
+    Active:
+      ID: "?"
+      Data: true
+    ID: "?"
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 1
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            VariableName:
+              ID: "?"
+              Data: Static.Ref
+            Reference:
+              ID: "?"
+              Data: ID:Ref:0
+            OverrideOnLink:
+              ID: "?"
+              Data: false
+    Children: []
+    ParentReference: ""
+  - Name:
+      ID: "?"
+      Data: Ref
+    Active:
+      ID: "?"
+      Data: true
+    ID: ID:Ref:0
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 0
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            SpaceName:
+              ID: "?"
+              Data: null
+            OnlyDirectBinding:
+              ID: "?"
+              Data: false
+    Children:
+      - Name:
+          ID: "?"
+          Data: MeteorVisual
+        Active:
+          ID: "?"
+          Data: true
+        ID: ID:MeteorVisual:0
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: ID:MeteorVisual:Tag:3
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: ID:MeteorVisual:Tag:4
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: ""
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                AutoAddChildren:
+                  ID: "?"
+                  Data: false
+                AutoAddIgnoreTags:
+                  ID: "?"
+                  Data: []
+                Targets:
+                  ID: "?"
+                  Data:
+                    - ID: "?"
+                      Data: ID:Chelyabinsk.obj:Tag:8
+                    - ID: "?"
+                      Data: ID:PeekskillMeteorite.obj:Tag:8
+                    - ID: "?"
+                      Data: ID:PeekskillMeteorite.obj:Tag:15
+                ActiveIndex:
+                  ID: ID:MeteorVisual:Components:2:ActiveIndex:0
+                  Data: 0
+                ActivationMode:
+                  ID: "?"
+                  Data: AtIndexOnly
+        Children:
+          - Name:
+              ID: "?"
+              Data: Chelyabinsk.obj
+            Active:
+              ID: ID:Chelyabinsk.obj:Tag:8
+              Data: true
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data: []
+            Children:
+              - Name:
+                  ID: "?"
+                  Data: Chelyabinsk.obj
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 111111
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data: []
+                Children:
+                  - Name:
+                      ID: "?"
+                      Data: Cube
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                        - 0
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 111111
+                        - 111111
+                        - 111111
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 3
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Mesh:
+                              ID: "?"
+                              Data: ID:Assets:15:ID:1
+                            Materials:
+                              ID: "?"
+                              Data:
+                                - ID: "?"
+                                  Data: ID:Assets:14:ID:3
+                            MaterialPropertyBlocks:
+                              ID: "?"
+                              Data: []
+                            ShadowCastMode:
+                              ID: "?"
+                              Data: On
+                            MotionVectorMode:
+                              ID: "?"
+                              Data: Object
+                            SortingOrder:
+                              ID: "?"
+                              Data: 0
+                        - Type: 4
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 333333333.3333333
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Offset:
+                              ID: "?"
+                              Data:
+                                - 0
+                                - 0
+                                - 0
+                            Type:
+                              ID: "?"
+                              Data: NoCollision
+                            Mass:
+                              ID: "?"
+                              Data: 333.3333333333333
+                            CharacterCollider:
+                              ID: "?"
+                              Data: false
+                            IgnoreRaycasts:
+                              ID: "?"
+                              Data: false
+                            Mesh:
+                              ID: "?"
+                              Data: ID:Assets:15:ID:1
+                            Sidedness:
+                              ID: "?"
+                              Data: Front
+                            ActualSpeculativeMargin:
+                              ID: "?"
+                              Data: null
+                    Children: []
+                    ParentReference: ""
+                ParentReference: ""
+            ParentReference: ""
+          - Name:
+              ID: "?"
+              Data: PeekskillMeteorite.obj
+            Active:
+              ID: ID:PeekskillMeteorite.obj:Tag:8
+              Data: false
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data: []
+            Children:
+              - Name:
+                  ID: "?"
+                  Data: PeekskillMeteorite.obj
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 111111
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data: []
+                Children:
+                  - Name:
+                      ID: "?"
+                      Data: Cube.001
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                        - 0
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 111111
+                        - 111111
+                        - 111111
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 3
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Mesh:
+                              ID: "?"
+                              Data: ID:Assets:15:ID:2
+                            Materials:
+                              ID: "?"
+                              Data:
+                                - ID: "?"
+                                  Data: ID:Assets:14:ID:4
+                            MaterialPropertyBlocks:
+                              ID: "?"
+                              Data: []
+                            ShadowCastMode:
+                              ID: "?"
+                              Data: On
+                            MotionVectorMode:
+                              ID: "?"
+                              Data: Object
+                            SortingOrder:
+                              ID: "?"
+                              Data: 0
+                        - Type: 4
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 333333333.3333333
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Offset:
+                              ID: "?"
+                              Data:
+                                - 0
+                                - 0
+                                - 0
+                            Type:
+                              ID: "?"
+                              Data: NoCollision
+                            Mass:
+                              ID: "?"
+                              Data: 333.3333333333333
+                            CharacterCollider:
+                              ID: "?"
+                              Data: false
+                            IgnoreRaycasts:
+                              ID: "?"
+                              Data: false
+                            Mesh:
+                              ID: "?"
+                              Data: ID:Assets:15:ID:2
+                            Sidedness:
+                              ID: "?"
+                              Data: Front
+                            ActualSpeculativeMargin:
+                              ID: "?"
+                              Data: null
+                    Children: []
+                    ParentReference: ""
+                ParentReference: ""
+            ParentReference: ""
+          - Name:
+              ID: "?"
+              Data: PeekskillMeteorite.obj
+            Active:
+              ID: ID:PeekskillMeteorite.obj:Tag:15
+              Data: false
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data: []
+            Children:
+              - Name:
+                  ID: "?"
+                  Data: PeekskillMeteorite_resize.obj
+                Active:
+                  ID: "?"
+                  Data: true
+                ID: "?"
+                Persistent-ID: "?"
+                Position:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                Rotation:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 111111
+                Scale:
+                  ID: "?"
+                  Data:
+                    - 111111
+                    - 111111
+                    - 111111
+                Tag:
+                  ID: "?"
+                  Data: null
+                OrderOffset:
+                  ID: "?"
+                  Data: 0
+                Components:
+                  ID: "?"
+                  Data: []
+                Children:
+                  - Name:
+                      ID: "?"
+                      Data: AllendeMeteorite
+                    Active:
+                      ID: "?"
+                      Data: true
+                    ID: "?"
+                    Persistent-ID: "?"
+                    Position:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                        - 0
+                    Rotation:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                        - 0
+                        - 111111
+                    Scale:
+                      ID: "?"
+                      Data:
+                        - 111111
+                        - 111111
+                        - 111111
+                    Tag:
+                      ID: "?"
+                      Data: null
+                    OrderOffset:
+                      ID: "?"
+                      Data: 0
+                    Components:
+                      ID: "?"
+                      Data:
+                        - Type: 3
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 0
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Mesh:
+                              ID: "?"
+                              Data: ID:Assets:15:ID:3
+                            Materials:
+                              ID: "?"
+                              Data:
+                                - ID: "?"
+                                  Data: ID:Assets:14:ID:5
+                            MaterialPropertyBlocks:
+                              ID: "?"
+                              Data: []
+                            ShadowCastMode:
+                              ID: "?"
+                              Data: On
+                            MotionVectorMode:
+                              ID: "?"
+                              Data: Object
+                            SortingOrder:
+                              ID: "?"
+                              Data: 0
+                        - Type: 4
+                          Data:
+                            ID: "?"
+                            persistent-ID: "?"
+                            UpdateOrder:
+                              ID: "?"
+                              Data: 333333333.3333333
+                            Enabled:
+                              ID: "?"
+                              Data: true
+                            Offset:
+                              ID: "?"
+                              Data:
+                                - 0
+                                - 0
+                                - 0
+                            Type:
+                              ID: "?"
+                              Data: NoCollision
+                            Mass:
+                              ID: "?"
+                              Data: 333.3333333333333
+                            CharacterCollider:
+                              ID: "?"
+                              Data: false
+                            IgnoreRaycasts:
+                              ID: "?"
+                              Data: false
+                            Mesh:
+                              ID: "?"
+                              Data: ID:Assets:15:ID:3
+                            Sidedness:
+                              ID: "?"
+                              Data: Front
+                            ActualSpeculativeMargin:
+                              ID: "?"
+                              Data: null
+                    Children: []
+                    ParentReference: ""
+                ParentReference: ""
+            ParentReference: ""
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Static
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Root
+                Reference:
+                  ID: "?"
+                  Data: ID:Ref:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Main
+                Reference:
+                  ID: "?"
+                  Data: ID:MeteorVisual:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.ChildrenParent
+                Reference:
+                  ID: "?"
+                  Data: ID:MeteorVisual:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Props
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 5
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.meteorIndex
+                TargetField:
+                  ID: "?"
+                  Data: ID:MeteorVisual:Components:2:ActiveIndex:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 6
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.scale
+                TargetField:
+                  ID: "?"
+                  Data: ID:MeteorVisual:Tag:4
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 7
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.rotation
+                TargetField:
+                  ID: "?"
+                  Data: ID:MeteorVisual:Tag:3
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+    ParentReference: ""
+ParentReference: ""

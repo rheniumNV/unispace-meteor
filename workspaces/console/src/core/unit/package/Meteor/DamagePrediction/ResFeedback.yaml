@@ -1,6 +1,6 @@
 Name:
   ID: "?"
-  Data: Meteor/MeteorInfo
+  Data: Meteor/DamagePrediction
 Active:
   ID: "?"
   Data: true
@@ -342,64 +342,7 @@ Children:
                   Data: true
                 VariableName:
                   ID: "?"
-                  Data: Props.title
-                TargetField:
-                  ID: "?"
-                  Data: null
-                OverrideOnLink:
-                  ID: "?"
-                  Data: false
-            - Type: 2
-              Data:
-                ID: "?"
-                persistent-ID: "?"
-                UpdateOrder:
-                  ID: "?"
-                  Data: 0
-                Enabled:
-                  ID: "?"
-                  Data: true
-                VariableName:
-                  ID: "?"
-                  Data: Props.description
-                TargetField:
-                  ID: "?"
-                  Data: null
-                OverrideOnLink:
-                  ID: "?"
-                  Data: false
-            - Type: 2
-              Data:
-                ID: "?"
-                persistent-ID: "?"
-                UpdateOrder:
-                  ID: "?"
-                  Data: 0
-                Enabled:
-                  ID: "?"
-                  Data: true
-                VariableName:
-                  ID: "?"
-                  Data: Props.onClick
-                TargetField:
-                  ID: "?"
-                  Data: null
-                OverrideOnLink:
-                  ID: "?"
-                  Data: false
-            - Type: 3
-              Data:
-                ID: "?"
-                persistent-ID: "?"
-                UpdateOrder:
-                  ID: "?"
-                  Data: 0
-                Enabled:
-                  ID: "?"
-                  Data: true
-                VariableName:
-                  ID: "?"
-                  Data: Props.imageUrl
+                  Data: Props.name
                 TargetField:
                   ID: "?"
                   Data: null

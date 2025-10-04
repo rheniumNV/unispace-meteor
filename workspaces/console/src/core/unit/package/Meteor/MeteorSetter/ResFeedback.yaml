@@ -167,7 +167,7 @@ Children:
         Active:
           ID: "?"
           Data: true
-        ID: ID:MeteorSetter:0
+        ID: "?"
         Persistent-ID: "?"
         Position:
           ID: "?"
@@ -260,7 +260,7 @@ Children:
                   ID: "?"
                   Data:
                     - 0
-                    - 0
+                    - 290444.3333333333
                     - -28555.666666666668
                 Rotation:
                   ID: "?"
@@ -272,9 +272,9 @@ Children:
                 Scale:
                   ID: "?"
                   Data:
-                    - 111
-                    - 111
-                    - 111
+                    - 111111
+                    - 111111
+                    - 111111
                 Tag:
                   ID: "?"
                   Data: null
@@ -297,7 +297,7 @@ Children:
                       ID: "?"
                       Data:
                         - 0
-                        - 0
+                        - 79222.33333333333
                         - 0
                     Rotation:
                       ID: "?"
@@ -767,8 +767,8 @@ Children:
                         Position:
                           ID: "?"
                           Data:
-                            - 31666.666666666668
-                            - 77111
+                            - 31000
+                            - 75000
                             - 0
                         Rotation:
                           ID: "?"
@@ -820,7 +820,7 @@ Children:
                                   Data: true
                                 Reference:
                                   ID: "?"
-                                  Data: ID:handle_root:Components:22:0
+                                  Data: ID:handle_root:Components:36:0
                         Children: []
                         ParentReference: ""
                       - Name:
@@ -1340,6 +1340,627 @@ Children:
                                   Data: false
                         Children: []
                         ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: GrabbableGrabber
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 8333.333333333334
+                            - 1222.3333333333333
+                            - 0
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 22
+                              Data:
+                                ID: ID:GrabbableGrabber:Components:22:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Grabbable:
+                                  ID: "?"
+                                  Data: ID:ObjectCast<Slider,IGrabbable>:Components:25:0
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ElementSource`1
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - -21777.666666666668
+                            - 666.6666666666666
+                            - 111
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 23
+                              Data:
+                                ID: ID:ElementSource`1:Components:23:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Source:
+                                  ID: "?"
+                                  Data: ID:ElementSource`1:Components:24:0
+                            - Type: 24
+                              Data:
+                                ID: ID:ElementSource`1:Components:24:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Reference:
+                                  ID: "?"
+                                  Data: null
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ObjectCast<Slider,IGrabbable>
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - -2666.6666666666665
+                            - 222.33333333333334
+                            - 0
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 25
+                              Data:
+                                ID: ID:ObjectCast<Slider,IGrabbable>:Components:25:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Input:
+                                  ID: "?"
+                                  Data: ID:ElementSource`1:Components:23:0
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: GetSlot
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 33222.333333333336
+                            - 2000
+                            - 0
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 26
+                              Data:
+                                ID: ID:GetSlot:Components:26:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Component:
+                                  ID: "?"
+                                  Data: ID:ObjectCast<Grabber,IComponent>:Components:27:0
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ObjectCast<Grabber,IComponent>
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 21777.666666666668
+                            - 1111
+                            - 0
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 27
+                              Data:
+                                ID: ID:ObjectCast<Grabber,IComponent>:Components:27:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Input:
+                                  ID: "?"
+                                  Data: ID:GrabbableGrabber:Components:22:0
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: GetActiveUser
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 49333.333333333336
+                            - 1889
+                            - 0
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 28
+                              Data:
+                                ID: ID:GetActiveUser:Components:28:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Instance:
+                                  ID: "?"
+                                  Data: ID:GetSlot:Components:26:0
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: SecondsTimer
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 97889
+                            - 6555.666666666667
+                            - -111
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 111
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 29
+                              Data:
+                                ID: "?"
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                UpdatingUser:
+                                  ID: "?"
+                                  Data: ID:SecondsTimer:Components:30:0
+                                SkipIfNull:
+                                  ID: "?"
+                                  Data: null
+                                OnUpdate:
+                                  ID: "?"
+                                  Data: ID:If:Components:35:0
+                                Interval:
+                                  ID: "?"
+                                  Data: ID:ValueInput`1:Components:34:0
+                            - Type: 30
+                              Data:
+                                ID: ID:SecondsTimer:Components:30:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Reference:
+                                  ID: ID:SecondsTimer:Components:30:Reference:0
+                                  Data: null
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ReferenceDrive`1
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 75777.66666666667
+                            - 2000
+                            - -111
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 31
+                              Data:
+                                ID: ID:ReferenceDrive`1:Components:31:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Target:
+                                  ID: "?"
+                                  Data: ID:GetActiveUser:Components:28:0
+                            - Type: 32
+                              Data:
+                                ID: "?"
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Node:
+                                  ID: "?"
+                                  Data: ID:ReferenceDrive`1:Components:31:0
+                                Path:
+                                  ID: "?"
+                                  Data: []
+                                Drive:
+                                  ID: "?"
+                                  Data: ID:SecondsTimer:Components:30:Reference:0
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: IsLocalUser
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 97777.66666666667
+                            - -8777.666666666666
+                            - -111
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 111
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 33
+                              Data:
+                                ID: ID:IsLocalUser:Components:33:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                User:
+                                  ID: "?"
+                                  Data: ID:GetActiveUser:Components:28:0
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ValueInput`1
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 57889
+                            - 11777.666666666666
+                            - 0
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 111
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 34
+                              Data:
+                                ID: ID:ValueInput`1:Components:34:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Value:
+                                  ID: "?"
+                                  Data: 50
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: If
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 116777.66666666667
+                            - 8000
+                            - -111
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 222.33333333333334
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 35
+                              Data:
+                                ID: ID:If:Components:35:0
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                OnTrue:
+                                  ID: "?"
+                                  Data: ID:Dynamic Impulse Trigger With Value<String>:Components:3:1
+                                OnFalse:
+                                  ID: "?"
+                                  Data: null
+                                Condition:
+                                  ID: "?"
+                                  Data: ID:IsLocalUser:Components:33:0
+                        Children: []
+                        ParentReference: ""
                     ParentReference: ""
                 ParentReference: ""
             ParentReference: ""
@@ -1386,7 +2007,7 @@ Children:
                 Active:
                   ID: "?"
                   Data: true
-                ID: "?"
+                ID: ID:handle_root:0
                 Persistent-ID: "?"
                 Position:
                   ID: ID:handle_root:Tag:2
@@ -1416,9 +2037,9 @@ Children:
                 Components:
                   ID: "?"
                   Data:
-                    - Type: 22
+                    - Type: 36
                       Data:
-                        ID: ID:handle_root:Components:22:0
+                        ID: ID:handle_root:Components:36:0
                         persistent-ID: "?"
                         UpdateOrder:
                           ID: "?"
@@ -1664,9 +2285,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 23
+                                - Type: 37
                                   Data:
-                                    ID: ID:DynamicVariableValueInput`1:Components:23:0
+                                    ID: ID:DynamicVariableValueInput`1:Components:37:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -1678,12 +2299,12 @@ Children:
                                       ID: "?"
                                       Data: ID:DynamicVariableValueInput`1:Components:5:0
                                     Value:
-                                      ID: ID:DynamicVariableValueInput`1:Components:23:Value:0
+                                      ID: ID:DynamicVariableValueInput`1:Components:37:Value:0
                                       Data: null
                                     HasValue:
                                       ID: "?"
                                       Data: null
-                                - Type: 24
+                                - Type: 38
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -1695,7 +2316,7 @@ Children:
                                       Data: true
                                     Node:
                                       ID: "?"
-                                      Data: ID:DynamicVariableValueInput`1:Components:23:0
+                                      Data: ID:DynamicVariableValueInput`1:Components:37:0
                                     Path:
                                       ID: "?"
                                       Data: []
@@ -1750,9 +2371,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 25
+                                - Type: 39
                                   Data:
-                                    ID: ID:ValueAdd`1:Components:25:0
+                                    ID: ID:ValueAdd`1:Components:39:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -1762,10 +2383,10 @@ Children:
                                       Data: true
                                     A:
                                       ID: "?"
-                                      Data: ID:DynamicVariableValueInput`1:Components:23:Value:0
+                                      Data: ID:DynamicVariableValueInput`1:Components:37:Value:0
                                     B:
                                       ID: "?"
-                                      Data: ID:ValueInput`1:Components:26:0
+                                      Data: ID:ValueInput`1:Components:34:1
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -1804,9 +2425,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 26
+                                - Type: 34
                                   Data:
-                                    ID: ID:ValueInput`1:Components:26:0
+                                    ID: ID:ValueInput`1:Components:34:1
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -1855,9 +2476,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 27
+                                - Type: 40
                                   Data:
-                                    ID: ID:ValueFieldDrive`1:Components:27:0
+                                    ID: ID:ValueFieldDrive`1:Components:40:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -1867,8 +2488,8 @@ Children:
                                       Data: true
                                     Value:
                                       ID: "?"
-                                      Data: ID:ValueMax`1:Components:29:0
-                                - Type: 28
+                                      Data: ID:ValueMax`1:Components:42:0
+                                - Type: 41
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -1880,13 +2501,13 @@ Children:
                                       Data: true
                                     Node:
                                       ID: "?"
-                                      Data: ID:ValueFieldDrive`1:Components:27:0
+                                      Data: ID:ValueFieldDrive`1:Components:40:0
                                     Path:
                                       ID: "?"
                                       Data: []
                                     Drive:
                                       ID: "?"
-                                      Data: ID:Handle:Components:63:Radius:0
+                                      Data: ID:Handle:Components:74:Radius:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -1925,9 +2546,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 29
+                                - Type: 42
                                   Data:
-                                    ID: ID:ValueMax`1:Components:29:0
+                                    ID: ID:ValueMax`1:Components:42:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -1937,10 +2558,10 @@ Children:
                                       Data: true
                                     A:
                                       ID: "?"
-                                      Data: ID:ValueAdd`1:Components:25:0
+                                      Data: ID:ValueAdd`1:Components:39:0
                                     B:
                                       ID: "?"
-                                      Data: ID:ValueInput`1:Components:26:1
+                                      Data: ID:ValueInput`1:Components:34:2
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -1979,9 +2600,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 26
+                                - Type: 34
                                   Data:
-                                    ID: ID:ValueInput`1:Components:26:1
+                                    ID: ID:ValueInput`1:Components:34:2
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2244,9 +2865,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 30
+                                - Type: 43
                                   Data:
-                                    ID: ID:ValueSource`1:Components:30:0
+                                    ID: ID:ValueSource`1:Components:43:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2256,10 +2877,10 @@ Children:
                                       Data: true
                                     Source:
                                       ID: "?"
-                                      Data: ID:ValueSource`1:Components:31:0
-                                - Type: 31
+                                      Data: ID:ValueSource`1:Components:44:0
+                                - Type: 44
                                   Data:
-                                    ID: ID:ValueSource`1:Components:31:0
+                                    ID: ID:ValueSource`1:Components:44:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2269,7 +2890,7 @@ Children:
                                       Data: true
                                     Reference:
                                       ID: "?"
-                                      Data: ID:LAt:Components:62:Value:0
+                                      Data: ID:LAt:Components:73:Value:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -2308,9 +2929,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 32
+                                - Type: 45
                                   Data:
-                                    ID: ID:ValueConditional`1:Components:32:0
+                                    ID: ID:ValueConditional`1:Components:45:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2320,13 +2941,13 @@ Children:
                                       Data: true
                                     OnTrue:
                                       ID: "?"
-                                      Data: ID:ValueSource`1:Components:30:0
+                                      Data: ID:ValueSource`1:Components:43:0
                                     OnFalse:
                                       ID: "?"
-                                      Data: ID:GlobalRotationToLocal:Components:44:0
+                                      Data: ID:GlobalRotationToLocal:Components:55:0
                                     Condition:
                                       ID: "?"
-                                      Data: ID:IsNull`1:Components:49:0
+                                      Data: ID:IsNull`1:Components:60:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -2365,9 +2986,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 33
+                                - Type: 46
                                   Data:
-                                    ID: ID:ValueFieldDrive`1:Components:33:0
+                                    ID: ID:ValueFieldDrive`1:Components:46:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2377,8 +2998,8 @@ Children:
                                       Data: true
                                     Value:
                                       ID: "?"
-                                      Data: ID:SmoothSlerp_floatQ:Components:43:0
-                                - Type: 34
+                                      Data: ID:SmoothSlerp_floatQ:Components:54:0
+                                - Type: 47
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -2390,7 +3011,7 @@ Children:
                                       Data: true
                                     Node:
                                       ID: "?"
-                                      Data: ID:ValueFieldDrive`1:Components:33:0
+                                      Data: ID:ValueFieldDrive`1:Components:46:0
                                     Path:
                                       ID: "?"
                                       Data: []
@@ -2435,9 +3056,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 35
+                                - Type: 26
                                   Data:
-                                    ID: ID:GetSlot:Components:35:0
+                                    ID: ID:GetSlot:Components:26:1
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2447,7 +3068,7 @@ Children:
                                       Data: true
                                     Component:
                                       ID: "?"
-                                      Data: ID:ObjectCast<Grabber,IComponent>:Components:36:0
+                                      Data: ID:ObjectCast<Grabber,IComponent>:Components:27:1
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -2486,9 +3107,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 36
+                                - Type: 27
                                   Data:
-                                    ID: ID:ObjectCast<Grabber,IComponent>:Components:36:0
+                                    ID: ID:ObjectCast<Grabber,IComponent>:Components:27:1
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2498,7 +3119,7 @@ Children:
                                       Data: true
                                     Input:
                                       ID: "?"
-                                      Data: ID:ReferenceSource`1:Components:47:0
+                                      Data: ID:ReferenceSource`1:Components:58:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -2537,7 +3158,7 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 37
+                                - Type: 48
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -2549,9 +3170,9 @@ Children:
                                       Data: true
                                     Instance:
                                       ID: "?"
-                                      Data: ID:GetSlot:Components:35:0
+                                      Data: ID:GetSlot:Components:26:1
                                     GlobalPosition:
-                                      ID: ID:GlobalTransform:Components:37:GlobalPosition:0
+                                      ID: ID:GlobalTransform:Components:48:GlobalPosition:0
                                       Data: null
                                     GlobalRotation:
                                       ID: "?"
@@ -2597,9 +3218,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 38
+                                - Type: 49
                                   Data:
-                                    ID: ID:ElementSource`1:Components:38:0
+                                    ID: ID:ElementSource`1:Components:49:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2609,10 +3230,10 @@ Children:
                                       Data: true
                                     Source:
                                       ID: "?"
-                                      Data: ID:ElementSource`1:Components:39:0
-                                - Type: 39
+                                      Data: ID:ElementSource`1:Components:50:0
+                                - Type: 50
                                   Data:
-                                    ID: ID:ElementSource`1:Components:39:0
+                                    ID: ID:ElementSource`1:Components:50:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2661,7 +3282,7 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 37
+                                - Type: 48
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -2673,9 +3294,9 @@ Children:
                                       Data: true
                                     Instance:
                                       ID: "?"
-                                      Data: ID:ElementSource`1:Components:38:0
+                                      Data: ID:ElementSource`1:Components:49:0
                                     GlobalPosition:
-                                      ID: ID:GlobalTransform:Components:37:GlobalPosition:1
+                                      ID: ID:GlobalTransform:Components:48:GlobalPosition:1
                                       Data: null
                                     GlobalRotation:
                                       ID: "?"
@@ -2721,9 +3342,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 40
+                                - Type: 51
                                   Data:
-                                    ID: ID:ValueSub`1:Components:40:0
+                                    ID: ID:ValueSub`1:Components:51:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2733,10 +3354,10 @@ Children:
                                       Data: true
                                     A:
                                       ID: "?"
-                                      Data: ID:GlobalTransform:Components:37:GlobalPosition:0
+                                      Data: ID:GlobalTransform:Components:48:GlobalPosition:0
                                     B:
                                       ID: "?"
-                                      Data: ID:GlobalTransform:Components:37:GlobalPosition:1
+                                      Data: ID:GlobalTransform:Components:48:GlobalPosition:1
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -2775,9 +3396,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 41
+                                - Type: 52
                                   Data:
-                                    ID: ID:LookRotation_floatQ:Components:41:0
+                                    ID: ID:LookRotation_floatQ:Components:52:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2787,7 +3408,7 @@ Children:
                                       Data: true
                                     Forward:
                                       ID: "?"
-                                      Data: ID:ValueNegate`1:Components:42:0
+                                      Data: ID:ValueNegate`1:Components:53:0
                                     Up:
                                       ID: "?"
                                       Data: null
@@ -2829,9 +3450,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 42
+                                - Type: 53
                                   Data:
-                                    ID: ID:ValueNegate`1:Components:42:0
+                                    ID: ID:ValueNegate`1:Components:53:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2841,7 +3462,7 @@ Children:
                                       Data: true
                                     N:
                                       ID: "?"
-                                      Data: ID:ValueSub`1:Components:40:0
+                                      Data: ID:ValueSub`1:Components:51:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -2880,9 +3501,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 43
+                                - Type: 54
                                   Data:
-                                    ID: ID:SmoothSlerp_floatQ:Components:43:0
+                                    ID: ID:SmoothSlerp_floatQ:Components:54:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2892,10 +3513,10 @@ Children:
                                       Data: true
                                     Input:
                                       ID: "?"
-                                      Data: ID:ValueConditional`1:Components:32:0
+                                      Data: ID:ValueConditional`1:Components:45:0
                                     Speed:
                                       ID: "?"
-                                      Data: ID:ValueInput`1:Components:26:2
+                                      Data: ID:ValueInput`1:Components:34:3
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -2934,9 +3555,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 26
+                                - Type: 34
                                   Data:
-                                    ID: ID:ValueInput`1:Components:26:2
+                                    ID: ID:ValueInput`1:Components:34:3
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2985,9 +3606,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 44
+                                - Type: 55
                                   Data:
-                                    ID: ID:GlobalRotationToLocal:Components:44:0
+                                    ID: ID:GlobalRotationToLocal:Components:55:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -2997,10 +3618,10 @@ Children:
                                       Data: true
                                     Instance:
                                       ID: "?"
-                                      Data: ID:GetParentSlot:Components:46:0
+                                      Data: ID:GetParentSlot:Components:57:0
                                     GlobalRotation:
                                       ID: "?"
-                                      Data: ID:LookRotation_floatQ:Components:41:0
+                                      Data: ID:LookRotation_floatQ:Components:52:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3039,9 +3660,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 45
+                                - Type: 56
                                   Data:
-                                    ID: ID:Relay:Components:45:0
+                                    ID: ID:Relay:Components:56:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3051,7 +3672,7 @@ Children:
                                       Data: true
                                     Input:
                                       ID: "?"
-                                      Data: ID:ElementSource`1:Components:38:0
+                                      Data: ID:ElementSource`1:Components:49:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3090,9 +3711,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 46
+                                - Type: 57
                                   Data:
-                                    ID: ID:GetParentSlot:Components:46:0
+                                    ID: ID:GetParentSlot:Components:57:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3102,7 +3723,7 @@ Children:
                                       Data: true
                                     Instance:
                                       ID: "?"
-                                      Data: ID:Relay:Components:45:0
+                                      Data: ID:Relay:Components:56:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3141,9 +3762,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 47
+                                - Type: 58
                                   Data:
-                                    ID: ID:ReferenceSource`1:Components:47:0
+                                    ID: ID:ReferenceSource`1:Components:58:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3153,10 +3774,10 @@ Children:
                                       Data: true
                                     Source:
                                       ID: "?"
-                                      Data: ID:ReferenceSource`1:Components:48:0
-                                - Type: 48
+                                      Data: ID:ReferenceSource`1:Components:59:0
+                                - Type: 59
                                   Data:
-                                    ID: ID:ReferenceSource`1:Components:48:0
+                                    ID: ID:ReferenceSource`1:Components:59:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3166,7 +3787,7 @@ Children:
                                       Data: true
                                     Reference:
                                       ID: "?"
-                                      Data: ID:handle:Components:22:_grabber:0
+                                      Data: ID:handle:Components:36:_grabber:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3205,9 +3826,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 49
+                                - Type: 60
                                   Data:
-                                    ID: ID:IsNull`1:Components:49:0
+                                    ID: ID:IsNull`1:Components:60:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3217,7 +3838,7 @@ Children:
                                       Data: true
                                     Instance:
                                       ID: "?"
-                                      Data: ID:ReferenceSource`1:Components:47:0
+                                      Data: ID:ReferenceSource`1:Components:58:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3470,9 +4091,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 50
+                                - Type: 61
                                   Data:
-                                    ID: ID:Pack_Float3:Components:50:0
+                                    ID: ID:Pack_Float3:Components:61:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3488,7 +4109,7 @@ Children:
                                       Data: null
                                     Z:
                                       ID: "?"
-                                      Data: ID:Distance_Float:Components:57:0
+                                      Data: ID:Distance_Float:Components:68:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3527,9 +4148,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 42
+                                - Type: 53
                                   Data:
-                                    ID: ID:ValueNegate`1:Components:42:1
+                                    ID: ID:ValueNegate`1:Components:53:1
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3539,7 +4160,7 @@ Children:
                                       Data: true
                                     N:
                                       ID: "?"
-                                      Data: ID:Pack_Float3:Components:50:0
+                                      Data: ID:Pack_Float3:Components:61:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3578,9 +4199,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 51
+                                - Type: 62
                                   Data:
-                                    ID: ID:ValueFieldDrive`1:Components:51:0
+                                    ID: ID:ValueFieldDrive`1:Components:62:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3590,8 +4211,8 @@ Children:
                                       Data: true
                                     Value:
                                       ID: "?"
-                                      Data: ID:ValueNegate`1:Components:42:1
-                                - Type: 52
+                                      Data: ID:ValueNegate`1:Components:53:1
+                                - Type: 63
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -3603,13 +4224,13 @@ Children:
                                       Data: true
                                     Node:
                                       ID: "?"
-                                      Data: ID:ValueFieldDrive`1:Components:51:0
+                                      Data: ID:ValueFieldDrive`1:Components:62:0
                                     Path:
                                       ID: "?"
                                       Data: []
                                     Drive:
                                       ID: "?"
-                                      Data: ID:Arrow:Components:66:Vector:0
+                                      Data: ID:Arrow:Components:77:Vector:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3648,9 +4269,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 51
+                                - Type: 62
                                   Data:
-                                    ID: ID:ValueFieldDrive`1:Components:51:1
+                                    ID: ID:ValueFieldDrive`1:Components:62:1
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3660,8 +4281,8 @@ Children:
                                       Data: true
                                     Value:
                                       ID: "?"
-                                      Data: ID:Pack_Float3:Components:50:0
-                                - Type: 52
+                                      Data: ID:Pack_Float3:Components:61:0
+                                - Type: 63
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -3673,13 +4294,13 @@ Children:
                                       Data: true
                                     Node:
                                       ID: "?"
-                                      Data: ID:ValueFieldDrive`1:Components:51:1
+                                      Data: ID:ValueFieldDrive`1:Components:62:1
                                     Path:
                                       ID: "?"
                                       Data: []
                                     Drive:
                                       ID: "?"
-                                      Data: ID:ArrowRev:Components:66:Vector:0
+                                      Data: ID:ArrowRev:Components:77:Vector:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3718,9 +4339,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 53
+                                - Type: 64
                                   Data:
-                                    ID: ID:ValueFieldDrive`1:Components:53:0
+                                    ID: ID:ValueFieldDrive`1:Components:64:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3730,8 +4351,8 @@ Children:
                                       Data: true
                                     Value:
                                       ID: "?"
-                                      Data: ID:Pack_Float2:Components:55:0
-                                - Type: 54
+                                      Data: ID:Pack_Float2:Components:66:0
+                                - Type: 65
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -3743,13 +4364,13 @@ Children:
                                       Data: true
                                     Node:
                                       ID: "?"
-                                      Data: ID:ValueFieldDrive`1:Components:53:0
+                                      Data: ID:ValueFieldDrive`1:Components:64:0
                                     Path:
                                       ID: "?"
                                       Data: []
                                     Drive:
                                       ID: "?"
-                                      Data: ID:ArrowRev:Components:66:BodyUVScale:0
+                                      Data: ID:ArrowRev:Components:77:BodyUVScale:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3788,9 +4409,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 55
+                                - Type: 66
                                   Data:
-                                    ID: ID:Pack_Float2:Components:55:0
+                                    ID: ID:Pack_Float2:Components:66:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3800,10 +4421,10 @@ Children:
                                       Data: true
                                     X:
                                       ID: "?"
-                                      Data: ID:ValueMul`1:Components:56:0
+                                      Data: ID:ValueMul`1:Components:67:0
                                     Y:
                                       ID: "?"
-                                      Data: ID:ValueMul`1:Components:56:0
+                                      Data: ID:ValueMul`1:Components:67:0
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3842,9 +4463,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 56
+                                - Type: 67
                                   Data:
-                                    ID: ID:ValueMul`1:Components:56:0
+                                    ID: ID:ValueMul`1:Components:67:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3854,10 +4475,10 @@ Children:
                                       Data: true
                                     A:
                                       ID: "?"
-                                      Data: ID:Distance_Float:Components:57:0
+                                      Data: ID:Distance_Float:Components:68:0
                                     B:
                                       ID: "?"
-                                      Data: ID:ValueInput`1:Components:26:3
+                                      Data: ID:ValueInput`1:Components:34:4
                             Children: []
                             ParentReference: ""
                           - Name:
@@ -3896,9 +4517,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 26
+                                - Type: 34
                                   Data:
-                                    ID: ID:ValueInput`1:Components:26:3
+                                    ID: ID:ValueInput`1:Components:34:4
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -3947,9 +4568,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 57
+                                - Type: 68
                                   Data:
-                                    ID: ID:Distance_Float:Components:57:0
+                                    ID: ID:Distance_Float:Components:68:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -4295,7 +4916,7 @@ Children:
                     Active:
                       ID: "?"
                       Data: true
-                    ID: "?"
+                    ID: ID:Asteroid Slot:0
                     Persistent-ID: "?"
                     Position:
                       ID: "?"
@@ -4325,7 +4946,7 @@ Children:
                     Components:
                       ID: "?"
                       Data:
-                        - Type: 58
+                        - Type: 69
                           Data:
                             ID: "?"
                             persistent-ID: "?"
@@ -4362,7 +4983,7 @@ Children:
                           Data: Asteroid
                         Active:
                           ID: "?"
-                          Data: true
+                          Data: false
                         ID: "?"
                         Persistent-ID: "?"
                         Position:
@@ -4430,9 +5051,9 @@ Children:
                             Components:
                               ID: "?"
                               Data:
-                                - Type: 59
+                                - Type: 70
                                   Data:
-                                    ID: ID:model:Components:59:0
+                                    ID: ID:model:Components:70:0
                                     persistent-ID: "?"
                                     UpdateOrder:
                                       ID: "?"
@@ -4480,7 +5101,7 @@ Children:
                                     DualSided:
                                       ID: "?"
                                       Data: false
-                                - Type: 60
+                                - Type: 71
                                   Data:
                                     ID: "?"
                                     persistent-ID: "?"
@@ -4492,12 +5113,12 @@ Children:
                                       Data: true
                                     Mesh:
                                       ID: "?"
-                                      Data: ID:model:Components:59:0
+                                      Data: ID:model:Components:70:0
                                     Materials:
                                       ID: "?"
                                       Data:
                                         - ID: "?"
-                                          Data: ID:Assets:71:ID:2
+                                          Data: ID:Assets:86:ID:2
                                     MaterialPropertyBlocks:
                                       ID: "?"
                                       Data: []
@@ -4587,9 +5208,9 @@ Children:
                         Components:
                           ID: "?"
                           Data:
-                            - Type: 22
+                            - Type: 36
                               Data:
-                                ID: ID:handle:Components:22:0
+                                ID: ID:handle:Components:36:0
                                 persistent-ID: "?"
                                 UpdateOrder:
                                   ID: "?"
@@ -4620,7 +5241,7 @@ Children:
                                   Data:
                                     Target: null
                                 _grabber:
-                                  ID: ID:handle:Components:22:_grabber:0
+                                  ID: ID:handle:Components:36:_grabber:0
                                   Data: null
                                 _holdSlot:
                                   ID: "?"
@@ -4782,7 +5403,7 @@ Children:
                                 Components:
                                   ID: "?"
                                   Data:
-                                    - Type: 61
+                                    - Type: 72
                                       Data:
                                         ID: "?"
                                         persistent-ID: "?"
@@ -4837,8 +5458,8 @@ Children:
                                           Data: 120000
                                         _target:
                                           ID: "?"
-                                          Data: ID:LAt:Components:62:Value:0
-                                    - Type: 62
+                                          Data: ID:LAt:Components:73:Value:0
+                                    - Type: 73
                                       Data:
                                         ID: "?"
                                         persistent-ID: "?"
@@ -4849,7 +5470,7 @@ Children:
                                           ID: "?"
                                           Data: true
                                         Value:
-                                          ID: ID:LAt:Components:62:Value:0
+                                          ID: ID:LAt:Components:73:Value:0
                                           Data:
                                             - 0
                                             - 0
@@ -4892,9 +5513,9 @@ Children:
                                     Components:
                                       ID: "?"
                                       Data:
-                                        - Type: 63
+                                        - Type: 74
                                           Data:
-                                            ID: ID:Handle:Components:63:0
+                                            ID: ID:Handle:Components:74:0
                                             persistent-ID: "?"
                                             UpdateOrder:
                                               ID: "?"
@@ -4929,7 +5550,7 @@ Children:
                                               ID: "?"
                                               Data: -45000
                                             Radius:
-                                              ID: ID:Handle:Components:63:Radius:0
+                                              ID: ID:Handle:Components:74:Radius:0
                                               Data: 66.66666666666667
                                             Width:
                                               ID: "?"
@@ -4943,7 +5564,7 @@ Children:
                                             Segments:
                                               ID: "?"
                                               Data: 10666.666666666666
-                                        - Type: 60
+                                        - Type: 71
                                           Data:
                                             ID: "?"
                                             persistent-ID: "?"
@@ -4955,12 +5576,12 @@ Children:
                                               Data: true
                                             Mesh:
                                               ID: "?"
-                                              Data: ID:Handle:Components:63:0
+                                              Data: ID:Handle:Components:74:0
                                             Materials:
                                               ID: "?"
                                               Data:
                                                 - ID: "?"
-                                                  Data: ID:Assets:67:ID:0
+                                                  Data: ID:Assets:78:ID:0
                                             MaterialPropertyBlocks:
                                               ID: "?"
                                               Data: []
@@ -4973,7 +5594,7 @@ Children:
                                             SortingOrder:
                                               ID: "?"
                                               Data: 0
-                                        - Type: 64
+                                        - Type: 75
                                           Data:
                                             ID: "?"
                                             persistent-ID: "?"
@@ -5003,7 +5624,7 @@ Children:
                                               Data: false
                                             Mesh:
                                               ID: "?"
-                                              Data: ID:Handle:Components:63:0
+                                              Data: ID:Handle:Components:74:0
                                             Sidedness:
                                               ID: "?"
                                               Data: Front
@@ -5049,7 +5670,7 @@ Children:
                                 Components:
                                   ID: "?"
                                   Data:
-                                    - Type: 60
+                                    - Type: 71
                                       Data:
                                         ID: "?"
                                         persistent-ID: "?"
@@ -5061,12 +5682,12 @@ Children:
                                           Data: true
                                         Mesh:
                                           ID: "?"
-                                          Data: ID:model:Components:65:0
+                                          Data: ID:model:Components:76:0
                                         Materials:
                                           ID: "?"
                                           Data:
                                             - ID: "?"
-                                              Data: ID:Arrow:Components:67:0
+                                              Data: ID:Arrow:Components:78:0
                                         MaterialPropertyBlocks:
                                           ID: "?"
                                           Data: []
@@ -5079,9 +5700,9 @@ Children:
                                         SortingOrder:
                                           ID: "?"
                                           Data: 0
-                                    - Type: 65
+                                    - Type: 76
                                       Data:
-                                        ID: ID:model:Components:65:0
+                                        ID: ID:model:Components:76:0
                                         persistent-ID: "?"
                                         UpdateOrder:
                                           ID: "?"
@@ -5164,7 +5785,7 @@ Children:
                         Components:
                           ID: "?"
                           Data:
-                            - Type: 61
+                            - Type: 72
                               Data:
                                 ID: "?"
                                 persistent-ID: "?"
@@ -5294,9 +5915,9 @@ Children:
                                 Components:
                                   ID: "?"
                                   Data:
-                                    - Type: 66
+                                    - Type: 77
                                       Data:
-                                        ID: ID:Arrow:Components:66:0
+                                        ID: ID:Arrow:Components:77:0
                                         persistent-ID: "?"
                                         UpdateOrder:
                                           ID: "?"
@@ -5325,7 +5946,7 @@ Children:
                                           ID: "?"
                                           Data: Linear
                                         Vector:
-                                          ID: ID:Arrow:Components:66:Vector:0
+                                          ID: ID:Arrow:Components:77:Vector:0
                                           Data:
                                             - 0
                                             - 0
@@ -5392,7 +6013,7 @@ Children:
                                             - 333.3333333333333
                                             - 333.3333333333333
                                             - sRGB
-                                    - Type: 60
+                                    - Type: 71
                                       Data:
                                         ID: "?"
                                         persistent-ID: "?"
@@ -5404,12 +6025,12 @@ Children:
                                           Data: true
                                         Mesh:
                                           ID: "?"
-                                          Data: ID:Arrow:Components:66:0
+                                          Data: ID:Arrow:Components:77:0
                                         Materials:
                                           ID: "?"
                                           Data:
                                             - ID: "?"
-                                              Data: ID:Arrow:Components:67:0
+                                              Data: ID:Arrow:Components:78:0
                                         MaterialPropertyBlocks:
                                           ID: "?"
                                           Data: []
@@ -5422,9 +6043,9 @@ Children:
                                         SortingOrder:
                                           ID: "?"
                                           Data: 0
-                                    - Type: 67
+                                    - Type: 78
                                       Data:
-                                        ID: ID:Arrow:Components:67:0
+                                        ID: ID:Arrow:Components:78:0
                                         persistent-ID: "?"
                                         UpdateOrder:
                                           ID: "?"
@@ -5591,9 +6212,9 @@ Children:
                                 Components:
                                   ID: "?"
                                   Data:
-                                    - Type: 66
+                                    - Type: 77
                                       Data:
-                                        ID: ID:ArrowRev:Components:66:0
+                                        ID: ID:ArrowRev:Components:77:0
                                         persistent-ID: "?"
                                         UpdateOrder:
                                           ID: "?"
@@ -5622,7 +6243,7 @@ Children:
                                           ID: "?"
                                           Data: Linear
                                         Vector:
-                                          ID: ID:ArrowRev:Components:66:Vector:0
+                                          ID: ID:ArrowRev:Components:77:Vector:0
                                           Data:
                                             - 0
                                             - 0
@@ -5646,7 +6267,7 @@ Children:
                                           ID: "?"
                                           Data: true
                                         BodyUVScale:
-                                          ID: ID:ArrowRev:Components:66:BodyUVScale:0
+                                          ID: ID:ArrowRev:Components:77:BodyUVScale:0
                                           Data:
                                             - 0
                                             - 0
@@ -5689,7 +6310,7 @@ Children:
                                             - 333.3333333333333
                                             - 333.3333333333333
                                             - sRGB
-                                    - Type: 60
+                                    - Type: 71
                                       Data:
                                         ID: "?"
                                         persistent-ID: "?"
@@ -5701,12 +6322,12 @@ Children:
                                           Data: true
                                         Mesh:
                                           ID: "?"
-                                          Data: ID:ArrowRev:Components:66:0
+                                          Data: ID:ArrowRev:Components:77:0
                                         Materials:
                                           ID: "?"
                                           Data:
                                             - ID: "?"
-                                              Data: ID:ArrowRev:Components:67:0
+                                              Data: ID:ArrowRev:Components:78:0
                                         MaterialPropertyBlocks:
                                           ID: "?"
                                           Data: []
@@ -5719,9 +6340,9 @@ Children:
                                         SortingOrder:
                                           ID: "?"
                                           Data: 0
-                                    - Type: 67
+                                    - Type: 78
                                       Data:
-                                        ID: ID:ArrowRev:Components:67:0
+                                        ID: ID:ArrowRev:Components:78:0
                                         persistent-ID: "?"
                                         UpdateOrder:
                                           ID: "?"
@@ -5772,16 +6393,16 @@ Children:
                                             - sRGB
                                         BehindFarTexture:
                                           ID: "?"
-                                          Data: ID:Assets:73:ID:8
+                                          Data: ID:Assets:81:ID:0
                                         BehindNearTexture:
                                           ID: "?"
-                                          Data: ID:Assets:73:ID:8
+                                          Data: ID:Assets:81:ID:0
                                         FrontFarTexture:
                                           ID: "?"
-                                          Data: ID:Assets:73:ID:8
+                                          Data: ID:Assets:81:ID:0
                                         FrontNearTexture:
                                           ID: "?"
-                                          Data: ID:Assets:73:ID:8
+                                          Data: ID:Assets:81:ID:0
                                         BehindFarTextureScale:
                                           ID: "?"
                                           Data:
@@ -5869,7 +6490,7 @@ Children:
               ID: "?"
               Data:
                 - 0
-                - 0
+                - 500222.3333333333
                 - 0
             Rotation:
               ID: "?"
@@ -5931,9 +6552,9 @@ Children:
                 Scale:
                   ID: "?"
                   Data:
-                    - 111
-                    - 111
-                    - 111
+                    - 111111
+                    - 111111
+                    - 111111
                 Tag:
                   ID: "?"
                   Data: null
@@ -6479,7 +7100,7 @@ Children:
                                   Data: true
                                 Reference:
                                   ID: "?"
-                                  Data: ID:handle:Components:22:0
+                                  Data: ID:handle:Components:36:0
                         Children: []
                         ParentReference: ""
                       - Name:
@@ -6999,6 +7620,627 @@ Children:
                                   Data: false
                         Children: []
                         ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ElementSource`1
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 32000
+                            - -1889
+                            - -222.33333333333334
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 23
+                              Data:
+                                ID: ID:ElementSource`1:Components:23:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Source:
+                                  ID: "?"
+                                  Data: ID:ElementSource`1:Components:24:1
+                            - Type: 24
+                              Data:
+                                ID: ID:ElementSource`1:Components:24:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Reference:
+                                  ID: "?"
+                                  Data: ID:handle:Components:36:0
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: GrabbableGrabber
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 56666.666666666664
+                            - -6889
+                            - -222.33333333333334
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 22
+                              Data:
+                                ID: ID:GrabbableGrabber:Components:22:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Grabbable:
+                                  ID: "?"
+                                  Data: ID:ObjectCast<Slider,IGrabbable>:Components:25:1
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ObjectCast<Slider,IGrabbable>
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 46666.666666666664
+                            - -7333.333333333333
+                            - -222.33333333333334
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 25
+                              Data:
+                                ID: ID:ObjectCast<Slider,IGrabbable>:Components:25:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Input:
+                                  ID: "?"
+                                  Data: ID:ElementSource`1:Components:23:1
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: GetSlot
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 82000
+                            - -11444.333333333334
+                            - -222.33333333333334
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 26
+                              Data:
+                                ID: ID:GetSlot:Components:26:2
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Component:
+                                  ID: "?"
+                                  Data: ID:ObjectCast<Grabber,IComponent>:Components:27:2
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ObjectCast<Grabber,IComponent>
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 72000
+                            - -11777.666666666666
+                            - -222.33333333333334
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 27
+                              Data:
+                                ID: ID:ObjectCast<Grabber,IComponent>:Components:27:2
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Input:
+                                  ID: "?"
+                                  Data: ID:GrabbableGrabber:Components:22:1
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: GetActiveUser
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 100777.66666666667
+                            - -10444.333333333334
+                            - -333.3333333333333
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 28
+                              Data:
+                                ID: ID:GetActiveUser:Components:28:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Instance:
+                                  ID: "?"
+                                  Data: ID:GetSlot:Components:26:2
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: SecondsTimer
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 120222.33333333333
+                            - 6333.333333333333
+                            - -333.3333333333333
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 29
+                              Data:
+                                ID: "?"
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                UpdatingUser:
+                                  ID: "?"
+                                  Data: ID:SecondsTimer:Components:30:1
+                                SkipIfNull:
+                                  ID: "?"
+                                  Data: null
+                                OnUpdate:
+                                  ID: "?"
+                                  Data: ID:If:Components:35:1
+                                Interval:
+                                  ID: "?"
+                                  Data: ID:ValueInput`1:Components:34:5
+                            - Type: 30
+                              Data:
+                                ID: ID:SecondsTimer:Components:30:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Reference:
+                                  ID: ID:SecondsTimer:Components:30:Reference:1
+                                  Data: null
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ValueInput`1
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 103222.33333333333
+                            - 6889
+                            - -333.3333333333333
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 34
+                              Data:
+                                ID: ID:ValueInput`1:Components:34:5
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Value:
+                                  ID: "?"
+                                  Data: 50
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: ReferenceDrive`1
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 123111
+                            - -18000
+                            - -333.3333333333333
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 31
+                              Data:
+                                ID: ID:ReferenceDrive`1:Components:31:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Target:
+                                  ID: "?"
+                                  Data: ID:GetActiveUser:Components:28:1
+                            - Type: 32
+                              Data:
+                                ID: "?"
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                Node:
+                                  ID: "?"
+                                  Data: ID:ReferenceDrive`1:Components:31:1
+                                Path:
+                                  ID: "?"
+                                  Data: []
+                                Drive:
+                                  ID: "?"
+                                  Data: ID:SecondsTimer:Components:30:Reference:1
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: If
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 141889
+                            - 11777.666666666666
+                            - -333.3333333333333
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 35
+                              Data:
+                                ID: ID:If:Components:35:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                OnTrue:
+                                  ID: "?"
+                                  Data: ID:Dynamic Impulse Trigger With Value<String>:Components:3:3
+                                OnFalse:
+                                  ID: "?"
+                                  Data: null
+                                Condition:
+                                  ID: "?"
+                                  Data: ID:IsLocalUser:Components:33:1
+                        Children: []
+                        ParentReference: ""
+                      - Name:
+                          ID: "?"
+                          Data: IsLocalUser
+                        Active:
+                          ID: "?"
+                          Data: true
+                        ID: "?"
+                        Persistent-ID: "?"
+                        Position:
+                          ID: "?"
+                          Data:
+                            - 120889
+                            - -9222.333333333334
+                            - -333.3333333333333
+                        Rotation:
+                          ID: "?"
+                          Data:
+                            - 0
+                            - 111
+                            - 0
+                            - 111111
+                        Scale:
+                          ID: "?"
+                          Data:
+                            - 111111
+                            - 111111
+                            - 111111
+                        Tag:
+                          ID: "?"
+                          Data: null
+                        OrderOffset:
+                          ID: "?"
+                          Data: 0
+                        Components:
+                          ID: "?"
+                          Data:
+                            - Type: 33
+                              Data:
+                                ID: ID:IsLocalUser:Components:33:1
+                                persistent-ID: "?"
+                                UpdateOrder:
+                                  ID: "?"
+                                  Data: 0
+                                Enabled:
+                                  ID: "?"
+                                  Data: true
+                                User:
+                                  ID: "?"
+                                  Data: ID:GetActiveUser:Components:28:1
+                        Children: []
+                        ParentReference: ""
                     ParentReference: ""
                 ParentReference: ""
             ParentReference: ""
@@ -7073,7 +8315,7 @@ Children:
                   Data: Static.Main
                 Reference:
                   ID: "?"
-                  Data: ID:MeteorSetter:0
+                  Data: ID:Asteroid Slot:0
                 OverrideOnLink:
                   ID: "?"
                   Data: false
@@ -7092,7 +8334,7 @@ Children:
                   Data: Static.ChildrenParent
                 Reference:
                   ID: "?"
-                  Data: ID:MeteorSetter:0
+                  Data: ID:handle_root:0
                 OverrideOnLink:
                   ID: "?"
                   Data: false
@@ -7134,7 +8376,7 @@ Children:
         Components:
           ID: "?"
           Data:
-            - Type: 68
+            - Type: 79
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -7153,7 +8395,7 @@ Children:
                 OverrideOnLink:
                   ID: "?"
                   Data: false
-            - Type: 68
+            - Type: 79
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -7172,7 +8414,7 @@ Children:
                 OverrideOnLink:
                   ID: "?"
                   Data: false
-            - Type: 69
+            - Type: 80
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -7191,7 +8433,7 @@ Children:
                 OverrideOnLink:
                   ID: "?"
                   Data: false
-            - Type: 69
+            - Type: 80
               Data:
                 ID: "?"
                 persistent-ID: "?"
