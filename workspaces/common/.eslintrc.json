@@ -1,0 +1,62 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:deprecation/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "ignorePatterns": ["src/lib/mirage-x", "src/lib/fileUtil", "src/dev/"],
+  "rules": {
+    "@typescript-eslint/no-deprecated": "warn",
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          {
+            "from": "../../node_modules/@uni-pocket",
+            "target": "./src"
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
+      }
+    ]
+  }
+}
