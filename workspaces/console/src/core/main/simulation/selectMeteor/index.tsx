@@ -1,5 +1,5 @@
-import { Box } from "../../../unit/package/Primitive/main";
+import { Earth } from "../../../unit/package/Meteor/main";
 
 export const SelectMeteor = () => {
-  return <Box />;
+  return <Earth />;
 };

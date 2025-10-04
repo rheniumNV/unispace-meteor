@@ -12,7 +12,7 @@ const SwitchMainUiContent = () => {
     case "SelectMeteor":
       return <MainUiSelectMeteor />;
     case "SetMeteor":
-      return <MainUiSetMeteor />;
+      return <MainUiSetMeteor simulationState={appState.simulationState} />;
     default:
       return null;
   }

@@ -5,9 +5,11 @@ import {
 } from "../../../unit/package/PrimitiveUix/main";
 import { StyledButton, StyledText } from "../../../unit/package/StyledUix/main";
 import { Color, Sprite } from "../../style";
-import { useAppContext } from "../../appContext";
+import { type SimulationModeSetMeteor, useAppContext } from "../../appContext";
 
-export const MainUiSetMeteor = () => {
+export const MainUiSetMeteor = (props: {
+  simulationState: SimulationModeSetMeteor;
+}) => {
   const { dispatch } = useAppContext();
 
   const onClickBack = useCallback(() => {
@@ -29,6 +31,25 @@ export const MainUiSetMeteor = () => {
             verticalAlign="Middle"
           />
         </StyledButton>
+      </LayoutElement>
+      <LayoutElement minHeight={100}>
+        <StyledText
+          content={`Position: ${props.simulationState.meteor.position.join(", ")}`}
+          horizontalAlign="Center"
+          styledColor={Color.text}
+          verticalAlign="Middle"
+          verticalAutoSize
+          horizontalAutoSize
+          autoSizeMin={1}
+        />
+      </LayoutElement>
+      <LayoutElement minHeight={100}>
+        <StyledText
+          content={`Power: ${props.simulationState.meteor.power.join(", ")}`}
+          horizontalAlign="Center"
+          styledColor={Color.text}
+          verticalAlign="Middle"
+        />
       </LayoutElement>
     </VerticalLayout>
   );
