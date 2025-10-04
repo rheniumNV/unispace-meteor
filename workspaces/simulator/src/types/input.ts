@@ -1,0 +1,69 @@
+/**
+ * シミュレーション入力パラメータの型定義
+ */
+
+/** 3次元ベクトル [x, y, z] */
+export type Vec3 = readonly [number, number, number];
+
+/** 発見時点の情報 */
+export interface DiscoveryInput {
+	/** 発見時刻（UTC） */
+	readonly t0: Date;
+	/** 発見時のECEF座標 [m] */
+	readonly r0_ecef: Vec3;
+	/** 速度情報 */
+	readonly velocity: {
+		/** 速度の大きさ [m/s] */
+		readonly magnitude_m_s: number;
+		/** 方位角 [度] (北から時計回り、0=北、90=東) */
+		readonly azimuth_deg: number;
+		/** 入射角 [度] (水平面からの角度、0=水平、90=鉛直下向き) */
+		readonly entry_angle_deg: number;
+	};
+}
+
+/** 隕石の物性 */
+export interface MeteoroidProperties {
+	/** 直径 [m] */
+	readonly diameter_m: number;
+	/** 密度 [kg/m³] */
+	readonly density_kg_m3: number;
+	/** 強度 [MPa] */
+	readonly strength_mpa: number;
+}
+
+/** 環境パラメータ */
+export interface EnvironmentParams {
+	/** 地表タイプ */
+	readonly surface: "land" | "water";
+	/** 海面大気密度 [kg/m³] */
+	readonly rho0_kg_m3?: number;
+	/** 大気スケールハイト [m] */
+	readonly scale_height_m?: number;
+	/** 重力加速度 [m/s²] */
+	readonly gravity_m_s2?: number;
+}
+
+/** モデルパラメータ */
+export interface ModelParams {
+	/** 抗力係数 */
+	readonly drag_coefficient?: number;
+	/** アブレーション係数 [s²/km²] (省略可) */
+	readonly ablation_coeff?: number;
+	/** 地震効率 */
+	readonly seismic_efficiency?: number;
+	/** 爆風過圧しきい値 [kPa] */
+	readonly blast_thresholds_kpa?: readonly number[];
+}
+
+/** シミュレーション入力全体 */
+export interface SimulationInput {
+	/** 発見時点の情報 */
+	readonly discovery: DiscoveryInput;
+	/** 隕石の物性 */
+	readonly meteoroid: MeteoroidProperties;
+	/** 環境パラメータ */
+	readonly environment: EnvironmentParams;
+	/** モデルパラメータ */
+	readonly model?: ModelParams;
+}
