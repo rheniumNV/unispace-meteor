@@ -76,6 +76,8 @@ export interface SeismicInfo {
 export interface SimulationResult {
 	/** 弾道データ */
 	readonly trajectory: readonly TrajectoryPoint[];
+	/** 終了理由 */
+	readonly terminationReason: "ground" | "breakup" | "burnout" | "max_time" | "escape";
 	/** 衝突までの時間 [s] */
 	readonly time_to_impact_s: number;
 	/** エネルギー情報 */
