@@ -4,10 +4,6 @@ import {
   type SimulationResult,
 } from "@unispace-meteor/simulator/dist/main";
 
-export type SimulationModeSelectMeteor = {
-  mode: "SelectMeteor";
-};
-
 export type SimulationModeSetMeteor = {
   mode: "SetMeteor";
   meteor: {
@@ -15,6 +11,7 @@ export type SimulationModeSetMeteor = {
     power: [number, number, number];
     mass: number;
     size: number;
+    visualIndex: number;
   };
   input?: SimulationInput;
   result?: SimulationResult;
@@ -27,11 +24,11 @@ export type SimulationModeViewMeteor = {
     power: [number, number, number];
     mass: number;
     size: number;
+    visualIndex: number;
   };
 };
 
 export type SimulationState =
-  | SimulationModeSelectMeteor
   | SimulationModeSetMeteor
   | SimulationModeViewMeteor;
 
@@ -42,24 +39,14 @@ export type AppState = {
 
 export type AppAction =
   | {
-      type: "GO_TO_SELECT_METEOR";
-    }
-  | {
-      type: "SELECT_METEOR";
+      type: "UPDATE_METEOR";
       meteor: {
-        mass: number;
-        size: number;
-        position: [number, number, number];
-        power: [number, number, number];
+        mass?: number;
+        size?: number;
+        visualIndex?: number;
+        position?: [number, number, number];
+        power?: [number, number, number];
       };
-    }
-  | {
-      type: "UPDATE_METEOR_POSITION";
-      position: [number, number, number];
-    }
-  | {
-      type: "UPDATE_METEOR_POWER";
-      power: [number, number, number];
     }
   | {
       type: "UPDATE_SIMULATION_RESULT";
@@ -71,26 +58,7 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
   console.debug("appReducer", action);
 
   switch (action.type) {
-    case "GO_TO_SELECT_METEOR":
-      return {
-        mode: "Simulation",
-        simulationState: { mode: "SelectMeteor" },
-      };
-    case "SELECT_METEOR":
-      if (state.simulationState.mode !== "SelectMeteor") {
-        return state;
-      }
-      return {
-        ...state,
-        simulationState: {
-          mode: "SetMeteor",
-          meteor: {
-            ...action.meteor,
-            power: [0, 0, 0],
-          },
-        },
-      };
-    case "UPDATE_METEOR_POSITION":
+    case "UPDATE_METEOR":
       if (state.simulationState.mode !== "SetMeteor") {
         return state;
       }
@@ -99,22 +67,15 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
         simulationState: {
           mode: "SetMeteor",
           meteor: {
-            ...state.simulationState.meteor,
-            position: action.position,
-          },
-        },
-      };
-    case "UPDATE_METEOR_POWER":
-      if (state.simulationState.mode !== "SetMeteor") {
-        return state;
-      }
-      return {
-        ...state,
-        simulationState: {
-          mode: "SetMeteor",
-          meteor: {
-            ...state.simulationState.meteor,
-            power: action.power,
+            size: action.meteor.size ?? state.simulationState.meteor.size,
+            mass: action.meteor.mass ?? state.simulationState.meteor.mass,
+            position:
+              action.meteor.position ?? state.simulationState.meteor.position,
+            power: action.meteor.power ?? state.simulationState.meteor.power,
+            visualIndex:
+              action.meteor.visualIndex ??
+              state.simulationState.meteor.visualIndex ??
+              0,
           },
         },
       };
@@ -153,7 +114,14 @@ export const AppContextProvider = ({
   >(appReducer, {
     mode: "Simulation",
     simulationState: {
-      mode: "SelectMeteor",
+      mode: "SetMeteor",
+      meteor: {
+        position: [2, 0.1, -0.05],
+        power: [0.3, 0.05, 0],
+        mass: 3000,
+        size: 10000,
+        visualIndex: 0,
+      },
     },
   } as const);
 

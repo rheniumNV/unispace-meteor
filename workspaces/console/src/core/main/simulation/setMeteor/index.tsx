@@ -3,12 +3,11 @@ import { MeteorSetterV2 } from "../../../lib/meteorSetterV2";
 import { useAppContext, type SimulationModeSetMeteor } from "../../appContext";
 import { useCallback, useEffect, useMemo } from "react";
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
-import { Earth, Line } from "../../../unit/package/Meteor/main";
-import {
-  simulateMeteorImpact,
-  Vec3,
-} from "@unispace-meteor/simulator/dist/main";
+import { Earth, Line, MeteorVisual } from "../../../unit/package/Meteor/main";
+import { simulateMeteorImpact } from "@unispace-meteor/simulator/dist/main";
 import { R } from "@mobily/ts-belt";
+import { SIMULATION_SCALE, SIMULATION_POWER_SCALE } from "../../constant";
+import { MeteorSelector } from "./meteorSelector";
 
 export const SetMeteor = (props: {
   simulationState: SimulationModeSetMeteor;
@@ -21,14 +20,20 @@ export const SetMeteor = (props: {
         discovery: {
           t0: new Date(),
           r0_ecef: [
-            props.simulationState.meteor.position[0] * 10000000,
-            props.simulationState.meteor.position[1] * 10000000,
-            props.simulationState.meteor.position[2] * 10000000,
+            props.simulationState.meteor.position[0] * SIMULATION_SCALE,
+            props.simulationState.meteor.position[1] * SIMULATION_SCALE,
+            props.simulationState.meteor.position[2] * SIMULATION_SCALE,
           ],
           velocity_ecef: [
-            -props.simulationState.meteor.power[0] * 0.01 * 10000000,
-            -props.simulationState.meteor.power[1] * 0.01 * 10000000,
-            -props.simulationState.meteor.power[2] * 0.01 * 10000000,
+            -props.simulationState.meteor.power[0] *
+              SIMULATION_POWER_SCALE *
+              SIMULATION_SCALE,
+            -props.simulationState.meteor.power[1] *
+              SIMULATION_POWER_SCALE *
+              SIMULATION_SCALE,
+            -props.simulationState.meteor.power[2] *
+              SIMULATION_POWER_SCALE *
+              SIMULATION_SCALE,
           ],
         },
         meteoroid: {
@@ -60,40 +65,35 @@ export const SetMeteor = (props: {
     if (!props.simulationState.result) {
       return [];
     }
+    const length = props.simulationState.result.trajectory.length;
     const points: (readonly [number, number, number])[] =
-      props.simulationState.result.trajectory.map((point) => point.r_ecef);
-    // [
-    //   [2, 0, 0],
-    //   [1.8, 0.2, 0],
-    //   [1.5, 0.4, 0],
-    //   [1.2, 0.5, 0],
-    //   [0.8, 0.45, 0],
-    //   [0.4, 0.3, 0],
-    //   [0, 0, 0],
-    // ];
+      props.simulationState.result.trajectory
+        .map((point) => point.r_ecef)
+        .map(
+          (point) =>
+            [
+              point[0] / SIMULATION_SCALE,
+              point[1] / SIMULATION_SCALE,
+              point[2] / SIMULATION_SCALE,
+            ] as [number, number, number],
+        )
+        .filter((_p, index) => index % Math.round(length / 100) === 0);
     return points
-      .map(
-        (point) =>
-          [point[0] / 10000000, point[1] / 10000000, point[2] / 10000000] as [
-            number,
-            number,
-            number,
-          ],
-      )
       .map((point, index) => {
         const prevPoint = points[index - 1];
-        return {
-          start: [point[0], point[1], point[2]] as [number, number, number],
-          end: prevPoint
-            ? ([prevPoint[0], prevPoint[1], prevPoint[2]] as [
+        return prevPoint
+          ? {
+              start: [point[0], point[1], point[2]] as [number, number, number],
+              end: [prevPoint[0], prevPoint[1], prevPoint[2]] as [
                 number,
                 number,
                 number,
-              ])
-            : ([0, 0, 0] as [number, number, number]),
-        };
+              ],
+            }
+          : undefined;
       })
-      .slice(0, 10);
+      .filter((v) => v !== undefined)
+      .slice(0, 1000);
   }, [props.simulationState.result]);
 
   console.log(meteorLinePoints.length);
@@ -101,8 +101,10 @@ export const SetMeteor = (props: {
   const onChangePosition = useCallback(
     (_env: FunctionEnv, position: [number, number, number]) => {
       dispatch({
-        type: "UPDATE_METEOR_POSITION",
-        position,
+        type: "UPDATE_METEOR",
+        meteor: {
+          position,
+        },
       });
     },
     [dispatch],
@@ -111,8 +113,10 @@ export const SetMeteor = (props: {
   const onChangePower = useCallback(
     (_env: FunctionEnv, power: [number, number, number]) => {
       dispatch({
-        type: "UPDATE_METEOR_POWER",
-        power,
+        type: "UPDATE_METEOR",
+        meteor: {
+          power,
+        },
       });
     },
     [dispatch],
@@ -126,9 +130,15 @@ export const SetMeteor = (props: {
         defaultPower={props.simulationState.meteor.power}
         onChangePosition={onChangePosition}
         onChangePower={onChangePower}
-      />
-      {meteorLinePoints.map((line) => (
-        <Line key={line.start.join(",")} start={line.start} end={line.end} />
+      >
+        <MeteorVisual
+          scale={[0.1, 0.1, 0.1]}
+          meteorIndex={props.simulationState.meteor.visualIndex}
+        />
+        <MeteorSelector />
+      </MeteorSetterV2>
+      {meteorLinePoints.map((line, index) => (
+        <Line key={index} start={line.start} end={line.end} />
       ))}
     </Slot>
   );
