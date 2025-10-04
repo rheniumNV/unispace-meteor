@@ -1,5 +1,6 @@
 import { useAppContext } from "../appContext";
 import { SelectMeteor } from "./selectMeteor";
+import { SetMeteor } from "./setMeteor";
 
 export const Simulation = () => {
   const { appState } = useAppContext();
@@ -7,6 +8,8 @@ export const Simulation = () => {
   switch (appState.simulationState.mode) {
     case "SelectMeteor":
       return <SelectMeteor />;
+    case "SetMeteor":
+      return <SetMeteor simulationState={appState.simulationState} />;
     default:
       return null;
   }
