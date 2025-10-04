@@ -9,6 +9,7 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
+    "dev": "tsc-watch",
     "clean": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\"",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",

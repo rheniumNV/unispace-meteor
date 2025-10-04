@@ -10,6 +10,7 @@
     "build:console": "npm run build -w workspaces/console",
     "dev": "run-p dev:*",
     "dev:common": "npm run dev -w workspaces/common",
+    "dev:simulator": "npm run dev -w workspaces/simulator",
     "dev:miragex": "npm run dev -w workspaces/miragex",
     "dev:console": "npm run dev -w workspaces/console",
     "clean": "run-p clean:*",

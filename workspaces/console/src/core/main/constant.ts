@@ -1,2 +1,2 @@
-export const SIMULATION_SCALE = 10000000;
+export const SIMULATION_SCALE = 12756000;
 export const SIMULATION_POWER_SCALE = 0.001;

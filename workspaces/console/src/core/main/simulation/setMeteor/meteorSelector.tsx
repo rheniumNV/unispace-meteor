@@ -31,8 +31,8 @@ const meteorList: Meteor[] = [
   },
   {
     name: "Meteor 3",
-    size: 300000,
-    mass: 30000000,
+    size: 300,
+    mass: 3500,
     visualIndex: 2,
   },
 ];

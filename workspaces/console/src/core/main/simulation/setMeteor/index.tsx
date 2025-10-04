@@ -3,7 +3,13 @@ import { MeteorSetterV2 } from "../../../lib/meteorSetterV2";
 import { useAppContext, type SimulationModeSetMeteor } from "../../appContext";
 import { useCallback, useEffect, useMemo } from "react";
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
-import { Earth, Line, MeteorVisual } from "../../../unit/package/Meteor/main";
+import {
+  DamagePrediction,
+  Earth,
+  GroundZeroEffect,
+  Line,
+  MeteorVisual,
+} from "../../../unit/package/Meteor/main";
 import { simulateMeteorImpact } from "@unispace-meteor/simulator/dist/main";
 import { R } from "@mobily/ts-belt";
 import { SIMULATION_SCALE, SIMULATION_POWER_SCALE } from "../../constant";
@@ -44,6 +50,9 @@ export const SetMeteor = (props: {
         environment: {
           surface: "land",
         },
+        model: {
+          time_step_s: 10,
+        },
       } as const;
       const result = simulateMeteorImpact(input);
       if (R.isOk(result)) {
@@ -77,7 +86,11 @@ export const SetMeteor = (props: {
               point[2] / SIMULATION_SCALE,
             ] as [number, number, number],
         )
-        .filter((_p, index) => index % Math.round(length / 100) === 0);
+        .filter((_p, index) =>
+          length < 100 || length - 1 === index
+            ? true
+            : index % Math.round(length / 100) === 0,
+        );
     return points
       .map((point, index) => {
         const prevPoint = points[index - 1];
@@ -122,6 +135,35 @@ export const SetMeteor = (props: {
     [dispatch],
   );
 
+  const crater = useMemo(() => {
+    if (!props.simulationState.result) {
+      return undefined;
+    }
+    if (!props.simulationState.result.crater.hasCrater) {
+      return undefined;
+    }
+    if (!props.simulationState.result.trajectory) {
+      return undefined;
+    }
+    const lastPoint =
+      props.simulationState.result.trajectory[
+        props.simulationState.result.trajectory.length - 1
+      ];
+    if (!lastPoint) {
+      return undefined;
+    }
+    return {
+      ...props.simulationState.result.crater,
+      damage_radii_km:
+        props.simulationState.result.blast.damage_radii_km["20kPa"],
+      position: [
+        lastPoint.r_ecef[0] / SIMULATION_SCALE,
+        lastPoint.r_ecef[1] / SIMULATION_SCALE,
+        lastPoint.r_ecef[2] / SIMULATION_SCALE,
+      ] as [number, number, number],
+    };
+  }, [props.simulationState.result]);
+
   return (
     <Slot>
       <Earth />
@@ -140,6 +182,17 @@ export const SetMeteor = (props: {
       {meteorLinePoints.map((line, index) => (
         <Line key={index} start={line.start} end={line.end} />
       ))}
+      {crater && (
+        <GroundZeroEffect
+          position={crater.position}
+          radius1={crater.transient_diameter_m / SIMULATION_SCALE / 2}
+          radius2={crater.final_diameter_m / SIMULATION_SCALE / 2}
+          radius3={((crater.damage_radii_km ?? 0) / SIMULATION_SCALE) * 1000}
+          color1={[1, 0, 0, 1]}
+          color2={[1, 1, 0, 1]}
+          color3={[1, 1, 1, 0.5]}
+        />
+      )}
     </Slot>
   );
 };
