@@ -3,7 +3,7 @@ import {
   ObjectContext,
   ObjectField,
   ObjectComponent,
-} from "@uni-pocket/common/dist/resonite/virtualObject";
+} from "@unispace-meteor/common/dist/resonite/virtualObject";
 import { stringify } from "yaml";
 
 const round = (n: number, digit: number) => Math.round(n * 10 ** digit) / digit;

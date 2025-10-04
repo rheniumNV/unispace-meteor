@@ -1,9 +1,9 @@
-import { readFileSync } from "@uni-pocket/common/dist/file";
+import { readFileSync } from "@unispace-meteor/common/dist/file";
 import {
   deleteHolder,
   ObjectContext,
   VirtualContext,
-} from "@uni-pocket/common/dist/resonite/virtualObject";
+} from "@unispace-meteor/common/dist/resonite/virtualObject";
 import { res2yaml } from "../util/res2yaml";
 import fs from "fs";
 import path from "path";

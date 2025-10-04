@@ -1,4 +1,4 @@
-import { ObjectContext } from "@uni-pocket/common/dist/resonite/virtualObject";
+import { ObjectContext } from "@unispace-meteor/common/dist/resonite/virtualObject";
 
 export const emptyFeedback: ObjectContext = {
   VersionNumber: "2024.7.20.94",

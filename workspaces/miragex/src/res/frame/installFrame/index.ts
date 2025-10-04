@@ -1,7 +1,7 @@
 import {
   ObjectContext,
   VirtualContext,
-} from "@uni-pocket/common/dist/resonite/virtualObject";
+} from "@unispace-meteor/common/dist/resonite/virtualObject";
 import ResFeedbackJson from "./ResFeedback.json";
 
 export const generateInstallFrame = (option: {
