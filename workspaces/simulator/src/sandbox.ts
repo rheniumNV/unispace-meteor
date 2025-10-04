@@ -62,7 +62,7 @@ const input: SimulationInput = {
 	meteoroid: {
 		// 大型隕石（大クレーター狙い）
 		diameter_m: 250, // 直径 [m]
-		density_kg_m3: 3500, // 密度 [kg/m^3]（stony-iron想定：岩石より重い）
+		mass_kg: 28_634_308_045, // 質量 [kg]（直径250m、密度3500kg/m³想定）
 		strength_mpa: 50, // 強度 [MPa]（空中破砕を抑えて地表まで持たせる）
 	},
 

@@ -30,7 +30,8 @@
     "workspaces/common",
     "workspaces/miragex",
     "workspaces/simulator",
-    "workspaces/console"
+    "workspaces/console",
+    "workspaces/data-client"
   ],
   "volta": {
     "node": "22.20.0"
