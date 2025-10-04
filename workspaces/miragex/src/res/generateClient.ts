@@ -2,7 +2,7 @@ import {
   ObjectContext,
   VirtualContext,
   dynamicValueVariable,
-} from "@uni-pocket/common/dist/resonite/virtualObject";
+} from "@unispace-meteor/common/dist/resonite/virtualObject";
 import RawResFeedbackJson from "./core/ResFeedback.json";
 
 const ResFeedbackJson = RawResFeedbackJson as unknown as ObjectContext;

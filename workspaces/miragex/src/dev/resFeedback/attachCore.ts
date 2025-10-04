@@ -1,4 +1,4 @@
-import { readFileSync } from "@uni-pocket/common/dist/file";
+import { readFileSync } from "@unispace-meteor/common/dist/file";
 import { res2yaml } from "../../util/res2yaml";
 import fs from "fs";
 import path from "path";

@@ -1,5 +1,5 @@
-import { readFileSync } from "@uni-pocket/common/dist/file";
-import { VirtualContext } from "@uni-pocket/common/dist/resonite/virtualObject";
+import { readFileSync } from "@unispace-meteor/common/dist/file";
+import { VirtualContext } from "@unispace-meteor/common/dist/resonite/virtualObject";
 import { Compress } from "brson.js";
 import { res2yaml } from "../util/res2yaml";
 import { generateClient } from "./generateClient";
