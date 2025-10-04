@@ -1,0 +1,1268 @@
+Name:
+  ID: "?"
+  Data: NexusUix/HomeTagButton
+Active:
+  ID: "?"
+  Data: true
+ID: "?"
+Persistent-ID: "?"
+Position:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+Rotation:
+  ID: "?"
+  Data:
+    - 0
+    - 0
+    - 0
+    - 1
+Scale:
+  ID: "?"
+  Data:
+    - 1
+    - 1
+    - 1
+Tag:
+  ID: "?"
+  Data: null
+OrderOffset:
+  ID: "?"
+  Data: 0
+Components:
+  ID: "?"
+  Data:
+    - Type: 0
+      Data:
+        ID: "?"
+        persistent-ID: "?"
+        UpdateOrder:
+          ID: "?"
+          Data: 0
+        Enabled:
+          ID: "?"
+          Data: true
+        SpaceName:
+          ID: "?"
+          Data: null
+        OnlyDirectBinding:
+          ID: "?"
+          Data: false
+Children:
+  - Name:
+      ID: "?"
+      Data: DV
+    Active:
+      ID: "?"
+      Data: true
+    ID: "?"
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 1
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            VariableName:
+              ID: "?"
+              Data: Static.Ref
+            Reference:
+              ID: "?"
+              Data: ID:Ref:0
+            OverrideOnLink:
+              ID: "?"
+              Data: false
+    Children: []
+    ParentReference: ""
+  - Name:
+      ID: "?"
+      Data: Ref
+    Active:
+      ID: "?"
+      Data: true
+    ID: ID:Ref:0
+    Persistent-ID: "?"
+    Position:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+    Rotation:
+      ID: "?"
+      Data:
+        - 0
+        - 0
+        - 0
+        - 111111
+    Scale:
+      ID: "?"
+      Data:
+        - 111111
+        - 111111
+        - 111111
+    Tag:
+      ID: "?"
+      Data: null
+    OrderOffset:
+      ID: "?"
+      Data: 0
+    Components:
+      ID: "?"
+      Data:
+        - Type: 0
+          Data:
+            ID: "?"
+            persistent-ID: "?"
+            UpdateOrder:
+              ID: "?"
+              Data: 0
+            Enabled:
+              ID: "?"
+              Data: true
+            SpaceName:
+              ID: "?"
+              Data: null
+            OnlyDirectBinding:
+              ID: "?"
+              Data: false
+    Children:
+      - Name:
+          ID: "?"
+          Data: HomeTagButton
+        Active:
+          ID: "?"
+          Data: true
+        ID: ID:HomeTagButton:0
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 2
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                Sprite:
+                  ID: ID:HomeTagButton:Components:2:Sprite:0
+                  Data: null
+                Material:
+                  ID: ID:HomeTagButton:Components:2:Material:0
+                  Data: null
+                PreserveAspect:
+                  ID: "?"
+                  Data: true
+                NineSliceSizing:
+                  ID: "?"
+                  Data: RectHeight
+                FlipHorizontally:
+                  ID: "?"
+                  Data: false
+                FlipVertically:
+                  ID: "?"
+                  Data: false
+                InteractionTarget:
+                  ID: "?"
+                  Data: true
+                FillRect:
+                  ID: "?"
+                  Data:
+                    X: 0
+                    Y: 0
+                    Width: 333.3333333333333
+                    Height: 333.3333333333333
+                Tint:
+                  ID: ID:HomeTagButton:Components:2:Tint:0
+                  Data:
+                    - 159.66666666666666
+                    - 203.33333333333334
+                    - 243.33333333333334
+                    - 333.3333333333333
+                    - Linear
+                __legacyZWrite-ID: "?"
+            - Type: 3
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                AnchorMin:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                AnchorMax:
+                  ID: "?"
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                OffsetMin:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                OffsetMax:
+                  ID: "?"
+                  Data:
+                    - 0
+                    - 0
+                Pivot:
+                  ID: "?"
+                  Data:
+                    - 166.66666666666666
+                    - 166.66666666666666
+            - Type: 4
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                BaseColor:
+                  ID: "?"
+                  Data:
+                    - 240.66666666666666
+                    - 268
+                    - 290.3333333333333
+                    - 333.3333333333333
+                    - sRGB
+                ColorDrivers:
+                  ID: "?"
+                  Data:
+                    - ID: "?"
+                      ColorDrive:
+                        ID: "?"
+                        Data: ID:HomeTagButton:Components:2:Tint:0
+                      TintColorMode:
+                        ID: "?"
+                        Data: Explicit
+                      NormalColor:
+                        ID: "?"
+                        Data:
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - sRGBAlpha
+                      HighlightColor:
+                        ID: "?"
+                        Data:
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - 0
+                          - sRGBAlpha
+                      PressColor:
+                        ID: "?"
+                        Data:
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - 333.3333333333333
+                          - 0
+                          - sRGBAlpha
+                      DisabledColor:
+                        ID: "?"
+                        Data:
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 333.3333333333333
+                          - sRGBAlpha
+                    - ID: "?"
+                      ColorDrive:
+                        ID: "?"
+                        Data: ID:Active:Components:8:TintTopLeft:0
+                      TintColorMode:
+                        ID: "?"
+                        Data: Direct
+                      NormalColor:
+                        ID: "?"
+                        Data:
+                          - 10
+                          - 150.33333333333334
+                          - 290.3333333333333
+                          - 333.3333333333333
+                          - Linear
+                      HighlightColor:
+                        ID: "?"
+                        Data:
+                          - 10
+                          - 150.33333333333334
+                          - 290.3333333333333
+                          - 333.3333333333333
+                          - Linear
+                      PressColor:
+                        ID: "?"
+                        Data:
+                          - 62.666666666666664
+                          - 234
+                          - 313.6666666666667
+                          - 333.3333333333333
+                          - sRGB
+                      DisabledColor:
+                        ID: "?"
+                        Data:
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 333.3333333333333
+                          - sRGB
+                    - ID: "?"
+                      ColorDrive:
+                        ID: "?"
+                        Data: ID:Active:Components:8:TintTopRight:0
+                      TintColorMode:
+                        ID: "?"
+                        Data: Direct
+                      NormalColor:
+                        ID: "?"
+                        Data:
+                          - 67.33333333333333
+                          - 175.66666666666666
+                          - 310
+                          - 333.3333333333333
+                          - Linear
+                      HighlightColor:
+                        ID: "?"
+                        Data:
+                          - 67.33333333333333
+                          - 175.66666666666666
+                          - 310
+                          - 333.3333333333333
+                          - Linear
+                      PressColor:
+                        ID: "?"
+                        Data:
+                          - 80.66666666666667
+                          - 211
+                          - 372
+                          - 333.3333333333333
+                          - Linear
+                      DisabledColor:
+                        ID: "?"
+                        Data:
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 333.3333333333333
+                          - sRGB
+                    - ID: "?"
+                      ColorDrive:
+                        ID: "?"
+                        Data: ID:Active:Components:8:TintBottomRight:0
+                      TintColorMode:
+                        ID: "?"
+                        Data: Direct
+                      NormalColor:
+                        ID: "?"
+                        Data:
+                          - 29.666666666666668
+                          - 24.666666666666668
+                          - 310
+                          - 333.3333333333333
+                          - Linear
+                      HighlightColor:
+                        ID: "?"
+                        Data:
+                          - 29.666666666666668
+                          - 24.666666666666668
+                          - 310
+                          - 333.3333333333333
+                          - Linear
+                      PressColor:
+                        ID: "?"
+                        Data:
+                          - 35.333333333333336
+                          - 29.666666666666668
+                          - 372
+                          - 333.3333333333333
+                          - Linear
+                      DisabledColor:
+                        ID: "?"
+                        Data:
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 333.3333333333333
+                          - sRGB
+                    - ID: "?"
+                      ColorDrive:
+                        ID: "?"
+                        Data: ID:Active:Components:8:TintBottomLeft:0
+                      TintColorMode:
+                        ID: "?"
+                        Data: Direct
+                      NormalColor:
+                        ID: "?"
+                        Data:
+                          - 67.33333333333333
+                          - 175.66666666666666
+                          - 310
+                          - 333.3333333333333
+                          - Linear
+                      HighlightColor:
+                        ID: "?"
+                        Data:
+                          - 67.33333333333333
+                          - 175.66666666666666
+                          - 310
+                          - 333.3333333333333
+                          - Linear
+                      PressColor:
+                        ID: "?"
+                        Data:
+                          - 80.66666666666667
+                          - 211
+                          - 372
+                          - 333.3333333333333
+                          - Linear
+                      DisabledColor:
+                        ID: "?"
+                        Data:
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 216.66666666666666
+                          - 333.3333333333333
+                          - sRGB
+                IsPressed:
+                  ID: "?"
+                  Data: false
+                IsHovering:
+                  ID: "?"
+                  Data: false
+                HoverVibrate:
+                  ID: "?"
+                  Data: Short
+                PressVibrate:
+                  ID: "?"
+                  Data: Medium
+                ClearFocusOnPress:
+                  ID: "?"
+                  Data: true
+                PassThroughHorizontalMovement:
+                  ID: "?"
+                  Data: true
+                PassThroughVerticalMovement:
+                  ID: "?"
+                  Data: true
+                RequireLockInToPress:
+                  ID: "?"
+                  Data: false
+                RequireInitialPress:
+                  ID: "?"
+                  Data: true
+                PressPoint:
+                  ID: "?"
+                  Data:
+                    - -151593.66666666666
+                    - 322154
+                SendSlotEvents:
+                  ID: "?"
+                  Data: true
+                Pressed:
+                  ID: "?"
+                  Data:
+                    Target: null
+                Pressing:
+                  ID: "?"
+                  Data:
+                    Target: null
+                Released:
+                  ID: "?"
+                  Data:
+                    Target: null
+                HoverEnter:
+                  ID: "?"
+                  Data:
+                    Target: null
+                HoverStay:
+                  ID: "?"
+                  Data:
+                    Target: null
+                HoverLeave:
+                  ID: "?"
+                  Data:
+                    Target: null
+                __legacy_NormalColor-ID: "?"
+                __legacy_HighlightColor-ID: "?"
+                __legacy_PressColor-ID: "?"
+                __legacy_DisabledColor-ID: "?"
+                __legacy_TintColorMode-ID: "?"
+                __legacy_ColorDrive-ID: "?"
+            - Type: 5
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                Target:
+                  ID: "?"
+                  Data: "?"
+                ExcludeDisabled:
+                  ID: "?"
+                  Data: false
+                PressedData:
+                  ID: "?"
+                  Data: {}
+                PressingData:
+                  ID: "?"
+                  Data: {}
+                ReleasedData:
+                  ID: "?"
+                  Data: {}
+                HoverEnterData:
+                  ID: "?"
+                  Data: {}
+                HoverStayData:
+                  ID: "?"
+                  Data: {}
+                HoverLeaveData:
+                  ID: "?"
+                  Data: {}
+            - Type: 6
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:HomeTagButton:Components:6:VariableName:0
+                  Data: null
+                Target:
+                  ID: "?"
+                  Data: ID:HomeTagButton:Components:2:Sprite:0
+                DefaultTarget:
+                  ID: "?"
+                  Data: null
+            - Type: 7
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: ID:HomeTagButton:Components:7:VariableName:0
+                  Data: null
+                Target:
+                  ID: "?"
+                  Data: ID:HomeTagButton:Components:2:Material:0
+                DefaultTarget:
+                  ID: "?"
+                  Data: null
+        Children:
+          - Name:
+              ID: "?"
+              Data: Shadow
+            Active:
+              ID: "?"
+              Data: true
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: -3333000
+            Components:
+              ID: "?"
+              Data:
+                - Type: 3
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    AnchorMin:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                    AnchorMax:
+                      ID: "?"
+                      Data:
+                        - 333.3333333333333
+                        - 333.3333333333333
+                    OffsetMin:
+                      ID: "?"
+                      Data:
+                        - -8333.333333333334
+                        - -9333.333333333334
+                    OffsetMax:
+                      ID: "?"
+                      Data:
+                        - 8333.333333333334
+                        - 7333.333333333333
+                    Pivot:
+                      ID: "?"
+                      Data:
+                        - 166.66666666666666
+                        - 166.66666666666666
+                - Type: 8
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    Sprite:
+                      ID: ID:Shadow:Components:8:Sprite:0
+                      Data: null
+                    Material:
+                      ID: ID:Shadow:Components:8:Material:0
+                      Data: null
+                    PreserveAspect:
+                      ID: "?"
+                      Data: true
+                    NineSliceSizing:
+                      ID: "?"
+                      Data: RectHeight
+                    FlipHorizontally:
+                      ID: "?"
+                      Data: false
+                    FlipVertically:
+                      ID: "?"
+                      Data: false
+                    InteractionTarget:
+                      ID: "?"
+                      Data: true
+                    FillRect:
+                      ID: "?"
+                      Data:
+                        X: 0
+                        Y: 0
+                        Width: 333.3333333333333
+                        Height: 333.3333333333333
+                    TintTopLeft:
+                      ID: "?"
+                      Data:
+                        - 2.3333333333333335
+                        - 132.33333333333334
+                        - 266.3333333333333
+                        - 233.33333333333334
+                        - Linear
+                    TintTopRight:
+                      ID: "?"
+                      Data:
+                        - 26
+                        - 39
+                        - 256
+                        - 233.33333333333334
+                        - Linear
+                    TintBottomRight:
+                      ID: "?"
+                      Data:
+                        - 33.333333333333336
+                        - 28
+                        - 256
+                        - 233.33333333333334
+                        - Linear
+                    TintBottomLeft:
+                      ID: "?"
+                      Data:
+                        - 4.666666666666667
+                        - 110.66666666666667
+                        - 266.3333333333333
+                        - 233.33333333333334
+                        - Linear
+                    __legacyZWrite-ID: "?"
+                - Type: 6
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: ID:Shadow:Components:6:VariableName:0
+                      Data: null
+                    Target:
+                      ID: "?"
+                      Data: ID:Shadow:Components:8:Sprite:0
+                    DefaultTarget:
+                      ID: "?"
+                      Data: null
+                - Type: 7
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: ID:Shadow:Components:7:VariableName:0
+                      Data: null
+                    Target:
+                      ID: "?"
+                      Data: ID:Shadow:Components:8:Material:0
+                    DefaultTarget:
+                      ID: "?"
+                      Data: null
+            Children: []
+            ParentReference: ""
+          - Name:
+              ID: "?"
+              Data: Active
+            Active:
+              ID: "?"
+              Data: true
+            ID: "?"
+            Persistent-ID: "?"
+            Position:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+            Rotation:
+              ID: "?"
+              Data:
+                - 0
+                - 0
+                - 0
+                - 111111
+            Scale:
+              ID: "?"
+              Data:
+                - 111111
+                - 111111
+                - 111111
+            Tag:
+              ID: "?"
+              Data: null
+            OrderOffset:
+              ID: "?"
+              Data: 0
+            Components:
+              ID: "?"
+              Data:
+                - Type: 3
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    AnchorMin:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                    AnchorMax:
+                      ID: "?"
+                      Data:
+                        - 333.3333333333333
+                        - 333.3333333333333
+                    OffsetMin:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                    OffsetMax:
+                      ID: "?"
+                      Data:
+                        - 0
+                        - 0
+                    Pivot:
+                      ID: "?"
+                      Data:
+                        - 166.66666666666666
+                        - 166.66666666666666
+                - Type: 8
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    Sprite:
+                      ID: ID:Active:Components:8:Sprite:0
+                      Data: null
+                    Material:
+                      ID: ID:Active:Components:8:Material:0
+                      Data: null
+                    PreserveAspect:
+                      ID: "?"
+                      Data: true
+                    NineSliceSizing:
+                      ID: "?"
+                      Data: RectHeight
+                    FlipHorizontally:
+                      ID: "?"
+                      Data: false
+                    FlipVertically:
+                      ID: "?"
+                      Data: false
+                    InteractionTarget:
+                      ID: "?"
+                      Data: true
+                    FillRect:
+                      ID: "?"
+                      Data:
+                        X: 0
+                        Y: 0
+                        Width: 333.3333333333333
+                        Height: 333.3333333333333
+                    TintTopLeft:
+                      ID: ID:Active:Components:8:TintTopLeft:0
+                      Data:
+                        - 10
+                        - 150.33333333333334
+                        - 290.3333333333333
+                        - 333.3333333333333
+                        - Linear
+                    TintTopRight:
+                      ID: ID:Active:Components:8:TintTopRight:0
+                      Data:
+                        - 67.33333333333333
+                        - 175.66666666666666
+                        - 310
+                        - 333.3333333333333
+                        - Linear
+                    TintBottomRight:
+                      ID: ID:Active:Components:8:TintBottomRight:0
+                      Data:
+                        - 29.666666666666668
+                        - 24.666666666666668
+                        - 310
+                        - 333.3333333333333
+                        - Linear
+                    TintBottomLeft:
+                      ID: ID:Active:Components:8:TintBottomLeft:0
+                      Data:
+                        - 67.33333333333333
+                        - 175.66666666666666
+                        - 310
+                        - 333.3333333333333
+                        - Linear
+                    __legacyZWrite-ID: "?"
+                - Type: 6
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: ID:Active:Components:6:VariableName:0
+                      Data: null
+                    Target:
+                      ID: "?"
+                      Data: ID:Active:Components:8:Sprite:0
+                    DefaultTarget:
+                      ID: "?"
+                      Data: null
+                - Type: 7
+                  Data:
+                    ID: "?"
+                    persistent-ID: "?"
+                    UpdateOrder:
+                      ID: "?"
+                      Data: 0
+                    Enabled:
+                      ID: "?"
+                      Data: true
+                    VariableName:
+                      ID: ID:Active:Components:7:VariableName:0
+                      Data: null
+                    Target:
+                      ID: "?"
+                      Data: ID:Active:Components:8:Material:0
+                    DefaultTarget:
+                      ID: "?"
+                      Data: null
+            Children: []
+            ParentReference: ""
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Static
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Root
+                Reference:
+                  ID: "?"
+                  Data: ID:Ref:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.Main
+                Reference:
+                  ID: "?"
+                  Data: ID:HomeTagButton:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 1
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Static.ChildrenParent
+                Reference:
+                  ID: "?"
+                  Data: ID:HomeTagButton:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+      - Name:
+          ID: "?"
+          Data: DV/Props
+        Active:
+          ID: "?"
+          Data: true
+        ID: "?"
+        Persistent-ID: "?"
+        Position:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+        Rotation:
+          ID: "?"
+          Data:
+            - 0
+            - 0
+            - 0
+            - 111111
+        Scale:
+          ID: "?"
+          Data:
+            - 111111
+            - 111111
+            - 111111
+        Tag:
+          ID: "?"
+          Data: null
+        OrderOffset:
+          ID: "?"
+          Data: 0
+        Components:
+          ID: "?"
+          Data:
+            - Type: 9
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.onClick
+                TargetField:
+                  ID: "?"
+                  Data: "?"
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 9
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledSprite
+                TargetField:
+                  ID: "?"
+                  Data: ID:HomeTagButton:Components:6:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 9
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledMaterial
+                TargetField:
+                  ID: "?"
+                  Data: ID:HomeTagButton:Components:7:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 9
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledShadowSprite
+                TargetField:
+                  ID: "?"
+                  Data: ID:Shadow:Components:6:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 9
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledShadowMaterial
+                TargetField:
+                  ID: "?"
+                  Data: ID:Shadow:Components:7:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 9
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledActiveSprite
+                TargetField:
+                  ID: "?"
+                  Data: ID:Active:Components:6:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+            - Type: 9
+              Data:
+                ID: "?"
+                persistent-ID: "?"
+                UpdateOrder:
+                  ID: "?"
+                  Data: 0
+                Enabled:
+                  ID: "?"
+                  Data: true
+                VariableName:
+                  ID: "?"
+                  Data: Props.styledActiveMaterial
+                TargetField:
+                  ID: "?"
+                  Data: ID:Active:Components:7:VariableName:0
+                OverrideOnLink:
+                  ID: "?"
+                  Data: false
+        Children: []
+        ParentReference: ""
+    ParentReference: ""
+ParentReference: ""

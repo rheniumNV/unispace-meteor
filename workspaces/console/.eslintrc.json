@@ -1,0 +1,106 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022
+  },
+  "plugins": ["@typescript-eslint", "react"],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "src/lib/mirage-x",
+    "src/lib/fileUtil",
+    "src/dev/"
+  ],
+  "rules": {
+    "import/order": [
+      "warn",
+      {
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"]
+      }
+    ],
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          {
+            "from": "./src/lib/mirage-x/res",
+            "target": "./src/!(res)"
+          },
+          {
+            "from": "./src/lib/mirage-x/server",
+            "target": "./src/!(server)"
+          },
+          {
+            "from": "./src/lib/mirage-x/main",
+            "target": ["./src/!(core)", "./src/core/!(main)"]
+          },
+          {
+            "from": "./src/lib/mirage-x/util",
+            "target": "./src/!(dev)"
+          },
+          {
+            "from": "./src/lib/mirage-x/unit",
+            "target": ["./src/!(core)", "./src/core/!(unit)"]
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
+      }
+    ],
+    "react/jsx-boolean-value": "error",
+    "react/jsx-curly-brace-presence": "error",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/hook-use-state": "error",
+    "react/jsx-fragments": "error",
+    "react/jsx-sort-props": "warn",
+    "react/jsx-pascal-case": "error",
+    "react/no-danger": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
