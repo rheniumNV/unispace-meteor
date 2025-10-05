@@ -51,6 +51,8 @@ export interface ModelParams {
 	readonly time_step_s?: number;
 	/** 最大シミュレーション時間 [s] */
 	readonly max_time_s?: number;
+	/** escape検出後の継続時間 [s] (デフォルト: 3600s = 1時間) */
+	readonly escape_continue_time_s?: number;
 }
 
 /** シミュレーション入力全体 */
