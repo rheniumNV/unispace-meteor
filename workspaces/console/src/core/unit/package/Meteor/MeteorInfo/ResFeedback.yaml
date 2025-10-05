@@ -1066,7 +1066,7 @@ Children:
                               Data: true
                             Sprite:
                               ID: "?"
-                              Data: ID:Assets:10:ID:1
+                              Data: ID:Assets:10:ID:21
                             Material:
                               ID: "?"
                               Data: null
@@ -1496,7 +1496,7 @@ Children:
                                   Data: true
                                 Font:
                                   ID: "?"
-                                  Data: ID:Assets:33:ID:0
+                                  Data: ID:Assets:31:ID:5
                                 Content:
                                   ID: ID:Text:Components:14:Content:0
                                   Data: ""
@@ -1530,7 +1530,7 @@ Children:
                                   ID: "?"
                                   Data:
                                     - ID: "?"
-                                      Data: ID:Assets:35:ID:0
+                                      Data: ID:Assets:33:ID:0
                                 LineHeight:
                                   ID: "?"
                                   Data: 266.6666666666667
@@ -1768,7 +1768,7 @@ Children:
                                   Data: true
                                 Sprite:
                                   ID: "?"
-                                  Data: ID:Assets:10:ID:2
+                                  Data: ID:Assets:10:ID:22
                                 Material:
                                   ID: "?"
                                   Data: null
@@ -1958,7 +1958,7 @@ Children:
                                       Data: true
                                     Font:
                                       ID: "?"
-                                      Data: ID:Assets:33:ID:0
+                                      Data: ID:Assets:31:ID:5
                                     Content:
                                       ID: ID:Text:Components:14:Content:1
                                       Data: ""
@@ -1992,7 +1992,7 @@ Children:
                                       ID: "?"
                                       Data:
                                         - ID: "?"
-                                          Data: ID:Assets:35:ID:0
+                                          Data: ID:Assets:33:ID:0
                                     LineHeight:
                                       ID: "?"
                                       Data: 266.6666666666667
@@ -2268,7 +2268,7 @@ Children:
                                   Data: true
                                 Sprite:
                                   ID: "?"
-                                  Data: ID:Assets:10:ID:3
+                                  Data: ID:Assets:10:ID:23
                                 Material:
                                   ID: "?"
                                   Data: null
@@ -2399,7 +2399,7 @@ Children:
                               Data: true
                             Sprite:
                               ID: "?"
-                              Data: ID:Assets:10:ID:4
+                              Data: ID:Assets:10:ID:24
                             Material:
                               ID: "?"
                               Data: null
@@ -3578,7 +3578,7 @@ Children:
                                   Data: true
                                 Sprite:
                                   ID: "?"
-                                  Data: ID:Assets:10:ID:5
+                                  Data: ID:Assets:10:ID:25
                                 Material:
                                   ID: "?"
                                   Data: null
@@ -3698,7 +3698,7 @@ Children:
                                   Data: true
                                 Sprite:
                                   ID: "?"
-                                  Data: ID:Assets:10:ID:1
+                                  Data: ID:Assets:10:ID:21
                                 Material:
                                   ID: "?"
                                   Data: null
@@ -4128,7 +4128,7 @@ Children:
                                       Data: true
                                     Font:
                                       ID: "?"
-                                      Data: ID:Assets:33:ID:0
+                                      Data: ID:Assets:31:ID:5
                                     Content:
                                       ID: ID:Text:Components:14:Content:2
                                       Data: " kg/㎥"
@@ -4162,7 +4162,7 @@ Children:
                                       ID: "?"
                                       Data:
                                         - ID: "?"
-                                          Data: ID:Assets:35:ID:0
+                                          Data: ID:Assets:33:ID:0
                                     LineHeight:
                                       ID: "?"
                                       Data: 266.6666666666667
@@ -4338,7 +4338,7 @@ Children:
                                   Data: true
                                 Sprite:
                                   ID: "?"
-                                  Data: ID:Assets:10:ID:4
+                                  Data: ID:Assets:10:ID:24
                                 Material:
                                   ID: "?"
                                   Data: null
@@ -4781,7 +4781,7 @@ Children:
                                   Data: true
                                 Sprite:
                                   ID: "?"
-                                  Data: ID:Assets:10:ID:6
+                                  Data: ID:Assets:10:ID:26
                                 Material:
                                   ID: "?"
                                   Data: null
@@ -4901,7 +4901,7 @@ Children:
                                   Data: true
                                 Sprite:
                                   ID: "?"
-                                  Data: ID:Assets:10:ID:1
+                                  Data: ID:Assets:10:ID:21
                                 Material:
                                   ID: "?"
                                   Data: null
@@ -5331,7 +5331,7 @@ Children:
                                       Data: true
                                     Font:
                                       ID: "?"
-                                      Data: ID:Assets:33:ID:0
+                                      Data: ID:Assets:31:ID:5
                                     Content:
                                       ID: ID:Text:Components:14:Content:3
                                       Data: " m"
@@ -5365,7 +5365,7 @@ Children:
                                       ID: "?"
                                       Data:
                                         - ID: "?"
-                                          Data: ID:Assets:35:ID:0
+                                          Data: ID:Assets:33:ID:0
                                     LineHeight:
                                       ID: "?"
                                       Data: 266.6666666666667
@@ -5541,7 +5541,7 @@ Children:
                                   Data: true
                                 Sprite:
                                   ID: "?"
-                                  Data: ID:Assets:10:ID:4
+                                  Data: ID:Assets:10:ID:24
                                 Material:
                                   ID: "?"
                                   Data: null

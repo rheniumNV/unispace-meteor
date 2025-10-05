@@ -4,7 +4,6 @@ import { useAppContext } from "../appContext";
 import { Color, Material, Sprite } from "../style";
 import { MainUiAnimation } from "./animation";
 import { ManageSimulationData } from "./manageSimulationData";
-import { LoadSimulationData } from "./manageSimulationData/loadSimulationData";
 import { MainUiSetMeteor } from "./setMeteor";
 
 const SwitchMainUiContent = () => {
@@ -23,7 +22,15 @@ const SwitchMainUiContent = () => {
 export const MainUi = () => {
   const { appState } = useAppContext();
   return (
-    <Canvas position={[0, 1, 0]} size={[1000, 1000]}>
+    <Canvas
+      position={[0, 1, 0]}
+      size={
+        appState.enableSimulationLoader ||
+        appState.simulationState.mode === "ANIMATION"
+          ? [1000, 1000]
+          : [1000, 500]
+      }
+    >
       <StyledImage
         styledColor={Color.white}
         styledMaterial={Material.baseAlpha}

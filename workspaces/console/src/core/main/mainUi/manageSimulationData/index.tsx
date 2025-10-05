@@ -9,8 +9,8 @@ import {
 import { useAppContext } from "../../appContext";
 import { SimpleButton } from "../../components/simpleButton";
 import { useLocalSimulationData } from "../../localSimulationData";
-import { StyledText } from "../../../unit/package/StyledUix/main";
 import { StyledTextFieldV2 } from "../../../lib/styledTextFieldV2";
+import { Sprite } from "../../style";
 import { LoadSimulationData } from "./loadSimulationData";
 
 export const ManageSimulationData = () => {
@@ -108,15 +108,15 @@ export const ManageSimulationData = () => {
   );
 
   return (
-    <VerticalLayout>
+    <VerticalLayout spacing={10}>
       {!appState.enableSimulationLoader && (
-        <VerticalLayout forceExpandChildHeight={false}>
+        <VerticalLayout forceExpandChildHeight={false} spacing={10}>
           <LayoutElement minHeight={100}>
-            <HorizontalLayout>
-              <StyledText content="title:" />
+            <HorizontalLayout spacing={5}>
               <StyledTextFieldV2
                 defaultValue={appState.simulationState.title}
                 onChange={onChangeTitle}
+                styledBackgroundSprite={Sprite.circleBase}
               />
             </HorizontalLayout>
           </LayoutElement>
@@ -133,7 +133,7 @@ export const ManageSimulationData = () => {
           </LayoutElement>
         </VerticalLayout>
       )}
-      <VerticalLayout forceExpandChildHeight={false}>
+      <VerticalLayout forceExpandChildHeight={false} spacing={5}>
         {appState.enableSimulationLoader &&
           localSimulationData.status === "SUCCESS" && (
             <LoadSimulationData

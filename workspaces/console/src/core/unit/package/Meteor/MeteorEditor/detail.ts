@@ -1,3 +1,4 @@
+import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import {
   DetailBase,
   UnitProp,
@@ -8,9 +9,17 @@ import {
 } from "@unispace-meteor/miragex/dist/unit/common";
 
 const detail = {
-  code: "Meteor/SmoothTransform",
+  code: "Meteor/MeteorEditor",
   propsConfig: {
-    enable: UnitProp.Boolean(true),
+    title: UnitProp.String(""),
+    description: UnitProp.String(""),
+    density: UnitProp.String(""),
+    size: UnitProp.String(""),
+    speed: UnitProp.String(""),
+    positionX: UnitProp.String(""),
+    positionY: UnitProp.String(""),
+    positionZ: UnitProp.String(""),
+    onClickSelectPreset: UnitProp.Function((_env: FunctionEnv) => {}),
   },
   children: "multi",
 } as const satisfies DetailBase;

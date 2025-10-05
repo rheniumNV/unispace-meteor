@@ -94,7 +94,7 @@ export const LoadSimulationData = (props: {
       <LayoutElement minHeight={100}>
         <SimpleButton onClick={onClickBack} text="Back" />
       </LayoutElement>
-      <LayoutElement minHeight={100}>
+      {/* <LayoutElement minHeight={100}>
         <HorizontalLayout>
           <SimpleButton
             onClick={onClickLocal}
@@ -111,7 +111,7 @@ export const LoadSimulationData = (props: {
             text="Nearby asteroids(from Web API)"
           />
         </HorizontalLayout>
-      </LayoutElement>
+      </LayoutElement> */}
       <LayoutElement flexibleHeight={1}>
         {props.mode === "Local" && (
           <VerticalLayout forceExpandChildHeight={false} spacing={10}>

@@ -11,36 +11,36 @@ type Meteor = {
   imageUrl: string;
 };
 
-const meteorList: Meteor[] = [
+export const meteorList: Meteor[] = [
   {
-    name: "アエンデ隕石",
-    size: 2.7,
-    density: 20000000,
+    name: "アポフィス",
+    size: 370,
+    density: 2700,
+    visualIndex: 0,
+    imageUrl:
+      "resdb:///e3d9c09304faf986fcb442138f885134e9f3bcddb2c1943d44c92146af9ce95c.webp",
+    description:
+      "発見当初、2029年に地球に衝突する可能性がわずかながら指摘され、大きな注目を集めました。その後の観測で、少なくとも今後100年間は衝突の危険がないことが確認されています。2029年には地球から約3万1000kmの距離を通過する予定で、静止衛星の軌道よりも内側を通る珍しい機会となります。",
+  },
+  {
+    name: "(415029) 2011 UL21",
+    size: 2300,
+    density: 2700,
+    visualIndex: 1,
+    imageUrl:
+      "resdb:///4c1801234c8c2c1e42260c4f2ae6f869a0ac2f05fd5b8ae791694f1675822c75.webp",
+    description:
+      "2024年6月下旬に地球の近くを通過しました。地球に衝突する危険はありませんでしたが、近年通過した中では最大級の小惑星の一つとして注目を集めました。「惑星キラー」とも呼ばれるサイズ帯に属しています。",
+  },
+  {
+    name: "チクシュルーブ衝突体",
+    size: 15000,
+    density: 1400,
     visualIndex: 2,
     imageUrl:
       "resdb:///b3299f05048f71286193e736039557bbeb28e00270aa98b1831a47a3a0eb254f.webp",
     description:
-      "アエンデ隕石は、1969年にメキシコのチワワ州プエブリート・デ・アエンデに落下しました。重さ約2トンで地球上で発見された最大の炭素質コンドライト隕石です。最も研究されている隕石の一つであり、豊富なCAI(高アルミニウムカルシウム含有物)を含むことで知られています。",
-  },
-  {
-    name: "チェリャビンスク隕石",
-    size: 17,
-    density: 10000000,
-    visualIndex: 0,
-    imageUrl:
-      "resdb:///4c1801234c8c2c1e42260c4f2ae6f869a0ac2f05fd5b8ae791694f1675822c75.webp",
-    description:
-      "チェリャビンスク隕石は、2013年ロシアのチェリャビンスク市の上空約20キロメートルで爆発しました。直径約18メートル、重量約1万1000トンの隕石で時速約66960キロメートルの速度で地球大気圏に突入しました。この爆発は、広島を破壊した原爆の30倍以上のエネルギーを放出し、惑星防衛に関する世界的な議論の火付け役となりました。",
-  },
-  {
-    name: "ピークスキル流星",
-    size: 0.3,
-    density: 12.57,
-    visualIndex: 1,
-    imageUrl:
-      "resdb:///62860aa6d0c249b5b7ab44a801fd8f828b5a05e540343e7b3f99710303fd2aee.webp",
-    description:
-      "1992年のピークスキル流星は、16本の独立したビデオに撮影され、その後車に衝突しました。結果として生じた隕石は高密度の岩石で構成されており、非常に重い ボウリングのボールほどの大きさと質量があります。 隕石事件の中でも最も視覚的な記録が残るものの一つとなりました。",
+      "約6600万年前、現在のメキシコ・ユカタン半島沖に落下した直径約10kmの小惑星。この衝突が引き起こした地球規模の環境激変が、恐竜を含む当時の生物種の約75%を絶滅させた「白亜紀末の大量絶滅」の最も有力な原因とされています。",
   },
 ];
 
@@ -75,6 +75,8 @@ export const MeteorSelector = () => {
       dispatch({
         type: "UPDATE_METEOR",
         meteor: {
+          name: meteor.name,
+          description: meteor.description,
           density: meteor.density,
           size: meteor.size,
           visualIndex: meteor.visualIndex,
