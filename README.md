@@ -164,3 +164,10 @@ npm run clean
 - **Lint/Format**: Biome / ESLint / Prettier
 - **ビルド**: TypeScript Compiler
 - **モノレポ**: npm workspaces
+
+## ハッカソン開発の様子
+
+### 1日目の様子
+[!['1日目'](https://i.ytimg.com/vi/_qWxChR3BTY/hqdefault.jpg?v=68dd42e9&sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCvFUK-lgEZNe0oKagExcMe0prV3g)](https://www.youtube.com/watch?v=vrROEV2g5VA)
+### 2日目の様子
+[!['2日目'](https://i.ytimg.com/vi/_qWxChR3BTY/hqdefault.jpg?v=68dd42e9&sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCvFUK-lgEZNe0oKagExcMe0prV3g)](https://www.youtube.com/watch?v=_qWxChR3BTY)
