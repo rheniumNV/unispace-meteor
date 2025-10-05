@@ -125,7 +125,8 @@ export const convertToSimulationInput = (
 		},
 		meteoroid: {
 			diameter_m: diameterM,
-			mass_kg: massKg,
+			density_kg_m3: densityKgM3,
+			strength_mpa: 100,
 		},
 		environment: {
 			surface: "land", // デフォルトは陸地

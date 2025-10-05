@@ -113,16 +113,25 @@ export const LoadSimulationData = (props: {
         </HorizontalLayout>
       </LayoutElement>
       <LayoutElement flexibleHeight={1}>
-        <VerticalLayout forceExpandChildHeight={false} spacing={10}>
-          {Object.entries(props.localSimulationData).map(([_, data], index) => (
-            <LocalSimulationData
-              deleteSimulationData={props.deleteSimulationData}
-              key={index}
-              onClickLoadSimulationData={onClickLoadSimulationData}
-              simulationData={data}
-            />
-          ))}
-        </VerticalLayout>
+        {props.mode === "Local" && (
+          <VerticalLayout forceExpandChildHeight={false} spacing={10}>
+            {Object.entries(props.localSimulationData).map(
+              ([_, data], index) => (
+                <LocalSimulationData
+                  deleteSimulationData={props.deleteSimulationData}
+                  key={index}
+                  onClickLoadSimulationData={onClickLoadSimulationData}
+                  simulationData={data}
+                />
+              ),
+            )}
+          </VerticalLayout>
+        )}
+        {props.mode === "NasaApi" && (
+          <VerticalLayout forceExpandChildHeight={false} spacing={10}>
+            <SimpleButton text="Load" />
+          </VerticalLayout>
+        )}
       </LayoutElement>
     </VerticalLayout>
   );
