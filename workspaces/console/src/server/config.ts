@@ -31,7 +31,7 @@ const {
 } = process.env;
 
 export const config: Config = {
-  appCode: APP_CODE ?? "UniPocket",
+  appCode: APP_CODE ?? "PlanetaryDefenseLab",
   mirage: {
     url: MIRAGE_URL ?? "http://localhost:3000/",
     port: MIRAGE_PORT ?? "3000",

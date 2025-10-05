@@ -69,6 +69,20 @@ export const LoadSimulationData = (props: {
     [dispatch],
   );
 
+  const onClickLocal = useCallback(() => {
+    dispatch({
+      type: "OPEN_LOAD_SIMULATION_DATA",
+      mode: "Local",
+    });
+  }, [dispatch]);
+
+  const onClickApi = useCallback(() => {
+    dispatch({
+      type: "OPEN_LOAD_SIMULATION_DATA",
+      mode: "NasaApi",
+    });
+  }, [dispatch]);
+
   return (
     <VerticalLayout
       forceExpandChildHeight={false}
@@ -80,17 +94,44 @@ export const LoadSimulationData = (props: {
       <LayoutElement minHeight={100}>
         <SimpleButton onClick={onClickBack} text="Back" />
       </LayoutElement>
+      {/* <LayoutElement minHeight={100}>
+        <HorizontalLayout>
+          <SimpleButton
+            onClick={onClickLocal}
+            overrideStyledColor={
+              props.mode === "Local" ? Color.selectedButton : Color.button
+            }
+            text="Local Save Data"
+          />
+          <SimpleButton
+            onClick={onClickApi}
+            overrideStyledColor={
+              props.mode === "NasaApi" ? Color.selectedButton : Color.button
+            }
+            text="Nearby asteroids(from Web API)"
+          />
+        </HorizontalLayout>
+      </LayoutElement> */}
       <LayoutElement flexibleHeight={1}>
-        <VerticalLayout forceExpandChildHeight={false} spacing={10}>
-          {Object.entries(props.localSimulationData).map(([_, data], index) => (
-            <LocalSimulationData
-              deleteSimulationData={props.deleteSimulationData}
-              key={index}
-              onClickLoadSimulationData={onClickLoadSimulationData}
-              simulationData={data}
-            />
-          ))}
-        </VerticalLayout>
+        {props.mode === "Local" && (
+          <VerticalLayout forceExpandChildHeight={false} spacing={10}>
+            {Object.entries(props.localSimulationData).map(
+              ([_, data], index) => (
+                <LocalSimulationData
+                  deleteSimulationData={props.deleteSimulationData}
+                  key={index}
+                  onClickLoadSimulationData={onClickLoadSimulationData}
+                  simulationData={data}
+                />
+              ),
+            )}
+          </VerticalLayout>
+        )}
+        {props.mode === "NasaApi" && (
+          <VerticalLayout forceExpandChildHeight={false} spacing={10}>
+            <SimpleButton text="Load" />
+          </VerticalLayout>
+        )}
       </LayoutElement>
     </VerticalLayout>
   );

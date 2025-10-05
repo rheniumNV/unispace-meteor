@@ -217,11 +217,11 @@ Children:
                   ID: "?"
                   Data:
                     - ID: "?"
-                      Data: ID:Chelyabinsk.obj:Tag:8
+                      Data: ID:Apophis.obj:Tag:15
                     - ID: "?"
                       Data: ID:PeekskillMeteorite.obj:Tag:8
                     - ID: "?"
-                      Data: ID:PeekskillMeteorite.obj:Tag:15
+                      Data: ID:チクシュルーブ衝突体:Tag:15
                 ActiveIndex:
                   ID: ID:MeteorVisual:Components:2:ActiveIndex:0
                   Data: 0
@@ -231,9 +231,9 @@ Children:
         Children:
           - Name:
               ID: "?"
-              Data: Chelyabinsk.obj
+              Data: Apophis.obj
             Active:
-              ID: ID:Chelyabinsk.obj:Tag:8
+              ID: ID:Apophis.obj:Tag:15
               Data: true
             ID: "?"
             Persistent-ID: "?"
@@ -268,7 +268,7 @@ Children:
             Children:
               - Name:
                   ID: "?"
-                  Data: Chelyabinsk.obj
+                  Data: Apophis.obj
                 Active:
                   ID: "?"
                   Data: true
@@ -305,7 +305,7 @@ Children:
                 Children:
                   - Name:
                       ID: "?"
-                      Data: Cube
+                      Data: Apophis.obj
                     Active:
                       ID: "?"
                       Data: true
@@ -351,12 +351,12 @@ Children:
                               Data: true
                             Mesh:
                               ID: "?"
-                              Data: ID:Assets:14:ID:1
+                              Data: ID:Assets:15:ID:1
                             Materials:
                               ID: "?"
                               Data:
                                 - ID: "?"
-                                  Data: ID:Assets:8:ID:3
+                                  Data: ID:Assets:17:ID:0
                             MaterialPropertyBlocks:
                               ID: "?"
                               Data: []
@@ -399,7 +399,7 @@ Children:
                               Data: false
                             Mesh:
                               ID: "?"
-                              Data: ID:Assets:14:ID:1
+                              Data: ID:Assets:15:ID:2
                             Sidedness:
                               ID: "?"
                               Data: Front
@@ -532,12 +532,12 @@ Children:
                               Data: true
                             Mesh:
                               ID: "?"
-                              Data: ID:Assets:14:ID:2
+                              Data: ID:Assets:15:ID:2
                             Materials:
                               ID: "?"
                               Data:
                                 - ID: "?"
-                                  Data: ID:Assets:8:ID:4
+                                  Data: ID:Assets:17:ID:1
                             MaterialPropertyBlocks:
                               ID: "?"
                               Data: []
@@ -580,7 +580,7 @@ Children:
                               Data: false
                             Mesh:
                               ID: "?"
-                              Data: ID:Assets:14:ID:2
+                              Data: ID:Assets:15:ID:3
                             Sidedness:
                               ID: "?"
                               Data: Front
@@ -593,9 +593,9 @@ Children:
             ParentReference: ""
           - Name:
               ID: "?"
-              Data: PeekskillMeteorite.obj
+              Data: チクシュルーブ衝突体
             Active:
-              ID: ID:PeekskillMeteorite.obj:Tag:15
+              ID: ID:チクシュルーブ衝突体:Tag:15
               Data: false
             ID: "?"
             Persistent-ID: "?"
@@ -630,7 +630,7 @@ Children:
             Children:
               - Name:
                   ID: "?"
-                  Data: PeekskillMeteorite_resize.obj
+                  Data: チクシュルーブ衝突体
                 Active:
                   ID: "?"
                   Data: true
@@ -667,7 +667,7 @@ Children:
                 Children:
                   - Name:
                       ID: "?"
-                      Data: AllendeMeteorite
+                      Data: チクシュルーブ衝突体
                     Active:
                       ID: "?"
                       Data: true
@@ -713,12 +713,12 @@ Children:
                               Data: true
                             Mesh:
                               ID: "?"
-                              Data: ID:Assets:14:ID:3
+                              Data: ID:Assets:15:ID:4
                             Materials:
                               ID: "?"
                               Data:
                                 - ID: "?"
-                                  Data: ID:Assets:8:ID:5
+                                  Data: ID:Assets:17:ID:2
                             MaterialPropertyBlocks:
                               ID: "?"
                               Data: []
@@ -761,7 +761,7 @@ Children:
                               Data: false
                             Mesh:
                               ID: "?"
-                              Data: ID:Assets:14:ID:3
+                              Data: ID:Assets:15:ID:4
                             Sidedness:
                               ID: "?"
                               Data: Front

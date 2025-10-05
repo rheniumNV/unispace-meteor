@@ -4,15 +4,18 @@ import {
   type SimulationResult,
 } from "@unispace-meteor/simulator/dist/main";
 import { SimulationData } from "./localSimulationData";
+import { meteorList } from "./simulation/setMeteor/meteorSelector";
 
 export type SimulationModeSetMeteor = {
   id?: string;
   mode: "SetMeteor";
   title: string;
   meteor: {
+    name: string;
+    description: string;
     position: [number, number, number];
     power: [number, number, number];
-    mass: number;
+    density: number;
     size: number;
     visualIndex: number;
   };
@@ -28,9 +31,11 @@ export type SimulationModeAnimation = {
   time: number;
   timeScale: number;
   meteor: {
+    name: string;
+    description: string;
     position: [number, number, number];
     power: [number, number, number];
-    mass: number;
+    density: number;
     size: number;
     visualIndex: number;
   };
@@ -52,9 +57,11 @@ export type AppAction =
   | {
       type: "SET_METEOR_MODE";
       meteor: {
+        name: string;
+        description: string;
         position: [number, number, number];
         power: [number, number, number];
-        mass: number;
+        density: number;
         size: number;
         visualIndex: number;
       };
@@ -62,7 +69,9 @@ export type AppAction =
   | {
       type: "UPDATE_METEOR";
       meteor: {
-        mass?: number;
+        name?: string;
+        description?: string;
+        density?: number;
         size?: number;
         visualIndex?: number;
         position?: [number, number, number];
@@ -82,9 +91,11 @@ export type AppAction =
   | {
       type: "START_ANIMATION";
       meteor: {
+        name: string;
+        description: string;
         position: [number, number, number];
         power: [number, number, number];
-        mass: number;
+        density: number;
         size: number;
         visualIndex: number;
       };
@@ -140,8 +151,13 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
           title: state.simulationState.title,
           mode: "SetMeteor",
           meteor: {
+            name: action.meteor.name ?? state.simulationState.meteor.name,
+            description:
+              action.meteor.description ??
+              state.simulationState.meteor.description,
             size: action.meteor.size ?? state.simulationState.meteor.size,
-            mass: action.meteor.mass ?? state.simulationState.meteor.mass,
+            density:
+              action.meteor.density ?? state.simulationState.meteor.density,
             position:
               action.meteor.position ?? state.simulationState.meteor.position,
             power: action.meteor.power ?? state.simulationState.meteor.power,
@@ -289,6 +305,8 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
               result: action.simulationData.result,
             },
           };
+        default:
+          return state;
       }
     default:
       return state;
@@ -316,11 +334,13 @@ export const AppContextProvider = ({
       title: "New Simulation",
       mode: "SetMeteor",
       meteor: {
+        name: meteorList[0]?.name ?? "New Meteor",
+        description: meteorList[0]?.description ?? "New Meteor",
         position: [2, 0.1, -0.05],
         power: [0.3, 0.05, 0],
-        mass: 3000,
-        size: 10000,
-        visualIndex: 0,
+        density: meteorList[0]?.density ?? 3000,
+        size: meteorList[0]?.size ?? 10000,
+        visualIndex: meteorList[0]?.visualIndex ?? 0,
       },
     },
   } as const);

@@ -1,6 +1,5 @@
 import {
   DetailBase,
-  UnitProp,
   generateUnitConfig,
   getMainProps,
   getMirrorProps,
@@ -8,10 +7,8 @@ import {
 } from "@unispace-meteor/miragex/dist/unit/common";
 
 const detail = {
-  code: "Meteor/SmoothTransform",
-  propsConfig: {
-    enable: UnitProp.Boolean(true),
-  },
+  code: "Meteor/FlexibleCanvas",
+  propsConfig: {},
   children: "multi",
 } as const satisfies DetailBase;
 

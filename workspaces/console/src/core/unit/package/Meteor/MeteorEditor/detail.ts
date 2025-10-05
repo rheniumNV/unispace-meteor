@@ -1,3 +1,4 @@
+import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import {
   DetailBase,
   UnitProp,
@@ -8,18 +9,17 @@ import {
 } from "@unispace-meteor/miragex/dist/unit/common";
 
 const detail = {
-  code: "Meteor/DamagePrediction",
+  code: "Meteor/MeteorEditor",
   propsConfig: {
-    initialDiameter: UnitProp.String(""),
-    finalDiameter: UnitProp.String(""),
-    craterDepth: UnitProp.String(""),
-    blast3_5kPa: UnitProp.String(""),
-    blast10kPa: UnitProp.String(""),
-    blast20kPa: UnitProp.String(""),
-    uiPosition: UnitProp.Float3([0, 0, 0]),
-    targetPosition: UnitProp.Float3([0, 0, 0]),
-    activeCrater: UnitProp.Boolean(true),
-    activeBlast: UnitProp.Boolean(true),
+    title: UnitProp.String(""),
+    description: UnitProp.String(""),
+    density: UnitProp.String(""),
+    size: UnitProp.String(""),
+    speed: UnitProp.String(""),
+    positionX: UnitProp.String(""),
+    positionY: UnitProp.String(""),
+    positionZ: UnitProp.String(""),
+    onClickSelectPreset: UnitProp.Function((_env: FunctionEnv) => {}),
   },
   children: "multi",
 } as const satisfies DetailBase;

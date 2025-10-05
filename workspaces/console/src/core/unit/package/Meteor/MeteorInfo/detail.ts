@@ -13,6 +13,8 @@ const detail = {
   propsConfig: {
     title: UnitProp.String(""),
     description: UnitProp.String(""),
+    density: UnitProp.String(""),
+    size: UnitProp.String(""),
     onClick: UnitProp.Function((_env: FunctionEnv) => {}),
     imageUrl: UnitProp.Uri(""),
   },

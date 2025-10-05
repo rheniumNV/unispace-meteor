@@ -5,8 +5,8 @@ import { useCallback, useEffect, useMemo } from "react";
 import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import {
   Earth,
-  GroundZeroEffect,
   Line,
+  MeteorEditor,
   MeteorVisual,
 } from "../../../unit/package/Meteor/main";
 import {
@@ -19,9 +19,11 @@ import {
   SIMULATION_SCALE,
   SIMULATION_POWER_SCALE,
   SIMULATION_DAY_TIME_STEP,
+  METEOR_VISUAL_SCALE,
 } from "../../constant";
 import { MeteorSelector } from "./meteorSelector";
 import { rotateQuatY } from "@unispace-meteor/common/dist/quaternion";
+import { DamageView } from "../../components/damageView";
 
 const simulateMeteorImpactAsync = async (
   input: SimulationInput,
@@ -31,6 +33,10 @@ const simulateMeteorImpactAsync = async (
   if (R.isOk(result)) {
     callback(R.getExn(result));
   }
+};
+
+const absoluteVec3 = (vec3: [number, number, number]) => {
+  return Math.sqrt(vec3[0] ** 2 + vec3[1] ** 2 + vec3[2] ** 2);
 };
 
 export const SetMeteor = (props: {
@@ -62,7 +68,7 @@ export const SetMeteor = (props: {
         },
         meteoroid: {
           diameter_m: props.simulationState.meteor.size,
-          density_kg_m3: props.simulationState.meteor.mass,
+          density_kg_m3: props.simulationState.meteor.density,
           strength_mpa: 100,
         },
         environment: {
@@ -160,50 +166,6 @@ export const SetMeteor = (props: {
     [dispatch],
   );
 
-  const grandZeroEffectProps = useMemo(() => {
-    if (!props.simulationState.result) {
-      return undefined;
-    }
-    if (!props.simulationState.result.crater.hasCrater) {
-      return undefined;
-    }
-    if (!props.simulationState.result.trajectory) {
-      return undefined;
-    }
-    const lastPoint =
-      props.simulationState.result.trajectory[
-        props.simulationState.result.trajectory.length - 1
-      ];
-    if (!lastPoint) {
-      return undefined;
-    }
-    return {
-      ...props.simulationState.result.crater,
-      damage_radii_km:
-        props.simulationState.result.blast.damage_radii_km["20kPa"],
-      position: [
-        lastPoint.r_ecef[0] / SIMULATION_SCALE,
-        lastPoint.r_ecef[1] / SIMULATION_SCALE,
-        lastPoint.r_ecef[2] / SIMULATION_SCALE,
-      ] as [number, number, number],
-      radius1:
-        ((props.simulationState.result.blast.damage_radii_km["20kPa"] ?? 0) /
-          SIMULATION_SCALE) *
-        1000,
-      radius2:
-        ((props.simulationState.result.blast.damage_radii_km["10kPa"] ?? 0) /
-          SIMULATION_SCALE) *
-        1000,
-      radius3:
-        ((props.simulationState.result.blast.damage_radii_km["3.5kPa"] ?? 0) /
-          SIMULATION_SCALE) *
-        1000,
-      color1: [1, 0, 0, 1] as [number, number, number, number],
-      color2: [1, 1, 0, 1] as [number, number, number, number],
-      color3: [1, 1, 1, 0.5] as [number, number, number, number],
-    };
-  }, [props.simulationState.result]);
-
   const earthRotation = useMemo<[number, number, number, number]>(() => {
     return rotateQuatY(
       [0, 0, 0, 1],
@@ -211,6 +173,10 @@ export const SetMeteor = (props: {
         SIMULATION_DAY_TIME_STEP,
     );
   }, [props.simulationState.result?.end_time_s]);
+
+  const meteorSpeedText = useMemo(() => {
+    return `${absoluteVec3(props.simulationState.meteor.power).toFixed(2)}km/s`;
+  }, [props.simulationState.meteor.power]);
 
   return (
     <Slot>
@@ -223,10 +189,32 @@ export const SetMeteor = (props: {
           onChangePower={onChangePower}
         >
           <MeteorVisual
-            scale={[0.1, 0.1, 0.1]}
+            scale={METEOR_VISUAL_SCALE}
             meteorIndex={props.simulationState.meteor.visualIndex}
           />
-          <MeteorSelector />
+          <MeteorEditor
+            title={props.simulationState.meteor.name}
+            description={props.simulationState.meteor.description}
+            density={props.simulationState.meteor.density.toString()}
+            size={props.simulationState.meteor.size.toString()}
+            speed={meteorSpeedText}
+            positionX={`${Math.round(
+              (props.simulationState.meteor.position[0] * SIMULATION_SCALE) /
+                1000,
+            )}km`}
+            positionY={`${Math.round(
+              (props.simulationState.meteor.position[1] * SIMULATION_SCALE) /
+                1000,
+            )}km`}
+            positionZ={`${Math.round(
+              (props.simulationState.meteor.position[2] * SIMULATION_SCALE) /
+                1000,
+            )}km`}
+          >
+            <Slot position={[-0.1, 0, 0]}>
+              <MeteorSelector />
+            </Slot>
+          </MeteorEditor>
         </MeteorSetterV2>
       )}
       <Slot
@@ -234,23 +222,15 @@ export const SetMeteor = (props: {
         position={props.simulationState.meteor.position}
       >
         <MeteorVisual
-          scale={[0.1, 0.1, 0.1]}
+          scale={METEOR_VISUAL_SCALE}
           meteorIndex={props.simulationState.meteor.visualIndex}
         />
       </Slot>
       {meteorLinePoints.map((line, index) => (
         <Line key={index} start={line.start} end={line.end} />
       ))}
-      {grandZeroEffectProps && (
-        <GroundZeroEffect
-          position={grandZeroEffectProps.position}
-          radius1={grandZeroEffectProps.radius1}
-          radius2={grandZeroEffectProps.radius2}
-          radius3={grandZeroEffectProps.radius3}
-          color1={grandZeroEffectProps.color1}
-          color2={grandZeroEffectProps.color2}
-          color3={grandZeroEffectProps.color3}
-        />
+      {props.simulationState.result && (
+        <DamageView result={props.simulationState.result} />
       )}
     </Slot>
   );

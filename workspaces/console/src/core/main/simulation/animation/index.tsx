@@ -1,14 +1,14 @@
 import { useEffect, useMemo } from "react";
 import { rotateQuatY } from "@unispace-meteor/common/dist/quaternion";
-import {
-  Earth,
-  GroundZeroEffect,
-  Line,
-  MeteorVisual,
-} from "../../../unit/package/Meteor/main";
+import { Earth, Line, MeteorVisual } from "../../../unit/package/Meteor/main";
 import { Slot } from "../../../unit/package/Primitive/main";
 import { SimulationModeAnimation, useAppContext } from "../../appContext";
-import { SIMULATION_DAY_TIME_STEP, SIMULATION_SCALE } from "../../constant";
+import {
+  METEOR_VISUAL_SCALE,
+  SIMULATION_DAY_TIME_STEP,
+  SIMULATION_SCALE,
+} from "../../constant";
+import { DamageView } from "../../components/damageView";
 
 export const Animation = (props: {
   simulationState: SimulationModeAnimation;
@@ -92,9 +92,10 @@ export const Animation = (props: {
         dispatch({
           type: "UPDATE_ANIMATION_TIME",
           time:
-            props.simulationState.time + props.simulationState.timeScale * 0.1,
+            props.simulationState.time +
+            props.simulationState.timeScale * 0.025,
         });
-      }, 100);
+      }, 25);
       return () => clearInterval(interval);
     }
   }, [
@@ -104,55 +105,11 @@ export const Animation = (props: {
     props.simulationState.timeScale,
   ]);
 
-  const grandZeroEffectProps = useMemo(() => {
-    if (props.simulationState.time < props.simulationState.result.end_time_s) {
-      return undefined;
-    }
-    if (!props.simulationState.result.crater.hasCrater) {
-      return undefined;
-    }
-    if (!props.simulationState.result.trajectory) {
-      return undefined;
-    }
-    const lastPoint =
-      props.simulationState.result.trajectory[
-        props.simulationState.result.trajectory.length - 1
-      ];
-    if (!lastPoint) {
-      return undefined;
-    }
-    return {
-      ...props.simulationState.result.crater,
-      damage_radii_km:
-        props.simulationState.result.blast.damage_radii_km["20kPa"],
-      position: [
-        lastPoint.r_ecef[0] / SIMULATION_SCALE,
-        lastPoint.r_ecef[1] / SIMULATION_SCALE,
-        lastPoint.r_ecef[2] / SIMULATION_SCALE,
-      ] as [number, number, number],
-      radius1:
-        ((props.simulationState.result.blast.damage_radii_km["20kPa"] ?? 0) /
-          SIMULATION_SCALE) *
-        1000,
-      radius2:
-        ((props.simulationState.result.blast.damage_radii_km["10kPa"] ?? 0) /
-          SIMULATION_SCALE) *
-        1000,
-      radius3:
-        ((props.simulationState.result.blast.damage_radii_km["3.5kPa"] ?? 0) /
-          SIMULATION_SCALE) *
-        1000,
-      color1: [1, 0, 0, 1] as [number, number, number, number],
-      color2: [1, 1, 0, 1] as [number, number, number, number],
-      color3: [1, 1, 1, 0.5] as [number, number, number, number],
-    };
-  }, [
-    props.simulationState.result.blast.damage_radii_km,
-    props.simulationState.result.crater,
-    props.simulationState.result.end_time_s,
-    props.simulationState.result.trajectory,
-    props.simulationState.time,
-  ]);
+  const isVisibleDamageView = useMemo(() => {
+    return (
+      props.simulationState.time >= props.simulationState.result.end_time_s
+    );
+  }, [props.simulationState.time, props.simulationState.result.end_time_s]);
 
   const earthRotation = useMemo<[number, number, number, number]>(() => {
     return rotateQuatY(
@@ -172,7 +129,7 @@ export const Animation = (props: {
       >
         <MeteorVisual
           meteorIndex={props.simulationState.meteor.visualIndex}
-          scale={[0.1, 0.1, 0.1]}
+          scale={METEOR_VISUAL_SCALE}
         />
       </Slot>
 
@@ -180,16 +137,8 @@ export const Animation = (props: {
         <Line end={line.end} key={index} start={line.start} />
       ))}
 
-      {grandZeroEffectProps && (
-        <GroundZeroEffect
-          color1={grandZeroEffectProps.color1}
-          color2={grandZeroEffectProps.color2}
-          color3={grandZeroEffectProps.color3}
-          position={grandZeroEffectProps.position}
-          radius1={grandZeroEffectProps.radius1}
-          radius2={grandZeroEffectProps.radius2}
-          radius3={grandZeroEffectProps.radius3}
-        />
+      {isVisibleDamageView && (
+        <DamageView result={props.simulationState.result} />
       )}
     </Slot>
   );

@@ -44,16 +44,14 @@ npm install
 #### 1. Reactコンポーネントを作成
 
 ```tsx
-import React from 'react';
+import React from "react";
 
 export const MyApp = () => {
   return (
     <slot name="Root">
       <slot name="Container">
         <text content="Hello Resonite!" />
-        <button onClick={() => console.log('Clicked!')}>
-          Click Me
-        </button>
+        <button onClick={() => console.log("Clicked!")}>Click Me</button>
       </slot>
     </slot>
   );
@@ -63,20 +61,23 @@ export const MyApp = () => {
 #### 2. MirageXサーバーを起動
 
 ```typescript
-import { MirageXServer, MirageXServerConfig } from '@unispace-meteor/miragex/dist/server';
-import { MyApp } from './MyApp';
+import {
+  MirageXServer,
+  MirageXServerConfig,
+} from "@unispace-meteor/miragex/dist/server";
+import { MyApp } from "./MyApp";
 
 const config: MirageXServerConfig = {
   mirage: {
-    url: 'http://localhost',
+    url: "http://localhost",
     port: 3000,
-    serverId: 'my-server-id',
+    serverId: "my-server-id",
     apiPath: {
-      info: '/info',
-      output: '/output.brson',
-      auth: '/auth/:connectionId',
-      interactionEvent: '/events',
-      websocket: '/ws',
+      info: "/info",
+      output: "/output.brson",
+      auth: "/auth/:connectionId",
+      interactionEvent: "/events",
+      websocket: "/ws",
     },
   },
 };
@@ -112,14 +113,14 @@ MirageXは独自のVirtualObjectシステムを使用してResoniteオブジェ�
 
 ```typescript
 const virtualSlot = {
-  type: 'slot',
-  name: 'MySlot',
+  type: "slot",
+  name: "MySlot",
   children: [
     {
-      type: 'component',
-      componentType: 'Text',
+      type: "component",
+      componentType: "Text",
       fields: {
-        content: 'Hello World',
+        content: "Hello World",
       },
     },
   ],
@@ -222,15 +223,15 @@ MirageXサーバーは以下の設定を受け付けます:
 ```typescript
 interface MirageXServerConfig {
   mirage: {
-    url: string;              // サーバーURL
-    port: number;             // ポート番号
-    serverId: string;         // サーバーID
+    url: string; // サーバーURL
+    port: number; // ポート番号
+    serverId: string; // サーバーID
     apiPath: {
-      info: string;           // 情報エンドポイント
-      output: string;         // Brson出力エンドポイント
-      auth: string;           // 認証エンドポイント
+      info: string; // 情報エンドポイント
+      output: string; // Brson出力エンドポイント
+      auth: string; // 認証エンドポイント
       interactionEvent: string; // インタラクションイベント
-      websocket: string;      // WebSocketエンドポイント
+      websocket: string; // WebSocketエンドポイント
     };
   };
 }
@@ -285,3 +286,30 @@ Resonite Import
 - 全てのReactの機能が使えるわけではない（Reconcilerの実装範囲内）
 - パフォーマンスはResonite側の制約を受ける
 
+# MirageX（ミラージュ・クロス）α
+
+MirageX は TypeScript×React で Resonite の開発を行えるフレームワークです。
+
+[UniPocket](https://about.uni-pocket.com/ja)を作るために開発されました。
+このリポジトリはUniPocketからMirageX部分を抽出して作られています。
+
+現在は α 版であり破壊的な変更を頻繁にします。
+
+サーバーサイドでメインロジックを動かし、Resonite では結果のみを表示するという仕組みになっています。
+特殊な構成になるため、導入は慎重に検討してください。
+
+主なメリット
+
+- 以下の理由により、開発速度が早くなる。
+  - React の作り方が使える。
+  - 外部ライブラリが使える。
+  - コードベースの開発ができる。
+    - git が使える。
+    - 再利用がしやすくなる。
+- メインロジックを隠蔽できるため、ユーザーのチートを防ぎやすくなる。
+
+主なデメリット
+
+- 完成品にはインフラコストがかかる。
+- ネットワークレイテンシーの影響を受ける。
+- Resonite 上で改造できない。

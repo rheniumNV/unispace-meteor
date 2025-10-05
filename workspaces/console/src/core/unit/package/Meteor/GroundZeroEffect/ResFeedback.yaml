@@ -817,7 +817,7 @@ Children:
                                           ID: ID:Sphere:Components:10:TextureOffset:0
                                           Data:
                                             - 0
-                                            - 59.333333333333336
+                                            - 303.3333333333333
                                         AlbedoColor:
                                           ID: "?"
                                           Data:
@@ -855,7 +855,7 @@ Children:
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:35:ID:2
+                                          Data: ID:Assets:29:ID:0
                                         NormalMap:
                                           ID: "?"
                                           Data: null
@@ -2261,7 +2261,7 @@ Children:
                                           ID: ID:Sphere:Components:10:TextureOffset:1
                                           Data:
                                             - 0
-                                            - 59.333333333333336
+                                            - 303.3333333333333
                                         AlbedoColor:
                                           ID: "?"
                                           Data:
@@ -2299,7 +2299,7 @@ Children:
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:35:ID:2
+                                          Data: ID:Assets:29:ID:0
                                         NormalMap:
                                           ID: "?"
                                           Data: null
@@ -3705,7 +3705,7 @@ Children:
                                           ID: ID:Sphere:Components:10:TextureOffset:2
                                           Data:
                                             - 0
-                                            - 59.333333333333336
+                                            - 303.3333333333333
                                         AlbedoColor:
                                           ID: "?"
                                           Data:
@@ -3743,7 +3743,7 @@ Children:
                                             - sRGB
                                         EmissiveMap:
                                           ID: "?"
-                                          Data: ID:Assets:35:ID:2
+                                          Data: ID:Assets:29:ID:0
                                         NormalMap:
                                           ID: "?"
                                           Data: null
