@@ -63,7 +63,7 @@ const input: SimulationInput = {
 		// 大型隕石（大クレーター狙い）
 		diameter_m: 250, // 直径 [m]
 		density_kg_m3: 3500, // 密度 [kg/m^3]（stony-iron想定：岩石より重い）
-		strength_mpa: 50, // 強度 [MPa]（空中破砕を抑えて地表まで持たせる）
+		strength_mpa: 50, // 強度 [MPa]（オプショナル、省略時: 5 MPa）（空中破砕を抑えて地表まで持たせる）
 	},
 
 	environment: {
