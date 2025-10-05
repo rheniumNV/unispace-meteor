@@ -92,9 +92,10 @@ export const Animation = (props: {
         dispatch({
           type: "UPDATE_ANIMATION_TIME",
           time:
-            props.simulationState.time + props.simulationState.timeScale * 0.1,
+            props.simulationState.time +
+            props.simulationState.timeScale * 0.025,
         });
-      }, 100);
+      }, 25);
       return () => clearInterval(interval);
     }
   }, [
