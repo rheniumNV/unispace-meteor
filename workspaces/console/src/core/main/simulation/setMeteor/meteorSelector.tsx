@@ -1,39 +1,46 @@
 import { useCallback } from "react";
-import {
-  Canvas,
-  HorizontalLayout,
-  LayoutElement,
-  VerticalLayout,
-} from "../../../unit/package/PrimitiveUix/main";
-import { StyledImage, StyledText } from "../../../unit/package/StyledUix/main";
-import { SimpleButton } from "../../components/simpleButton";
-import { Color, Material, Sprite } from "../../style";
 import { useAppContext } from "../../appContext";
+import { Slot } from "../../../unit/package/Primitive/main";
+import { FlexibleCanvas, MeteorInfo } from "../../../unit/package/Meteor/main";
 type Meteor = {
   name: string;
+  description: string;
   size: number;
-  mass: number;
+  density: number;
   visualIndex: number;
+  imageUrl: string;
 };
 
 const meteorList: Meteor[] = [
   {
-    name: "Meteor 1",
-    size: 3000,
-    mass: 10000,
-    visualIndex: 0,
-  },
-  {
-    name: "Meteor 2",
-    size: 30000,
-    mass: 2000000,
-    visualIndex: 1,
-  },
-  {
-    name: "Meteor 3",
-    size: 300,
-    mass: 100000,
+    name: "アエンデ隕石",
+    size: 2.7,
+    density: 20000000,
     visualIndex: 2,
+    imageUrl:
+      "resdb:///b3299f05048f71286193e736039557bbeb28e00270aa98b1831a47a3a0eb254f.webp",
+    description:
+      "アエンデ隕石は、1969年にメキシコのチワワ州プエブリート・デ・アエンデに落下しました。重さ約2トンで地球上で発見された最大の炭素質コンドライト隕石です。最も研究されている隕石の一つであり、豊富なCAI(高アルミニウムカルシウム含有物)を含むことで知られています。",
+  },
+  {
+    name: "チェリャビンスク隕石",
+    size: 17,
+    density: 10000000,
+    visualIndex: 0,
+    imageUrl:
+      "resdb:///4c1801234c8c2c1e42260c4f2ae6f869a0ac2f05fd5b8ae791694f1675822c75.webp",
+    description:
+      "チェリャビンスク隕石は、2013年ロシアのチェリャビンスク市の上空約20キロメートルで爆発しました。直径約18メートル、重量約1万1000トンの隕石で時速約66960キロメートルの速度で地球大気圏に突入しました。この爆発は、広島を破壊した原爆の30倍以上のエネルギーを放出し、惑星防衛に関する世界的な議論の火付け役となりました。",
+  },
+  {
+    name: "ピークスキル流星",
+    size: 0.3,
+    density: 12.57,
+    visualIndex: 1,
+    imageUrl:
+      "resdb:///62860aa6d0c249b5b7ab44a801fd8f828b5a05e540343e7b3f99710303fd2aee.webp",
+    description:
+      "1992年のピークスキル流星は、16本の独立したビデオに撮影され、その後車に衝突しました。結果として生じた隕石は高密度の岩石で構成されており、非常に重い ボウリングのボールほどの大きさと質量があります。 隕石事件の中でも最も視覚的な記録が残るものの一つとなりました。",
   },
 ];
 
@@ -49,45 +56,14 @@ const Meteor = ({
   }, [meteor, selectMeteor]);
 
   return (
-    <LayoutElement minHeight={200}>
-      <StyledImage
-        styledColor={Color.subBackground}
-        styledSprite={Sprite.circleBase}
-      />
-      <HorizontalLayout spacing={10}>
-        <LayoutElement flexibleWidth={1}>
-          <VerticalLayout>
-            <LayoutElement minHeight={100}>
-              <StyledText
-                content={meteor.name}
-                horizontalAlign="Center"
-                styledColor={Color.text}
-                verticalAlign="Middle"
-              />
-            </LayoutElement>
-            <LayoutElement flexibleHeight={1}>
-              <HorizontalLayout spacing={10}>
-                <StyledText
-                  content={`Size: ${meteor.size}`}
-                  horizontalAlign="Center"
-                  styledColor={Color.text}
-                  verticalAlign="Middle"
-                />
-                <StyledText
-                  content={`Mass: ${meteor.mass}`}
-                  horizontalAlign="Center"
-                  styledColor={Color.text}
-                  verticalAlign="Middle"
-                />
-              </HorizontalLayout>
-            </LayoutElement>
-          </VerticalLayout>
-        </LayoutElement>
-        <LayoutElement minWidth={200}>
-          <SimpleButton onClick={onClick} text="Select" />
-        </LayoutElement>
-      </HorizontalLayout>
-    </LayoutElement>
+    <MeteorInfo
+      density={meteor.density.toString()}
+      description={meteor.description}
+      imageUrl={meteor.imageUrl}
+      onClick={onClick}
+      size={meteor.size.toString()}
+      title={meteor.name}
+    />
   );
 };
 
@@ -99,7 +75,7 @@ export const MeteorSelector = () => {
       dispatch({
         type: "UPDATE_METEOR",
         meteor: {
-          mass: meteor.mass,
+          density: meteor.density,
           size: meteor.size,
           visualIndex: meteor.visualIndex,
         },
@@ -109,30 +85,16 @@ export const MeteorSelector = () => {
   );
 
   return (
-    <Canvas position={[0, 1, 0]} size={[1000, 1000]}>
-      <StyledImage
-        styledColor={Color.white}
-        styledMaterial={Material.baseAlpha}
-        styledSprite={Sprite.base}
-      />
-      <VerticalLayout
-        forceExpandChildHeight={false}
-        paddingBottom={100}
-        paddingLeft={100}
-        paddingRight={100}
-        paddingTop={100}
-        spacing={10}
-      >
-        <VerticalLayout forceExpandChildHeight={false} spacing={10}>
-          {meteorList.map((meteor) => (
-            <Meteor
-              key={meteor.name}
-              meteor={meteor}
-              selectMeteor={selectMeteor}
-            />
-          ))}
-        </VerticalLayout>
-      </VerticalLayout>
-    </Canvas>
+    <Slot position={[0, 0.5, 0]}>
+      <FlexibleCanvas>
+        {meteorList.map((meteor) => (
+          <Meteor
+            key={meteor.name}
+            meteor={meteor}
+            selectMeteor={selectMeteor}
+          />
+        ))}
+      </FlexibleCanvas>
+    </Slot>
   );
 };

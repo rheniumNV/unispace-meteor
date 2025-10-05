@@ -14,7 +14,7 @@ export type SimulationData = {
   meteor: {
     position: [number, number, number];
     power: [number, number, number];
-    mass: number;
+    density: number;
     size: number;
     visualIndex: number;
   };

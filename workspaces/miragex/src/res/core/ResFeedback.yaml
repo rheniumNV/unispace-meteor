@@ -870,7 +870,7 @@ Children:
                               Data: false
                             FallbackValue:
                               ID: ID:Static.Web.Host:Components:5:FallbackValue:0
-                              Data: localhost:3000
+                              Data: debug.rheni.work
                             OverrideOwner:
                               ID: ID:Static.Web.Host:Components:5:OverrideOwner:0
                               Data: ""
@@ -889,7 +889,7 @@ Children:
                               Data: Static.Web.Host
                             Value:
                               ID: ID:Static.Web.Host:Components:6:Value:0
-                              Data: localhost:3000
+                              Data: debug.rheni.work
                             OverrideOnLink:
                               ID: "?"
                               Data: false
@@ -955,7 +955,7 @@ Children:
                               Data: false
                             FallbackValue:
                               ID: ID:Static.Web.UseSSL:Components:7:FallbackValue:0
-                              Data: false
+                              Data: true
                             OverrideOwner:
                               ID: ID:Static.Web.UseSSL:Components:7:OverrideOwner:0
                               Data: ""
@@ -1012,7 +1012,7 @@ Children:
                               Data: Static.Web.UseSSL
                             Value:
                               ID: ID:Static.Web.UseSSL:Components:8:Value:0
-                              Data: false
+                              Data: true
                             OverrideOnLink:
                               ID: "?"
                               Data: false
@@ -1088,7 +1088,7 @@ Children:
                               Data: Static.Web.Url.Ws
                             Value:
                               ID: ID:Static.Web.Url.Ws:Components:10:Value:0
-                              Data: "@ws://localhost:3000/"
+                              Data: "@wss://debug.rheni.work/"
                             OverrideOnLink:
                               ID: "?"
                               Data: false
@@ -1865,7 +1865,7 @@ Children:
                               Data: Static.Web.Url.Http
                             Value:
                               ID: ID:Static.Web.Url.Http:Components:10:Value:0
-                              Data: "@http://localhost:3000/"
+                              Data: "@https://debug.rheni.work/"
                             OverrideOnLink:
                               ID: "?"
                               Data: false
@@ -4315,7 +4315,36 @@ Children:
                               Data: []
                             Value:
                               ID: ID:Value Register<String>:Components:49:Value:0
-                              Data: l$#6$#v$#k0$#type$#v0$#sync$#t0$#string$#k1$#data.type$#v1$#updateProp$#t1$#string$#k2$#data.unit.id$#v2$#d211cbe1-b546-4062-a585-24f0ce818274$#t2$#string$#k3$#data.unit.prop.key$#v3$#preserveAspect$#t3$#string$#k4$#data.unit.prop.type$#v4$#Boolean$#t4$#string$#k5$#data.unit.prop.value$#v5$#true$#t5$#bool$#
+                              Data: |-
+                                l$#6$#v$#k0$#type$#v0$#sync$#t0$#string$#k1$#data.type$#v1$#updateProp$#t1$#string$#k2$#data.unit.id$#v2$#5370d31e-33c0-4749-a690-9458a6aeeb97$#t2$#string$#k3$#data.unit.prop.key$#v3$#content$#t3$#string$#k4$#data.unit.prop.type$#v4$#String$#t4$#string$#k5$#data.unit.prop.value$#v5$#points: 18
+                                    {
+                                  "terminationReason": "ground",
+                                  "end_time_s": 3229,
+                                  "energy": {
+                                    "joule": 9.121710915026814e+22,
+                                    "mt_tnt": 21801412.320809785
+                                  },
+                                  "airburst": {
+                                    "isOccurrence": false
+                                  },
+                                  "crater": {
+                                    "hasCrater": true,
+                                    "transient_diameter_m": 49371.43450960881,
+                                    "final_diameter_m": 64182.86486249145,
+                                    "depth_m": 12836.57297249829
+                                  },
+                                  "blast": {
+                                    "damage_radii_km": {
+                                      "1kPa": 5587.1655327912595,
+                                      "3.5kPa": 2234.866213116504,
+                                      "10kPa": 1117.433106558252,
+                                      "20kPa": 838.0748299186888
+                                    }
+                                  },
+                                  "seismic": {
+                                    "moment_magnitude_M": 10.106717536317372
+                                  }
+                                }$#t5$#string$#
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -7118,7 +7147,7 @@ Children:
                               Data: []
                             Value:
                               ID: ID:Value Register`1:Components:49:Value:0
-                              Data: $#t5$#bool$#
+                              Data: $#t5$#string$#
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -7987,6 +8016,9 @@ Children:
                             ReplaceWith:
                               ID: "?"
                               Data: ID:string:Components:18:20
+                            ComparisonMode:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -8146,6 +8178,9 @@ Children:
                             ReplaceWith:
                               ID: "?"
                               Data: ID:string:Components:18:22
+                            ComparisonMode:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -18129,6 +18164,9 @@ Children:
                             Template:
                               ID: "?"
                               Data: ID:Read Dynamic Variable<Slot>:Components:128:Value:3
+                            OverrideParent:
+                              ID: "?"
+                              Data: null
                             Duplicate:
                               ID: ID:Duplicate Slot:Components:124:Duplicate:0
                               Data: null
@@ -21201,6 +21239,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -21252,6 +21296,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -21913,6 +21963,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -21964,6 +22020,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -22659,7 +22721,8 @@ Children:
                               Data: true
                             Value:
                               ID: "?"
-                              Data: "\n"
+                              Data: |+
+                                
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -22828,6 +22891,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -23554,6 +23623,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -23605,6 +23680,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -23875,6 +23956,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -25840,6 +25927,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -25891,6 +25984,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -25942,6 +26041,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -27703,6 +27808,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                   - Name:
@@ -28048,6 +28159,12 @@ Children:
                             Value:
                               ID: "?"
                               Data: ID:Relay:Components:60:3
+                            FailValue:
+                              ID: "?"
+                              Data: null
+                            OnlyDefined:
+                              ID: "?"
+                              Data: null
                     Children: []
                     ParentReference: ""
                 ParentReference: ""

@@ -1,7 +1,5 @@
-import { FunctionEnv } from "@unispace-meteor/miragex/dist/common/interactionEvent";
 import {
   DetailBase,
-  UnitProp,
   generateUnitConfig,
   getMainProps,
   getMirrorProps,
@@ -9,15 +7,8 @@ import {
 } from "@unispace-meteor/miragex/dist/unit/common";
 
 const detail = {
-  code: "Meteor/MeteorInfo",
-  propsConfig: {
-    title: UnitProp.String(""),
-    description: UnitProp.String(""),
-    density: UnitProp.String(""),
-    size: UnitProp.String(""),
-    onClick: UnitProp.Function((_env: FunctionEnv) => {}),
-    imageUrl: UnitProp.Uri(""),
-  },
+  code: "Meteor/FlexibleCanvas",
+  propsConfig: {},
   children: "multi",
 } as const satisfies DetailBase;
 

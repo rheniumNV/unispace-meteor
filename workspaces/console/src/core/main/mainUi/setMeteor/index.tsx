@@ -5,9 +5,9 @@ import {
   VerticalLayout,
 } from "../../../unit/package/PrimitiveUix/main";
 import { StyledText } from "../../../unit/package/StyledUix/main";
-import { Color } from "../../style";
+import { Color, Sprite } from "../../style";
 import { type SimulationModeSetMeteor, useAppContext } from "../../appContext";
-import { SimpleButton } from "../../components/simpleButton";
+import { SimpleIconButton } from "../../components/simpleIconButton";
 
 export const MainUiSetMeteor = (props: {
   simulationState: SimulationModeSetMeteor;
@@ -37,7 +37,7 @@ export const MainUiSetMeteor = (props: {
         meteor: {
           position: props.simulationState.meteor.position,
           power: props.simulationState.meteor.power,
-          mass: props.simulationState.meteor.mass,
+          density: props.simulationState.meteor.density,
           size: props.simulationState.meteor.size,
           visualIndex: props.simulationState.meteor.visualIndex,
         },
@@ -45,13 +45,27 @@ export const MainUiSetMeteor = (props: {
         result: props.simulationState.result,
       });
     }
-  }, [dispatch, props.simulationState.input, props.simulationState.result]);
+  }, [
+    dispatch,
+    props.simulationState.input,
+    props.simulationState.meteor.density,
+    props.simulationState.meteor.position,
+    props.simulationState.meteor.power,
+    props.simulationState.meteor.size,
+    props.simulationState.meteor.visualIndex,
+    props.simulationState.result,
+  ]);
 
   return (
     <VerticalLayout>
       <LayoutElement minHeight={100}>
-        <HorizontalLayout>
-          <SimpleButton text="Play" onClick={onClickPlay} />
+        <HorizontalLayout forceExpandChildWidth={false}>
+          <LayoutElement minWidth={100}>
+            <SimpleIconButton
+              iconSprite={Sprite.iconPlay}
+              onClick={onClickPlay}
+            />
+          </LayoutElement>
         </HorizontalLayout>
       </LayoutElement>
       <LayoutElement flexibleHeight={1}>

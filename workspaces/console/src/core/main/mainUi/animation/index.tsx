@@ -7,10 +7,10 @@ import {
   VerticalLayout,
 } from "../../../unit/package/PrimitiveUix/main";
 import { SimulationModeAnimation, useAppContext } from "../../appContext";
-import { SimpleButton } from "../../components/simpleButton";
 import { StyledImage, StyledText } from "../../../unit/package/StyledUix/main";
 import { StyledTextFieldV2 } from "../../../lib/styledTextFieldV2";
 import { Sprite } from "../../style";
+import { SimpleIconButton } from "../../components/simpleIconButton";
 
 export const MainUiAnimation = (props: {
   simulationState: SimulationModeAnimation;
@@ -92,18 +92,27 @@ export const MainUiAnimation = (props: {
   return (
     <VerticalLayout forceExpandChildHeight={false} spacing={10}>
       <LayoutElement minHeight={100}>
-        <HorizontalLayout>
-          <SimpleButton
-            enabled={!props.simulationState.play}
-            onClick={onClickPlay}
-            text="Play"
-          />
-          <SimpleButton
-            enabled={props.simulationState.play}
-            onClick={onClickPause}
-            text="Pause"
-          />
-          <SimpleButton onClick={onClickStop} text="Reset" />
+        <HorizontalLayout forceExpandChildWidth={false}>
+          <LayoutElement minWidth={100}>
+            <SimpleIconButton
+              enabled={!props.simulationState.play}
+              iconSprite={Sprite.iconPlay}
+              onClick={onClickPlay}
+            />
+          </LayoutElement>
+          <LayoutElement minWidth={100}>
+            <SimpleIconButton
+              enabled={props.simulationState.play}
+              iconSprite={Sprite.iconPause}
+              onClick={onClickPause}
+            />
+          </LayoutElement>
+          <LayoutElement minWidth={100}>
+            <SimpleIconButton
+              iconSprite={Sprite.iconStop}
+              onClick={onClickStop}
+            />
+          </LayoutElement>
         </HorizontalLayout>
       </LayoutElement>
       <LayoutElement minHeight={100}>

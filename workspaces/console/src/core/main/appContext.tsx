@@ -12,7 +12,7 @@ export type SimulationModeSetMeteor = {
   meteor: {
     position: [number, number, number];
     power: [number, number, number];
-    mass: number;
+    density: number;
     size: number;
     visualIndex: number;
   };
@@ -30,7 +30,7 @@ export type SimulationModeAnimation = {
   meteor: {
     position: [number, number, number];
     power: [number, number, number];
-    mass: number;
+    density: number;
     size: number;
     visualIndex: number;
   };
@@ -54,7 +54,7 @@ export type AppAction =
       meteor: {
         position: [number, number, number];
         power: [number, number, number];
-        mass: number;
+        density: number;
         size: number;
         visualIndex: number;
       };
@@ -62,7 +62,7 @@ export type AppAction =
   | {
       type: "UPDATE_METEOR";
       meteor: {
-        mass?: number;
+        density?: number;
         size?: number;
         visualIndex?: number;
         position?: [number, number, number];
@@ -84,7 +84,7 @@ export type AppAction =
       meteor: {
         position: [number, number, number];
         power: [number, number, number];
-        mass: number;
+        density: number;
         size: number;
         visualIndex: number;
       };
@@ -141,7 +141,8 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
           mode: "SetMeteor",
           meteor: {
             size: action.meteor.size ?? state.simulationState.meteor.size,
-            mass: action.meteor.mass ?? state.simulationState.meteor.mass,
+            density:
+              action.meteor.density ?? state.simulationState.meteor.density,
             position:
               action.meteor.position ?? state.simulationState.meteor.position,
             power: action.meteor.power ?? state.simulationState.meteor.power,
@@ -289,6 +290,8 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
               result: action.simulationData.result,
             },
           };
+        default:
+          return state;
       }
     default:
       return state;
@@ -318,7 +321,7 @@ export const AppContextProvider = ({
       meteor: {
         position: [2, 0.1, -0.05],
         power: [0.3, 0.05, 0],
-        mass: 3000,
+        density: 3000,
         size: 10000,
         visualIndex: 0,
       },
