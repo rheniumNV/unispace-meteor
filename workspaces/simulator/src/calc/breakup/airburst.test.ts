@@ -5,7 +5,7 @@ import * as Airburst from "./airburst";
 
 describe("空中爆発検出", () => {
 	describe("detectAirburst", () => {
-		it("空中爆発が発生する場合（高度 > 0）", () => {
+		it("空中爆発が発生する場合（breakup）", () => {
 			const samples: TrajectoryPoint[] = [
 				{
 					t: 0,
@@ -18,7 +18,7 @@ describe("空中爆発検出", () => {
 				},
 			];
 
-			const result = Airburst.detectAirburst(samples, 10);
+			const result = Airburst.detectAirburst(samples, "breakup", 10);
 
 			expect(R.isOk(result)).toBe(true);
 			if (R.isOk(result)) {
@@ -32,7 +32,7 @@ describe("空中爆発検出", () => {
 			}
 		});
 
-		it("空中爆発が発生しない場合（高度 = 0）", () => {
+		it("空中爆発が発生しない場合（ground）", () => {
 			const samples: TrajectoryPoint[] = [
 				{
 					t: 0,
@@ -45,7 +45,7 @@ describe("空中爆発検出", () => {
 				},
 			];
 
-			const result = Airburst.detectAirburst(samples, 10);
+			const result = Airburst.detectAirburst(samples, "ground", 10);
 
 			expect(R.isOk(result)).toBe(true);
 			if (R.isOk(result)) {
@@ -54,20 +54,20 @@ describe("空中爆発検出", () => {
 			}
 		});
 
-		it("空中爆発が発生しない場合（高度 < 0）", () => {
+		it("空中爆発が発生しない場合（escape）", () => {
 			const samples: TrajectoryPoint[] = [
 				{
 					t: 0,
 					r_ecef: [6371000, 0, 0],
 					v_ecef: [0, 15000, -10000],
 					mass_kg: 1000,
-					alt_m: -100, // 高度-100m（地下）
+					alt_m: 150000, // 高度150km（脱出）
 					lat: 0,
 					lon: 0,
 				},
 			];
 
-			const result = Airburst.detectAirburst(samples, 10);
+			const result = Airburst.detectAirburst(samples, "escape", 10);
 
 			expect(R.isOk(result)).toBe(true);
 			if (R.isOk(result)) {
@@ -79,7 +79,7 @@ describe("空中爆発検出", () => {
 		it("空の軌道サンプルでエラーを返す", () => {
 			const samples: TrajectoryPoint[] = [];
 
-			const result = Airburst.detectAirburst(samples, 10);
+			const result = Airburst.detectAirburst(samples, "breakup", 10);
 
 			expect(R.isError(result)).toBe(true);
 		});
@@ -109,8 +109,8 @@ describe("空中爆発検出", () => {
 				},
 			];
 
-			const result1 = Airburst.detectAirburst(samples1, 10);
-			const result2 = Airburst.detectAirburst(samples2, 10);
+			const result1 = Airburst.detectAirburst(samples1, "breakup", 10);
+			const result2 = Airburst.detectAirburst(samples2, "breakup", 10);
 
 			expect(R.isOk(result1)).toBe(true);
 			expect(R.isOk(result2)).toBe(true);
@@ -160,7 +160,7 @@ describe("空中爆発検出", () => {
 				},
 			];
 
-			const result = Airburst.detectAirburst(samples, 10);
+			const result = Airburst.detectAirburst(samples, "breakup", 10);
 
 			expect(R.isOk(result)).toBe(true);
 			if (R.isOk(result)) {
@@ -171,6 +171,58 @@ describe("空中爆発検出", () => {
 					// 最後のサンプルの高度を使う
 					expect(airburst.burst_altitude_m).toBe(8000);
 				}
+			}
+		});
+	});
+
+	describe("terminationReasonによる判定", () => {
+		const sampleData: TrajectoryPoint = {
+			t: 0,
+			r_ecef: [6371000, 0, 0],
+			v_ecef: [0, 15000, -10000],
+			mass_kg: 1000,
+			alt_m: 10000,
+			lat: 0,
+			lon: 0,
+		};
+
+		it("breakup の場合のみ空中爆発を検出", () => {
+			const result = Airburst.detectAirburst([sampleData], "breakup", 10);
+
+			expect(R.isOk(result)).toBe(true);
+			if (R.isOk(result)) {
+				const airburst = R.getExn(result);
+				expect(airburst.isOccurrence).toBe(true);
+			}
+		});
+
+		it("escape の場合は空中爆発なし（物理的に正しい）", () => {
+			const result = Airburst.detectAirburst([sampleData], "escape", 10);
+
+			expect(R.isOk(result)).toBe(true);
+			if (R.isOk(result)) {
+				const airburst = R.getExn(result);
+				expect(airburst.isOccurrence).toBe(false);
+			}
+		});
+
+		it("burnout の場合は空中爆発なし", () => {
+			const result = Airburst.detectAirburst([sampleData], "burnout", 10);
+
+			expect(R.isOk(result)).toBe(true);
+			if (R.isOk(result)) {
+				const airburst = R.getExn(result);
+				expect(airburst.isOccurrence).toBe(false);
+			}
+		});
+
+		it("max_time の場合は空中爆発なし", () => {
+			const result = Airburst.detectAirburst([sampleData], "max_time", 10);
+
+			expect(R.isOk(result)).toBe(true);
+			if (R.isOk(result)) {
+				const airburst = R.getExn(result);
+				expect(airburst.isOccurrence).toBe(false);
 			}
 		});
 	});

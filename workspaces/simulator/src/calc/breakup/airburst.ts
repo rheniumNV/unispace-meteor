@@ -10,11 +10,13 @@ import * as Vec from "../coordinates/vector";
  * 軌道データから空中爆発を検出
  *
  * @param samples 軌道サンプル点
+ * @param terminationReason シミュレーション終了理由
  * @param strength_mpa 強度 [MPa]
  * @returns 空中爆発情報（なければNone）
  */
 export const detectAirburst = (
 	samples: readonly TrajectoryPoint[],
+	terminationReason: "ground" | "breakup" | "burnout" | "max_time" | "escape",
 	_strength_mpa: number,
 ): R.Result<AirburstInfo, Error> => {
 	if (A.isEmpty(samples)) {
@@ -27,14 +29,15 @@ export const detectAirburst = (
 		return R.Error(new Error("軌道サンプルが空です"));
 	}
 
-	// 地表到達（高度0以下）の場合は空中爆発なし
-	if (lastSample.alt_m <= 0) {
+	// 空中爆発は breakup の場合のみ発生
+	// escape, burnout, ground, max_time の場合は空中爆発なし
+	if (terminationReason !== "breakup") {
 		return R.Ok({
 			isOccurrence: false,
 		});
 	}
 
-	// 空中で停止した場合は空中爆発と判定
+	// breakup の場合：動圧が強度を超えて破砕した場合
 	// 爆発高度 = 最後のサンプルの高度
 	const burst_altitude_m = lastSample.alt_m;
 
