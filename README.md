@@ -165,6 +165,13 @@ npm run clean
 - **ビルド**: TypeScript Compiler
 - **モノレポ**: npm workspaces
 
+## AI活用について
+
+このプロジェクトの開発では、AI技術を積極的に活用しています。
+
+- **コード補完**: Cursorなどを利用した開発支援
+- **AIエージェント開発**: 特に `@unispace-meteor/simulator` モジュールでは、Claude CodeのAIエージェント機能を活用し、コードの大部分をAI支援により実装しています
+
 ## ハッカソン開発の様子
 
 ### 1日目の様子
