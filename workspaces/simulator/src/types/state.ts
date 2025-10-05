@@ -48,6 +48,8 @@ export interface SimulationParams {
 	readonly seismic_efficiency: number;
 	/** 爆風しきい値 [kPa] */
 	readonly blast_thresholds_kpa: readonly number[];
+	/** escape検出後の継続時間 [s] */
+	readonly escape_continue_time_s: number;
 }
 
 /** 地理座標 */

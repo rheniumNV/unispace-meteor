@@ -257,11 +257,11 @@ export const integrateTrajectory = (
 			break;
 		}
 
-		// 脱出で停止（検出から600秒経過後）
+		// 脱出で停止（検出から指定時間経過後）
 		if (
 			terminationReason === "escape" &&
 			escape_detected_t !== null &&
-			t - escape_detected_t >= 600
+			t - escape_detected_t >= params.escape_continue_time_s
 		) {
 			// 最後の点を必ず記録
 			if (!should_sample) {
