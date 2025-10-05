@@ -20,7 +20,7 @@ const meteorList: Meteor[] = [
   {
     name: "Meteor 1",
     size: 3000,
-    mass: 100000,
+    mass: 10000,
     visualIndex: 0,
   },
   {
@@ -32,7 +32,7 @@ const meteorList: Meteor[] = [
   {
     name: "Meteor 3",
     size: 300,
-    mass: 3500,
+    mass: 100000,
     visualIndex: 2,
   },
 ];

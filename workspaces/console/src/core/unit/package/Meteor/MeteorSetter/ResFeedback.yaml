@@ -2383,7 +2383,7 @@ Children:
                                       ID: "?"
                                       Data:
                                         - ID: "?"
-                                          Data: ID:Assets:85:ID:5
+                                          Data: ID:Assets:81:ID:2
                                     MaterialPropertyBlocks:
                                       ID: "?"
                                       Data: []
@@ -6393,16 +6393,16 @@ Children:
                                             - sRGB
                                         BehindFarTexture:
                                           ID: "?"
-                                          Data: ID:Assets:87:ID:11
+                                          Data: ID:Assets:88:ID:8
                                         BehindNearTexture:
                                           ID: "?"
-                                          Data: ID:Assets:87:ID:11
+                                          Data: ID:Assets:88:ID:8
                                         FrontFarTexture:
                                           ID: "?"
-                                          Data: ID:Assets:87:ID:11
+                                          Data: ID:Assets:88:ID:8
                                         FrontNearTexture:
                                           ID: "?"
-                                          Data: ID:Assets:87:ID:11
+                                          Data: ID:Assets:88:ID:8
                                         BehindFarTextureScale:
                                           ID: "?"
                                           Data:

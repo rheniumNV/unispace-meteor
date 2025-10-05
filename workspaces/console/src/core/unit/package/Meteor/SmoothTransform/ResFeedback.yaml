@@ -1,6 +1,6 @@
 Name:
   ID: "?"
-  Data: Meteor/Line
+  Data: Meteor/SmoothTransform
 Active:
   ID: "?"
   Data: true
@@ -163,27 +163,27 @@ Children:
     Children:
       - Name:
           ID: "?"
-          Data: Line
+          Data: Main
         Active:
           ID: "?"
           Data: true
-        ID: ID:Line:0
+        ID: ID:Main:0
         Persistent-ID: "?"
         Position:
-          ID: "?"
+          ID: ID:Main:Tag:2
           Data:
             - 0
             - 0
             - 0
         Rotation:
-          ID: "?"
+          ID: ID:Main:Tag:3
           Data:
             - 0
             - 0
             - 0
             - 111111
         Scale:
-          ID: "?"
+          ID: ID:Main:Tag:4
           Data:
             - 111111
             - 111111
@@ -203,33 +203,50 @@ Children:
                 persistent-ID: "?"
                 UpdateOrder:
                   ID: "?"
-                  Data: 0
+                  Data: 33333333.333333332
                 Enabled:
-                  ID: "?"
+                  ID: ID:Main:Components:2:Enabled:0
                   Data: true
-                Mesh:
+                InterpolationSpace:
                   ID: "?"
-                  Data: ID:Line:Components:3:0
-                Materials:
+                  Data: {}
+                TargetPosition:
                   ID: "?"
                   Data:
-                    - ID: "?"
-                      Data: ID:Assets:13:ID:0
-                MaterialPropertyBlocks:
+                    - 0
+                    - 0
+                    - 0
+                TargetRotation:
                   ID: "?"
-                  Data: []
-                ShadowCastMode:
+                  Data:
+                    - 0
+                    - 0
+                    - 0
+                    - 333.3333333333333
+                TargetScale:
                   ID: "?"
-                  Data: On
-                MotionVectorMode:
+                  Data:
+                    - 333.3333333333333
+                    - 333.3333333333333
+                    - 333.3333333333333
+                Position:
                   ID: "?"
-                  Data: Object
-                SortingOrder:
+                  Data: ID:Main:Tag:2
+                Rotation:
+                  ID: "?"
+                  Data: ID:Main:Tag:3
+                Scale:
+                  ID: "?"
+                  Data: ID:Main:Tag:4
+                SmoothSpeed:
+                  ID: "?"
+                  Data: 666.6666666666666
+                _updateIndex:
                   ID: "?"
                   Data: 0
-            - Type: 3
+            - Type: 1
               Data:
-                ID: ID:Line:Components:3:0
+                ID: "?"
                 persistent-ID: "?"
                 UpdateOrder:
                   ID: "?"
@@ -237,50 +254,15 @@ Children:
                 Enabled:
                   ID: "?"
                   Data: true
-                HighPriorityIntegration:
-                  ID: "?"
-                  Data: false
-                OverrideBoundingBox:
-                  ID: "?"
-                  Data: false
-                OverridenBoundingBox:
-                  ID: "?"
-                  Data:
-                    Min:
-                      - 0
-                      - 0
-                      - 0
-                    Max:
-                      - 0
-                      - 0
-                      - 0
-                Profile:
-                  ID: "?"
-                  Data: Linear
-                Radius:
-                  ID: "?"
-                  Data: 3.3333333333333335
-                PointA:
-                  ID: ID:Line:Components:3:PointA:0
-                  Data:
-                    - 0
-                    - 0
-                    - 0
-                PointB:
-                  ID: ID:Line:Components:3:PointB:0
-                  Data:
-                    - 0
-                    - 0
-                    - 0
-                SlotA:
+                VariableName:
                   ID: "?"
                   Data: null
-                SlotB:
+                Reference:
                   ID: "?"
                   Data: null
-                Shading:
+                OverrideOnLink:
                   ID: "?"
-                  Data: Smooth
+                  Data: false
         Children: []
         ParentReference: ""
       - Name:
@@ -353,7 +335,7 @@ Children:
                   Data: Static.Main
                 Reference:
                   ID: "?"
-                  Data: ID:Line:0
+                  Data: ID:Main:0
                 OverrideOnLink:
                   ID: "?"
                   Data: false
@@ -372,7 +354,7 @@ Children:
                   Data: Static.ChildrenParent
                 Reference:
                   ID: "?"
-                  Data: ID:Line:0
+                  Data: ID:Main:0
                 OverrideOnLink:
                   ID: "?"
                   Data: false
@@ -414,7 +396,7 @@ Children:
         Components:
           ID: "?"
           Data:
-            - Type: 4
+            - Type: 3
               Data:
                 ID: "?"
                 persistent-ID: "?"
@@ -426,29 +408,10 @@ Children:
                   Data: true
                 VariableName:
                   ID: "?"
-                  Data: Props.start
+                  Data: Props.enable
                 TargetField:
                   ID: "?"
-                  Data: ID:Line:Components:3:PointA:0
-                OverrideOnLink:
-                  ID: "?"
-                  Data: false
-            - Type: 4
-              Data:
-                ID: "?"
-                persistent-ID: "?"
-                UpdateOrder:
-                  ID: "?"
-                  Data: 0
-                Enabled:
-                  ID: "?"
-                  Data: true
-                VariableName:
-                  ID: "?"
-                  Data: Props.end
-                TargetField:
-                  ID: "?"
-                  Data: ID:Line:Components:3:PointB:0
+                  Data: ID:Main:Components:2:Enabled:0
                 OverrideOnLink:
                   ID: "?"
                   Data: false

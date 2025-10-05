@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from "react";
 import {
+  HorizontalLayout,
   LayoutElement,
   VerticalLayout,
 } from "../../../unit/package/PrimitiveUix/main";
@@ -11,11 +12,16 @@ import { Color } from "../../style";
 const LocalSimulationData = (props: {
   simulationData: SimulationData;
   onClickLoadSimulationData: (data: SimulationData) => void;
+  deleteSimulationData: (id: string) => void;
 }) => {
   const { appState } = useAppContext();
 
   const onClickLoad = useCallback(() => {
     props.onClickLoadSimulationData(props.simulationData);
+  }, [props]);
+
+  const onClickDelete = useCallback(() => {
+    props.deleteSimulationData(props.simulationData.id);
   }, [props]);
 
   const backgroundColor = useMemo(() => {
@@ -26,18 +32,26 @@ const LocalSimulationData = (props: {
 
   return (
     <LayoutElement minHeight={100}>
-      <SimpleButton
-        onClick={onClickLoad}
-        overrideStyledColor={backgroundColor}
-        text={props.simulationData.title}
-      />
+      <HorizontalLayout>
+        <SimpleButton
+          onClick={onClickLoad}
+          overrideStyledColor={backgroundColor}
+          text={props.simulationData.title}
+        />
+        <SimpleButton
+          onClick={onClickDelete}
+          overrideStyledColor={backgroundColor}
+          text="Delete"
+        />
+      </HorizontalLayout>
     </LayoutElement>
   );
 };
 
-export const LoadSimulationData = (_props: {
+export const LoadSimulationData = (props: {
   mode: "Local" | "NasaApi";
   localSimulationData: Record<string, SimulationData>;
+  deleteSimulationData: (id: string) => void;
 }) => {
   const { dispatch } = useAppContext();
 
@@ -68,15 +82,14 @@ export const LoadSimulationData = (_props: {
       </LayoutElement>
       <LayoutElement flexibleHeight={1}>
         <VerticalLayout forceExpandChildHeight={false} spacing={10}>
-          {Object.entries(_props.localSimulationData).map(
-            ([_, data], index) => (
-              <LocalSimulationData
-                key={index}
-                onClickLoadSimulationData={onClickLoadSimulationData}
-                simulationData={data}
-              />
-            ),
-          )}
+          {Object.entries(props.localSimulationData).map(([_, data], index) => (
+            <LocalSimulationData
+              deleteSimulationData={props.deleteSimulationData}
+              key={index}
+              onClickLoadSimulationData={onClickLoadSimulationData}
+              simulationData={data}
+            />
+          ))}
         </VerticalLayout>
       </LayoutElement>
     </VerticalLayout>
