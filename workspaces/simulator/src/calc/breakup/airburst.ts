@@ -11,13 +11,11 @@ import * as Vec from "../coordinates/vector";
  *
  * @param samples 軌道サンプル点
  * @param terminationReason シミュレーション終了理由
- * @param strength_mpa 強度 [MPa]
  * @returns 空中爆発情報（なければNone）
  */
 export const detectAirburst = (
 	samples: readonly TrajectoryPoint[],
 	terminationReason: "ground" | "breakup" | "burnout" | "max_time" | "escape",
-	_strength_mpa: number,
 ): R.Result<AirburstInfo, Error> => {
 	if (A.isEmpty(samples)) {
 		return R.Error(new Error("軌道サンプルが空です"));
