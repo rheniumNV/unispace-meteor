@@ -96,14 +96,25 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	}
 	const end_time_s = final_sample.t;
 
-	// 最終速度からエネルギーを計算
-	const v_final_mag = Vec.magnitude(final_sample.v_ecef);
-	// 最終質量は初期質量と同じと仮定（アブレーション未実装の場合）
-	const E_joule = 0.5 * m0_kg * v_final_mag * v_final_mag;
-	const E_mt_tnt = E_joule / MEGATON_TNT_JOULE;
+	// エネルギー計算
+	// ground または breakup の場合のみ地球にエネルギーが預託される
+	// escape, burnout, max_time の場合は地球への影響なし
+	let E_joule = 0;
+	let E_mt_tnt = 0;
 
-	// 空中爆発の検出
-	const airburstResult = Breakup.detectAirburst(samples, meteoroid.strength_mpa);
+	if (trajectory.terminationReason === "ground" || trajectory.terminationReason === "breakup") {
+		const v_final_mag = Vec.magnitude(final_sample.v_ecef);
+		// 最終質量は最終サンプルの質量を使用
+		E_joule = 0.5 * final_sample.mass_kg * v_final_mag * v_final_mag;
+		E_mt_tnt = E_joule / MEGATON_TNT_JOULE;
+	}
+
+	// 空中爆発の検出（terminationReasonを渡す）
+	const airburstResult = Breakup.detectAirburst(
+		samples,
+		trajectory.terminationReason,
+		meteoroid.strength_mpa,
+	);
 	if (R.isError(airburstResult)) {
 		return airburstResult;
 	}
@@ -151,19 +162,30 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	}
 
 	// 爆風影響範囲
-	const burst_alt = airburst.isOccurrence ? airburst.burst_altitude_m : 0;
-	const blastRadiiResult = Blast.calculateBlastRadii(E_joule, blast_thresholds_kpa, burst_alt);
-	if (R.isError(blastRadiiResult)) {
-		return blastRadiiResult;
+	// ground または breakup の場合のみ爆風が発生
+	let damage_radii_km: Record<string, number> = {};
+	if (
+		(trajectory.terminationReason === "ground" || trajectory.terminationReason === "breakup") &&
+		E_joule > 0
+	) {
+		const burst_alt = airburst.isOccurrence ? airburst.burst_altitude_m : 0;
+		const blastRadiiResult = Blast.calculateBlastRadii(E_joule, blast_thresholds_kpa, burst_alt);
+		if (R.isError(blastRadiiResult)) {
+			return blastRadiiResult;
+		}
+		damage_radii_km = R.getExn(blastRadiiResult);
 	}
-	const damage_radii_km = R.getExn(blastRadiiResult);
 
 	// 地震規模
-	const magnitudeResult = Seismic.calculateSeismicMagnitude(E_joule, seismic_efficiency);
-	if (R.isError(magnitudeResult)) {
-		return magnitudeResult;
+	// ground（地表衝突）の場合のみ地震が発生
+	let moment_magnitude_M = 0;
+	if (trajectory.terminationReason === "ground" && E_joule > 0) {
+		const magnitudeResult = Seismic.calculateSeismicMagnitude(E_joule, seismic_efficiency);
+		if (R.isError(magnitudeResult)) {
+			return magnitudeResult;
+		}
+		moment_magnitude_M = R.getExn(magnitudeResult);
 	}
-	const moment_magnitude_M = R.getExn(magnitudeResult);
 
 	// 結果をまとめる
 	const result: SimulationResult = {
