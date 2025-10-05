@@ -42,7 +42,7 @@ const input: SimulationInput = {
   meteoroid: {
     diameter_m: 250,      // 直径 [m]
     density_kg_m3: 3500,  // 密度 [kg/m³]
-    strength_mpa: 50,     // 強度 [MPa]
+    strength_mpa: 50,     // 強度 [MPa] (オプショナル、デフォルト: 5)
   },
   environment: {
     surface: "land",      // 地表タイプ
@@ -105,6 +105,25 @@ ECEF座標を地理座標（緯度・経度・高度）に変換します。
 
 各過圧しきい値での爆風影響半径を計算します（Glasstone & Dolan）。
 
+### 定数
+
+ライブラリから以下の定数をインポートして使用できます：
+
+```typescript
+import {
+  DEFAULT_STRENGTH_MPA,           // 5 MPa - 石質小惑星の典型値
+  DEFAULT_SEISMIC_EFFICIENCY,     // 0.001 - 地震効率
+  DEFAULT_BLAST_THRESHOLDS_KPA,   // [1, 3.5, 10, 20] - 爆風過圧しきい値
+  EARTH_RADIUS_M,                 // 6,371,000 m - 地球半径
+  EARTH_MU_M3_S2,                 // 3.986004418e14 m³/s² - 地球重力定数
+  MEGATON_TNT_JOULE,              // 4.184e15 J - 1メガトンTNT
+  SEA_LEVEL_DENSITY_KG_M3,        // 1.225 kg/m³ - 海面大気密度
+  STANDARD_GRAVITY_M_S2,          // 9.81 m/s² - 標準重力加速度
+  STANDARD_DRAG_COEFFICIENT,      // 1.0 - 標準抗力係数
+  // その他の定数...
+} from '@unispace-meteor/simulator';
+```
+
 ### 型定義
 
 #### SimulationInput
@@ -119,7 +138,7 @@ interface SimulationInput {
   meteoroid: {
     diameter_m: number;         // 直径 [m]
     density_kg_m3: number;      // 密度 [kg/m³]
-    strength_mpa: number;       // 強度 [MPa]
+    strength_mpa?: number;      // 強度 [MPa] (オプショナル、デフォルト: 5)
   };
   environment: {
     surface: "land" | "water";  // 地表タイプ

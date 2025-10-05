@@ -21,8 +21,8 @@ export interface MeteoroidProperties {
 	readonly diameter_m: number;
 	/** 密度 [kg/m³] */
 	readonly density_kg_m3: number;
-	/** 強度 [MPa] */
-	readonly strength_mpa: number;
+	/** 強度 [MPa] (デフォルト: 5 MPa - 石質小惑星の典型値) */
+	readonly strength_mpa?: number;
 }
 
 /** 環境パラメータ */

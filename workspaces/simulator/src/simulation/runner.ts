@@ -14,6 +14,7 @@ import {
 	DEFAULT_BLAST_THRESHOLDS_KPA,
 	DEFAULT_ESCAPE_CONTINUE_TIME_S,
 	DEFAULT_SEISMIC_EFFICIENCY,
+	DEFAULT_STRENGTH_MPA,
 	MEGATON_TNT_JOULE,
 	SEA_LEVEL_DENSITY_KG_M3,
 	STANDARD_DRAG_COEFFICIENT,
@@ -48,8 +49,8 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const volume_m3 = (4 / 3) * Math.PI * radius_m * radius_m * radius_m;
 	const m0_kg = meteoroid.density_kg_m3 * volume_m3;
 
-	// 強度をPaに変換
-	const strength_pa = meteoroid.strength_mpa * 1e6;
+	// 強度をPaに変換（デフォルト: 5 MPa）
+	const strength_pa = (meteoroid.strength_mpa ?? DEFAULT_STRENGTH_MPA) * 1e6;
 
 	// 地表密度（簡易的に）
 	const target_density_kg_m3 = environment.surface === "water" ? 1000 : 2500;
@@ -110,11 +111,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	}
 
 	// 空中爆発の検出（terminationReasonを渡す）
-	const airburstResult = Breakup.detectAirburst(
-		samples,
-		trajectory.terminationReason,
-		meteoroid.strength_mpa,
-	);
+	const airburstResult = Breakup.detectAirburst(samples, trajectory.terminationReason);
 	if (R.isError(airburstResult)) {
 		return airburstResult;
 	}
