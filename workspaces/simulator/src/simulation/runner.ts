@@ -12,6 +12,7 @@ import * as Seismic from "../calc/seismic";
 import {
 	ATMOSPHERE_SCALE_HEIGHT_M,
 	DEFAULT_BLAST_THRESHOLDS_KPA,
+	DEFAULT_ESCAPE_CONTINUE_TIME_S,
 	DEFAULT_SEISMIC_EFFICIENCY,
 	MEGATON_TNT_JOULE,
 	SEA_LEVEL_DENSITY_KG_M3,
@@ -35,6 +36,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 	const Cd = model?.drag_coefficient ?? STANDARD_DRAG_COEFFICIENT;
 	const seismic_efficiency = model?.seismic_efficiency ?? DEFAULT_SEISMIC_EFFICIENCY;
 	const blast_thresholds_kpa = model?.blast_thresholds_kpa ?? DEFAULT_BLAST_THRESHOLDS_KPA;
+	const escape_continue_time_s = model?.escape_continue_time_s ?? DEFAULT_ESCAPE_CONTINUE_TIME_S;
 	const dt = model?.time_step_s ?? 1; // 1秒
 	const max_time = model?.max_time_s ?? 60 * 60 * 24 * 30 * 3; // 90日 = 7,776,000秒
 
@@ -69,6 +71,7 @@ export const simulateMeteorImpact = (input: SimulationInput): R.Result<Simulatio
 		density_kg_m3: meteoroid.density_kg_m3,
 		seismic_efficiency,
 		blast_thresholds_kpa: [...blast_thresholds_kpa],
+		escape_continue_time_s,
 	};
 
 	// 軌道積分を実行

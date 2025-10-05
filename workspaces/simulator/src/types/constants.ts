@@ -37,3 +37,6 @@ export const DEFAULT_BLAST_THRESHOLDS_KPA = [1, 3.5, 10, 20] as const;
 
 /** デフォルトの隕石強度 [MPa] (石質小惑星の典型値) */
 export const DEFAULT_STRENGTH_MPA = 5;
+
+/** escape検出後の継続時間 [s] (デフォルト: 1時間) */
+export const DEFAULT_ESCAPE_CONTINUE_TIME_S = 3600;
